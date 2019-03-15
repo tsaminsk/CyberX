@@ -1,0 +1,183 @@
+.one {
+    position: relative;
+    background: url('../images/one/one.png') center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    
+    &__outer {
+        padding: 56.75% 0 0;
+    }
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 145px);
+    }
+
+    &__left {
+        float: left;
+        padding: 11.2% 0 0;
+        color: #fff;
+    }
+
+    &__logo {
+        margin: 0 0 28px 1px;
+    }
+
+    &__title {
+        max-width: 750px;
+        padding: 0 0 19px;
+        border-bottom: 2px #dbdbdb solid;
+        margin: 0 0 0 3.5px;
+
+        h1 {
+            font-family: "RoadRadio";
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 54px;
+            text-transform: none;
+            letter-spacing: -0.6px;
+            margin: 0;
+        }
+        
+        span {
+            font-family: "RoadRadio";
+            text-transform: uppercase;
+            font-size: 50px;
+        }
+
+        b {
+            font-family: "RoadRadio";
+            text-transform: uppercase;
+            font-size: 45px;
+            font-weight: 400;
+        }
+    }
+
+    &__context {
+        max-width: 735px;
+        counter-reset: myCounter;
+        padding: 31px 0 0 14px;
+        margin: 0;
+
+        li {
+            position: relative;
+            display: block;
+            padding: 0 0 0 19px;
+            font-family: "Jura-DemiBold";
+            font-size: 24px;
+            line-height: 29px;
+            letter-spacing: -0.8px;
+            margin: 0 0 28px 53px;
+        }
+
+        li:before {
+            counter-increment: myCounter;
+            content: counter(myCounter);
+            position: absolute;
+            top: calc(50% - 30px);
+            left: -60px;
+            display: inline-block;
+            vertical-align: top;
+            height: 60px;
+            width: 59px;
+            font-family: "RussoOne";
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            border: 1px solid #754145;
+            background: #240003;
+            padding: 15px 0 0;
+        }
+    }
+
+    &__right {
+        float: right;
+        padding: 287px 0 0;
+    }
+
+    &__right-tel {
+        text-align: right;
+    }
+
+    &__right-tel_icon {
+        display: inline-block;
+        vertical-align: top;
+        width: 36px;
+        height: 36px;
+        text-align: center;
+        padding: 9px 2px 0 0;
+        background-color: #bf1e2e;
+        transform: rotate(45deg);
+        margin: 9px 0 0;
+
+        img {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__right-tel_info {
+        display: inline-block;
+        vertical-align: top;
+        letter-spacing: -0.6px;
+    }
+
+    &__right-tel_number {
+        font-family: "RussoOne";
+        font-size: 20px;
+        color: #fff;
+        padding: 0 0 5px 16px;
+    }
+
+    &__right-tel_order {
+        a {
+            font-family: "RoadRadio-Bold";
+            font-size: 17px;
+            text-decoration: none;
+            color: #bf1e2e;
+        }
+    }
+
+    &__footer {
+        position: absolute;
+        top: calc(100% - 145px);
+        left: 0px;
+        width: 100%;
+        height: 145px;
+        padding: 21px 0 0;
+        letter-spacing: -0.6px;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(238, 18, 41);
+        opacity: 0.8;
+    }
+
+    &__footer-title {
+        font-family: "Jura-DemiBold";
+        font-size: 20px;
+        margin: 0 0 22px;
+    }
+
+    &__footer-button {
+        img {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 0 0 15px;
+            font-family: "RoadRadio-Light";
+            font-size: 22px;
+            text-transform: uppercase;
+            text-decoration-skip-ink: none;
+            color: #fff;
+            margin: 5px 0 0;
+        }
+    }
+}
+

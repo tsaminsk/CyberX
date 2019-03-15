@@ -1,0 +1,3 @@
+[2019-03-05 15:17:49] layer "info@cyberx-franchise.ru": Unsupported extension: ru
+[2019-03-05 15:17:49] layer "cross.png": Duplicate path: cross.png
+[2019-03-05 15:17:49] layer "cross.png": Duplicate path: cross.png
