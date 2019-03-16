@@ -1,0 +1,62 @@
+.form_one {
+    position: relative;
+
+    &__outer {
+        padding: 15.625% 0 0;
+        background: url('../images/form_one/form_one_bg.png') center center no-repeat;
+        background-size: cover;
+    }
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 98px;
+        
+    }
+
+    &__title {
+        padding: 0 0 5px;
+        font-family: "RoadRadio-Bold";
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -0.8px;
+        text-transform: uppercase;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        margin: 5px 0 0 31px;
+    }
+
+    &__button {
+        margin: 14px 96px 0 0;
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 360px;
+            height: 50px;
+            font-family: "Jura-DemiBold";
+            font-size: 20px;
+            letter-spacing: -0.6px;
+            color: #bf1e2e;
+            border-radius: 2px;
+            border: none;
+            background-color: #fff;
+            transition: box-shadow 0.5s ease;
+
+            &:hover {
+                box-shadow: 0 0 10px 3px rgba(#fff, 0.4);
+            }
+        }
+    }
+}
