@@ -1,3 +1,6 @@
+gulpfile.js
+# only for netlify
+
 .idea/
 node_modules
 nbproject
