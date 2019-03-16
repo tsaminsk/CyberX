@@ -1,0 +1,58 @@
+@import "sprite";
+
+.icon {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.icon-angle {
+    @include sprite($angle);
+}
+
+.icon-plus {
+    @include sprite($plus);
+}
+
+.icon-calendar {
+    @include sprite($calendar);
+}
+
+.icon-chat {
+    @include sprite($chat);
+}
+
+.icon-contract {
+    @include sprite($contract);
+}
+
+.icon-employee {
+    @include sprite($employee);
+}
+
+.icon-group {
+    @include sprite($group);
+}
+
+.icon-joystick {
+    @include sprite($joystick);
+}
+
+.icon-performance {
+    @include sprite($performance);
+}
+
+.icon-pie-chart {
+    @include sprite($pie-chart);
+}
+
+.icon-price-tag {
+    @include sprite($price-tag);
+}
+
+.icon-security {
+    @include sprite($security);
+}
+
+.icon-team {
+    @include sprite($team);
+}
