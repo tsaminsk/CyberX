@@ -1,0 +1,121 @@
+.fifth {
+    position: relative;
+    padding: 56.75% 0 0;
+    background: url('../images/fifth/fifth_bg.png') center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -83px;
+        left: -224px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -83px;
+        right: -202px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &__outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+    }
+
+    &__inner {
+        width: 83.33%;
+    }
+
+    &__title {
+        padding: 111px 53px 0 8px;
+        font-size: 30px;
+        font-family: "RussoOne";
+        letter-spacing: -0.4px;
+        color: #bf1e2e;
+        text-transform: uppercase;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0 0 83px;
+
+        span {
+            padding: 0 10px 0 0;
+            color: #fff;
+        }
+    }
+
+    &__grafics {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        color: #fff;
+        margin: 0 0 22px;
+    }
+
+    &__grafics-gold,
+    &__grafics-ciber {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    &__grafics-title {
+        padding: 0 0 0 10px;
+        font-family: "RoadRadio";
+        font-size: 25px;
+        margin: 0 0 -25px;
+    }
+    
+    &__text {
+        color: #fff;
+        text-align: center;
+    }
+
+    &__link-forbes {
+        font-family: "RoadRadio";
+        font-size: 20px;
+        letter-spacing: -0.2px;
+        margin: 0 0 55px;
+
+        a {
+            color: #bf1e2e;
+        }
+    }
+
+    &__text-title {
+        padding: 0 0 30px 11px;
+        font-family: "RussoOne";
+        font-size: 25px;
+        letter-spacing: -0.45px;
+        text-transform: uppercase;
+    }
+
+    &__text-call {
+        padding: 0 0 0 13px;
+        font-family: "RussoOne";
+        font-size: 40px;
+        letter-spacing: -0.5px;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        text-shadow: 15px 15px 20px #bf1e2e,
+                    -15px 15px 20px #bf1e2e,
+                    15px -15px 20px #bf1e2e,
+                    -15px -15px 20px #bf1e2e;
+    }
+}
+
