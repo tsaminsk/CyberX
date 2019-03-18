@@ -41,3 +41,49 @@ ol {
   text-indent: -9999px;
   font-size: 0;
 }
+
+button.button--red {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  height: 50px;
+  font-family: "Jura-DemiBold";
+  font-size: 20px;
+  letter-spacing: -0.6px;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  background-color: #bf1e2e;
+  opacity: 1;
+  transition: box-shadow 0.5s ease, opacity 0.5s ease;
+
+  span {
+    position: relative;
+    z-index: 3;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 3px;
+    background-image: linear-gradient(to top, #c02232, #cf5561);
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px 3px rgba(#fff, 0.4);
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+}

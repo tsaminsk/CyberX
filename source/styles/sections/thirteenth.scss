@@ -1,0 +1,239 @@
+.thirteenth {
+    position: relative;
+    padding: 56.75% 0 0;
+    background: url('../images/thirteenth/thirteenth_bg.png') center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -83px;
+        right: -202px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -83px;
+        left: -226px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &__outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #000;
+    }
+
+    &__inner {
+        width: 75%;
+        padding: 0 15px;
+        margin: 0 0 0 8.33%;
+    }
+
+    &__title {
+        padding: 112px 113px 0 0;
+        font-family: "RussoOne";
+        font-size: 40px;
+        letter-spacing: -0.7px;
+        text-transform: uppercase;
+        margin: 0 0 39px;
+    }
+
+    &__title--red {
+        color: #bf1e2e;
+        text-align: center;
+        margin: 0 0 -2px;
+    }
+
+    &__title--dark {
+        color: #000;
+        text-align: center;
+    }
+
+    &__content {
+
+    }
+
+    &__player {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 0 23px;
+
+        .video {
+            width: 572px;
+            height: 318px;
+        }
+    }
+
+    &__player-descr {
+        font-family: "RoadRadio-Black";
+        font-size: 25px;
+        margin: 0 52px 0 0;
+        
+        span {
+            display: block;
+            font-family: "RoadRadio-Bold";
+            font-size: 22px;
+        }
+    }
+    
+    &__player-title  {
+        position: relative;
+        padding: 19px 16px 24px 24px;
+        margin: 0 0 23px;
+    }
+
+    &__playr-decor--top,
+    &__playr-decor--bottom {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+
+    }
+
+    &__playr-decor--top{
+        top: 0;
+        left: 0;
+    }
+
+    &__playr-decor--bottom {
+        bottom: 0;
+        right: 0;
+
+        .icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__player-address {
+        font-family: "RoadRadio";
+        font-size: 18px;
+
+        .icon {
+            margin: 0 3px 0 0;
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .twelfth__item {
+            position: relative;
+            color: #000;
+
+            img {
+                width: 356px;
+                height: 236px;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 35px);
+                left: calc(50% - 35px);
+                width: 70px;
+                height: 70px;
+                @include sprite($play-big);
+            }
+        }
+    }
+
+    &__button {
+
+    }
+}
+
+.video {
+    position: relative;
+    font-size: 0;
+    border: 2px solid #bf1e2e;
+
+    &.is-active {
+        video {
+            transition: visibility 0s linear;
+            visibility: visible;
+        }
+
+        .video__overlay {
+            opacity: 0;
+        }
+
+        .video__btn {
+            pointer-events: none;
+        }
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        background: #000;
+        transition: visibility 0.5s linear;
+        visibility: hidden;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 21.25% 0 0;
+        background: none no-repeat 50% 50%;
+        background-size: cover;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        overflow: hidden;
+
+        &:hover {
+            .video__overlay-hover {
+                opacity: 1;
+                transform: scale(1.2) translate3d(0, 0, 0);
+                transition: opacity 0.5s linear, transform 60s 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+    }
+
+    &__overlay-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: none no-repeat 50% 50%;
+        background-size: cover;
+        transition: opacity 0.5s ease, transform 0.5s 0.5s ease;
+    }
+
+    &__btn {
+        position: relative;
+        display: block;
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        transition: background 0.5s;
+        margin: 0 auto 25px;
+        pointer-events: all;
+    }
+}

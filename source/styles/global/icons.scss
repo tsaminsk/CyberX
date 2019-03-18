@@ -5,6 +5,14 @@
     vertical-align: top;
 }
 
+.icon-play {
+    @include sprite($play);
+}
+
+.icon-play-big {
+    @include sprite($play-big);
+}
+
 .icon-plus-red-mini {
     @include sprite($plus-red-mini);
 }
