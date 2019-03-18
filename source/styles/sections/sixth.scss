@@ -91,12 +91,14 @@
     }
 
     &__item-image {
-
+        display: inline-block;
+        vertical-align: top;
+        min-width: 269px;
     }
 
     &__item-content {
         padding: 29px 0 0;
-        margin: 0 0 0 1px;
+        margin: 0 0 0 -49px;
     }
     
     &__item-title {
@@ -114,7 +116,7 @@
     }
 
     &__item-text {
-        padding: 0 0 0 30px;
+        padding: 0 0 0 27px;
         font-family: "Jura-DemiBold";
         font-size: 15px;
     }

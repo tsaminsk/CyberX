@@ -13,6 +13,10 @@
     @include sprite($plus);
 }
 
+.icon-plus-red {
+    @include sprite($plus-red);
+}
+
 .icon-calendar {
     @include sprite($calendar);
 }
