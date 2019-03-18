@@ -1,0 +1,141 @@
+.ninth {
+    position: relative;
+    padding: 56.75% 0 0;
+    background: url('../images/ninth/ninth_bg.png') center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -83px;
+        right: -202px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -83px;
+        left: -226px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &__outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        background: url('../images/ninth/red.png') 60% 50% no-repeat;
+    }
+    
+    &__inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 83.33%;
+        padding: 208px 0 0;
+    }
+    
+    &__item {
+        width: 490px;
+        // padding: 0 100px 0 0;
+        margin: 0 0 0 8px;
+
+        &:first-child {
+            margin: 0 225px 0 8px;
+        }
+
+        &--red {
+            .ninth__item-title {
+                padding: 0 106px 20px 0;
+                color: #bf1e2e;
+
+                span {
+                    border-color: #bf1e2e;
+                }
+            }
+
+            .ninth__item-text {
+                padding: 22px 23px 18px 28px;
+
+                p {
+                    padding: 0;
+                    margin: 0 0 10px;
+                }
+            }
+
+            .ninth____item-icon {
+                border: 1px dashed rgba(#bf1e2e, 0.2);
+            }
+
+            .ninth__item-icon_bg {
+                background-image: linear-gradient(to right, rgba(#bf1e2e, 0.7), rgba(#bf1e2e, 0.95));
+            }
+        }
+    }
+    
+    &__item-title {
+        padding: 0 26px 20px 0;
+        font-family: "RoadRadio-bold";
+        font-size: 35px;
+        letter-spacing: -0.3px;
+        text-align: center;
+        
+        span {
+            display: block;
+            width: 84%;
+            font-family: "RoadRadio";
+            line-height: 39px;
+            letter-spacing: -0.3px;
+            text-align-last: left;
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+    &__item-text {
+        position: relative;
+        padding: 59px 23px 59px 29px;
+        font-family: "Jura-DemiBold";
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -0.3px;
+        text-shadow: 0px 1px 17.1px rgba(0, 0, 0, 0.63);
+        border-radius: 3px;
+        border: 1px dashed rgba(#fff, 0.2);
+    }
+
+    &__item-icon {
+        position: absolute;
+        top: -58px;
+        right: -58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        border: 1px dashed rgb(106, 106, 106);
+    }
+
+    &__item-icon_bg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-image: linear-gradient(to right, rgba(#fff, 0.7), rgba(#fff, 0.95));
+    }
+}
+

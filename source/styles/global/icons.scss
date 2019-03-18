@@ -17,6 +17,14 @@
     @include sprite($plus-red);
 }
 
+.icon-myself {
+    @include sprite($myself);
+}
+
+.icon-withus {
+    @include sprite($withus);
+}
+
 .icon-calendar {
     @include sprite($calendar);
 }
