@@ -1,0 +1,198 @@
+.eleventh {
+    position: relative;
+    padding: 56.75% 0 0;
+    background: url('../images/eleventh/eleventh_bg.png') center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: -83px;
+        right: -202px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -83px;
+        left: -226px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &__outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #000;
+    }
+
+    &__title {
+        padding: 112px 113px 0 0;
+        font-family: "RussoOne";
+        font-size: 40px;
+        letter-spacing: -0.7px;
+        text-transform: uppercase;
+        margin: 0 0 11px;
+    }
+
+    &__title--red {
+        color: #bf1e2e;
+        text-align: center;
+        margin: 0 0 -2px;
+    }
+
+    &__title--dark {
+        color: #000;
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &__questions {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-width: 1082px;
+        padding: 27px 0 0 300px;
+        border-radius: 3px;
+        border: 1px dashed #6a6a6a;
+        margin: 0 0 0 -300px;
+    }
+
+    &__questions-elem {
+        position: absolute;
+        top: 67px;
+        right: -17px;
+        width: 30px;
+        height: 30px;
+        border-radius: 3px;
+        border-right: 1px dashed #6a6a6a;
+        border-bottom: 1px dashed #6a6a6a;
+        transform: rotate(-45deg);
+        overflow: hidden;
+        
+        &_img {
+            width: 141%;
+            height: 141%;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__questions-item {
+
+        &:first-child {
+            max-width: 53.1%;
+            .eleventh__item-title {
+                padding: 37px 0 39px 34px;
+                color: #bf1e2e;
+            }
+        }
+        
+    }
+
+    &__item-title {
+        position: relative;
+        width: 90%;
+        min-width: 347px;
+        padding: 16px 0 17px 36px;
+        font-family: "RoadRadio-Black";
+        font-size: 35px;
+        letter-spacing: -0.6px;
+    }
+
+    &__item-decor--top {
+        position: absolute;
+        top: -5px;
+        left: 7px;
+        width: 30px;
+        height: 30px;
+    }
+
+    &__item-decor--bottom {
+        position: absolute;
+        bottom: 0;
+        right: 3px;
+        width: 30px;
+        height: 30px;
+
+        .icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__item-list {
+        padding: 1px 0 0 64px;
+        
+        li {
+            position: relative;
+            font-family: "Jura-DemiBold";
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: -0.4px;
+            padding: 0;
+            margin: 0 0 13px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: -27px;
+                display: block;
+                @include sprite($plus-red-mini);
+            }
+
+            span {
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+    }
+
+    &__howmuch {
+        width: 620px;
+        margin: 0 0 0 14px;
+    }
+
+    &__howmuch-title {
+        padding: 64px 0px 0 28px;
+        font-family: "RoadRadio-Black";
+        font-size: 35px;
+        letter-spacing: -0.6px;
+        color: #bf1e2e;
+        margin: 0 0 12px;
+    }
+
+    &__howmuch-text {
+        font-family: "RoadRadio-Light";
+        font-size: 18px;
+        line-height: 1.23;
+
+        p {
+            display: block;
+            width: 100%;
+            padding: 8px 120px 8px 16px;
+            margin: 0 0 2px;
+            
+            &:last-child {
+                background-image: linear-gradient(to right, rgba(#bf1e2e, 0.2), rgba(#bf1e2e, 0));
+            }
+        }
+    }
+}

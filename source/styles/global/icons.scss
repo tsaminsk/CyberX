@@ -5,6 +5,14 @@
     vertical-align: top;
 }
 
+.icon-plus-red-mini {
+    @include sprite($plus-red-mini);
+}
+
+.icon-elem-bg {
+    @include sprite($elem-bg);
+}
+
 .icon-angle {
     @include sprite($angle);
 }

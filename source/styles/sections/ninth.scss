@@ -36,7 +36,7 @@
         width: 100%;
         height: 100%;
         color: #fff;
-        background: url('../images/ninth/red.png') 60% 50% no-repeat;
+        background: url('../images/ninth/red.png') 85% 35% no-repeat;
     }
     
     &__inner {
@@ -49,7 +49,6 @@
     
     &__item {
         width: 490px;
-        // padding: 0 100px 0 0;
         margin: 0 0 0 8px;
 
         &:first-child {
@@ -73,10 +72,11 @@
                     padding: 0;
                     margin: 0 0 10px;
                 }
-            }
 
-            .ninth____item-icon {
-                border: 1px dashed rgba(#bf1e2e, 0.2);
+            }
+            
+            .ninth__item-icon {
+                border-color: rgba(#543c3d, 0.8);
             }
 
             .ninth__item-icon_bg {
@@ -111,6 +111,7 @@
         line-height: 30px;
         letter-spacing: -0.3px;
         text-shadow: 0px 1px 17.1px rgba(0, 0, 0, 0.63);
+        color: #fefefe;
         border-radius: 3px;
         border: 1px dashed rgba(#fff, 0.2);
     }
@@ -125,7 +126,7 @@
         width: 116px;
         height: 116px;
         border-radius: 50%;
-        border: 1px dashed rgb(106, 106, 106);
+        border: 1px dashed rgba(#fff, 0.2);
     }
 
     &__item-icon_bg {
