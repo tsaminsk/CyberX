@@ -5,6 +5,10 @@
     vertical-align: top;
 }
 
+.icon-close {
+    @include sprite($close);
+}
+
 .icon-play {
     @include sprite($play);
 }

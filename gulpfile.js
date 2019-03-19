@@ -80,8 +80,14 @@ gulp.task('copy:images', function() {
     .pipe(gulp.dest('build/images'));
 });
 
+/* ------------ Copy js ------------- */
+gulp.task('copy:js', function () {
+  return gulp.src('./source/js/*.js')
+    .pipe(gulp.dest('build/js'));
+});
+
 /* ------------ Copy ------------- */
-gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images'));
+gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images', 'copy:js'));
 
 /* ------------ Watchers ------------- */
 gulp.task('watch', function() {

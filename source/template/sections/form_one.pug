@@ -5,4 +5,22 @@ div.form_one
             .form_one__title
                 | оставьте заявку и получите доступ <br>к финансовым документам
             .form_one__button
-                button Получить доступ
+                button(id="popup_1") Получить доступ
+.popup
+    .popup__wrap
+        .popup__title доступ к финансовым документам
+        .popup__content
+            form.popup__form(action="#")
+                input(type="text" id="popup1-name" placeholder="Ваше имя")
+                input(type="text" id="popup1-phone" placeholder="Ваш телефон")
+                input(type="email" id="popup1-email" placeholder="Email")
+                button.button--red
+                    span Получить доступ
+            .popup__note
+                | Ваши данные не будут переданы третьим лицам 
+        .popup__clouse
+            .icon.icon-close
+    .popup__submited
+        .popup__title Ваше сообщение отправленно
+        button.button--red
+                span Закрыть

@@ -12,6 +12,7 @@
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "browser-sync": "^2.24.7",
+    "concat": "^1.0.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cli": "^2.0.1",
@@ -22,7 +23,8 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp.spritesmith": "^6.9.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "uglify": "^0.1.5"
   },
   "dependencies": {
     "normalize.scss": "^0.1.0"
