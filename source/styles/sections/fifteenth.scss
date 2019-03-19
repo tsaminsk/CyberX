@@ -1,0 +1,220 @@
+.fifteenth {
+    position: relative;
+    padding: 56.75% 0 0;
+    background: url('../images/fifteenth/fifteenth_bg.png') center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: -83px;
+        left: -226px;
+        width: 550px;
+        height: 300px;
+        background-color: #bf1e2e;
+        transform: rotate(-45deg);
+        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+    }
+
+    &__outer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #000;
+    }
+
+    &__inner {
+        padding: 0 110px 0 0;
+    }
+
+
+    &__title {
+        padding: 109px 113px 0 0;
+        font-family: "RussoOne";
+        font-size: 40px;
+        letter-spacing: -0.7px;
+        text-transform: uppercase;
+        margin: 0 0 124px;
+    }
+
+    &__title--red {
+        color: #bf1e2e;
+        text-align: center;
+        margin: 0 0 -2px;
+    }
+
+    &__title--white {
+        color: #fff;
+        text-align: center;
+    }
+
+    &__content {
+        text-align: center;
+    }
+
+    &__form {
+        width: 1140px;
+        height: 609px;
+        padding: 11px;
+        border-radius: 3px;
+        background-color: rgb(255, 255, 255);
+        opacity: 0.902;
+        box-shadow: 0px 2px 9.5px 0.5px rgba(0, 0, 0, 0.25);
+        margin: 0 auto;
+
+        form {
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            opacity: 0.902;
+            box-shadow: 0px 2px 9.5px 0.5px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &__form-inner {
+        width: 100%;
+        height: 100%;
+        padding: 61px 0 0;
+        border-width: 2px;
+        border-color: rgb(191, 30, 46);
+        border-style: solid;
+        border-radius: 3px;
+        opacity: 0.902;
+    }
+
+    &__form-title {
+        width: 75%;
+        font-family: "RoadRadio-Black";
+        font-size: 30px;
+        letter-spacing: -0.5px;
+        color: #000;
+        margin: 0 auto 28px;
+    }
+
+    &__form-inputs {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 72%;
+        text-align: center;
+        margin: 0 auto 7px;
+
+        input {
+            width: 365px;
+            height: 33px;
+            font-family: "Jura-DemiBold";
+            font-size: 20px;
+            border: none;
+            border-bottom: 2px solid #818181;
+            margin: 30px 0 31px;
+        }
+    }
+
+    &__note_title {
+        font-family: "Jura-DemiBold";
+        font-size: 15px;
+        color: #000;
+        margin: 0 0 22px;
+
+        span {
+            color: #bf1e2e;
+        }
+    }
+
+    &__note_politics,
+    &__note_politics a {
+        font-family: "Jura-DemiBold";
+        font-size: 15px;
+        color: #818181;
+        text-decoration-skip-ink: none
+    }
+
+    &__form-button {
+        padding: 41px 0 0;
+
+        button {
+            margin: 0 auto;
+        }
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 107px;
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: "Jura-DemiBold";
+            color: #fff;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+
+    &__footer-phone {
+        padding: 13px 0 0;
+        font-family: "RussoOne";
+        font-size: 20px;
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            padding: 13px 0 0;
+            text-decoration: none;
+            margin: 0 0 0 20px;
+        }
+    }
+
+    &__footer-phone_icon {
+        display: inline-block;
+        vertical-align: top;
+        width: 36px;
+        height: 36px;
+        text-align: center;
+        padding: 9px 2px 0 0;
+        background-color: #bf1e2e;
+        transform: rotate(45deg);
+        margin: 9px 0 0;
+
+        img {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__footer-mail {
+        padding: 27px 0 0;
+        font-size: 18px;
+        letter-spacing: -0.6px;
+    }
+
+    &__footer-logo {
+
+        img {
+            width: 260px;
+        }
+    }
+
+    &__footer-address {
+        padding: 25px 0 0;
+        font-size: 20px;
+        letter-spacing: -0.6px;
+    }
+
+    &__footer-copy {
+        padding: 30px 0 0;
+        font-size: 15px;
+        letter-spacing: -0.6px;
+    }
+}
