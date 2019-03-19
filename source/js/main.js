@@ -68,11 +68,24 @@ window.onload = function () {
 
     // });
 
-    var popupOpen = document.querySelector('#popup_1');
+    var popupOpen1 = document.querySelector('#popup_1');
+    var popupOpen2 = document.querySelector('#popup_2');
     var popupClouse = document.querySelector('.popup__clouse');
 
-    popupOpen.addEventListener('click', (event) => {
+    popupOpen1.addEventListener('click', (event) => {
         event.preventDefault();
+        document.querySelector('.popup__title').innerHTML = 'доступ к финансовым документам';
+        document.querySelector('.popup').style.display = 'block';
+        document.querySelector('.popup__wrap').style.display = 'block';
+        document.querySelector('.popup__submited').style.display = 'none';
+        document.querySelector('body').addClass = 'modal-open';
+
+    });
+
+    popupOpen2.addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        document.querySelector('.popup__title').innerHTML = 'Свободен ли ваш<br>город?';
         document.querySelector('.popup').style.display = 'block';
         document.querySelector('.popup__wrap').style.display = 'block';
         document.querySelector('.popup__submited').style.display = 'none';
