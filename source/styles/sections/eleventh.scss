@@ -15,6 +15,10 @@
         background-color: #bf1e2e;
         transform: rotate(-45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            right: -331px;
+        }
     }
 
     &:after {
@@ -27,6 +31,10 @@
         background-color: #bf1e2e;
         transform: rotate(-45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            left: -316px;
+        }
     }
 
     &__outer {
@@ -45,6 +53,15 @@
         letter-spacing: -0.7px;
         text-transform: uppercase;
         margin: 0 0 11px;
+
+        @media (max-width: 1919px) {
+            padding: 60px 100px 30px 0;
+        }
+
+        @media (max-width: 1599px) {
+            padding: 40px 100px 20px 0;
+            font-size: 32px;
+        }
     }
 
     &__title--red {
@@ -74,6 +91,10 @@
         border-radius: 3px;
         border: 1px dashed #6a6a6a;
         margin: 0 0 0 -300px;
+
+        @media (max-width: 1599px) {
+            max-width: 900px;
+        }
     }
 
     &__questions-elem {
@@ -102,9 +123,17 @@
             .eleventh__item-title {
                 padding: 37px 0 39px 34px;
                 color: #bf1e2e;
+
+                @media (max-width: 1919px) {
+                    padding: 27px 0 29px 34px;
+                }
+
+                @media (max-width: 1599px) {
+                    padding: 18px 0 15px 36px;
+                    transform: translate3d(30px, 0, 0);
+                }
             }
         }
-        
     }
 
     &__item-title {
@@ -115,6 +144,16 @@
         font-family: "RoadRadio-Black";
         font-size: 35px;
         letter-spacing: -0.6px;
+
+        @media (max-width: 1919px) {
+            padding: 6px 0 7px 36px;
+        }
+
+        @media (max-width: 1599px) {
+            min-width: 0;
+            padding: 11px 0 7px 36px;
+            font-size: 22px;
+        }
     }
 
     &__item-decor--top {
@@ -123,6 +162,10 @@
         left: 7px;
         width: 30px;
         height: 30px;
+
+        @media (max-width: 1599px) {
+            left: 20px;
+        }
     }
 
     &__item-decor--bottom {
@@ -139,15 +182,27 @@
 
     &__item-list {
         padding: 1px 0 0 64px;
+
+        @media (max-width: 1599px) {
+            margin-top: 0;
+        }
         
         li {
             position: relative;
             font-family: "Jura-DemiBold";
             font-size: 18px;
-            line-height: 22px;
+            line-height: 1.22;
             letter-spacing: -0.4px;
             padding: 0;
             margin: 0 0 13px;
+
+            @media (max-width: 1919px) {
+                margin: 0 0 5px;
+            }
+
+            @media (max-width: 1599px) {
+                font-size: 13px;
+            }
 
             &:before {
                 content: '';
@@ -160,7 +215,11 @@
 
             span {
                 font-size: 16px;
-                line-height: 16px;
+                line-height: 1;
+
+                @media (max-width: 1599px) {
+                    font-size: 13px;
+                }
             }
         }
     }
@@ -177,6 +236,11 @@
         letter-spacing: -0.6px;
         color: #bf1e2e;
         margin: 0 0 12px;
+
+        @media (max-width: 1599px) {
+            font-size: 22px;
+            margin: 0;
+        }
     }
 
     &__howmuch-text {
@@ -189,6 +253,15 @@
             width: 100%;
             padding: 8px 120px 8px 16px;
             margin: 0 0 2px;
+
+            @media (max-width: 1919px) {
+                font-size: 17px;
+            }
+
+            @media (max-width: 1599px) {
+                padding: 8px 190px 8px 16px;
+                font-size: 13px;
+            }
             
             &:last-child {
                 background-image: linear-gradient(to right, rgba(#bf1e2e, 0.2), rgba(#bf1e2e, 0));

@@ -26,6 +26,9 @@
         align-items: center;
         padding: 0 98px;
 
+        @media (max-width: 1599px) {
+            padding: 0 15px;
+        }
     }
 
     &__title {
@@ -38,6 +41,10 @@
         color: #fff;
         border-bottom: 2px solid #bf1e2e;
         margin: 0 0 0 31px;
+
+        @media (max-width: 1599px) {
+            font-size: 27px;
+        }
     }
 
     &__button {

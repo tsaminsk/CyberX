@@ -15,6 +15,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            left: -316px;
+        }
     }
 
     &:after {
@@ -27,6 +31,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            right: -331px;
+        }
     }
 
     &__outer {
@@ -40,6 +48,11 @@
 
     &__inner {
         width: 83.33%;
+
+        @media (max-width: 1919px) {
+            width: 75%;
+            margin: 0 0 0 8.33%;
+        }
     }
 
     &__title {
@@ -52,6 +65,15 @@
         line-height: 1.2;
         text-align: left;
         margin: 0 0 83px;
+
+        @media (max-width: 1919px) {
+            padding: 50px 53px 0 8px;
+        }
+
+        @media (max-width: 1599px) {
+            font-size: 27px;
+            margin: 0 0 30px;
+        }
 
         span {
             padding: 0 10px 0 0;
@@ -73,12 +95,27 @@
         flex-direction: column;
         justify-content: space-between;
     }
+
+    &__grafics-image img {
+        @media (max-width: 1919px) {
+            width: 550px;
+        }
+
+        @media (max-width: 1599px) {
+            width: 420px;
+        }
+    }
     
     &__grafics-title {
         padding: 0 0 0 10px;
         font-family: "RoadRadio";
         font-size: 25px;
         margin: 0 0 -25px;
+
+        @media (max-width: 1599px) {
+            font-size: 18px;
+            margin: 0;
+        }
     }
     
     &__text {
@@ -92,6 +129,15 @@
         letter-spacing: -0.2px;
         margin: 0 0 55px;
 
+        @media (max-width: 1919px) {
+            font-size: 19px;
+        }
+
+        @media (max-width: 1599px) {
+            font-size: 14px;
+            margin: 0 0 20px;
+        }
+
         a {
             color: #bf1e2e;
         }
@@ -103,6 +149,10 @@
         font-size: 25px;
         letter-spacing: -0.45px;
         text-transform: uppercase;
+
+        @media (max-width: 1599px) {
+            font-size: 19px;
+        }
     }
 
     &__text-call {
@@ -116,6 +166,10 @@
                     -15px 15px 20px #bf1e2e,
                     15px -15px 20px #bf1e2e,
                     -15px -15px 20px #bf1e2e;
+
+        @media (max-width: 1599px) {
+            font-size: 32px;
+        }
     }
 }
 

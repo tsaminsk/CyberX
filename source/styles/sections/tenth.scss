@@ -16,6 +16,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            left: -316px;
+        }
     }
 
     &:after {
@@ -28,6 +32,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            right: -331px;
+        }
     }
 
     &__outer {
@@ -48,6 +56,14 @@
         letter-spacing: -0.7px;
         text-transform: uppercase;
         margin: 0 0 265px;
+
+        @media (max-width: 1599px) {
+            font-size: 32px;
+        }
+
+        @media (max-width: 1599px) {
+            margin: 0 0 150px;
+        }
     }
 
     &__title--red  {
@@ -63,5 +79,9 @@
 
     &__logo {
         padding: 0 0 0 6px;
+
+        @media (max-width: 1919px) {
+            padding: 0 0 0 130px;
+        }
     }
 }

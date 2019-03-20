@@ -16,6 +16,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            left: -316px
+        }
     }
 
     &:after {
@@ -28,6 +32,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            right: -331px;
+        }
     }
 
     &__outer {
@@ -46,5 +54,10 @@
         color:#fff;
         text-align: center;
         text-transform: uppercase;
+
+        @media (max-width: 1599px) {
+            padding: 60px 111px 0 0;
+            font-size: 32px;
+        }
     }
 }

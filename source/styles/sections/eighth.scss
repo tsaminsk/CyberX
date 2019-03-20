@@ -15,6 +15,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            left: -316px;
+        }
     }
 
     &:after {
@@ -27,6 +31,10 @@
         background-color: #bf1e2e;
         transform: rotate(45deg);
         box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+        @media (max-width: 1599px) {
+            right: -331px;
+        }
     }
 
     &__outer {
@@ -40,13 +48,17 @@
 
     &__inner {
         width: 83.33%;
+
+        @media (max-width: 1919px) {
+            margin: 0 0 0 7%;
+        }
     }
 
     &__title {
         padding: 99px 0 91px 140px;
         font-family: "RussoOne";
         font-size: 40px;
-        line-height: 74px;
+        line-height: 1.85;
         letter-spacing: -0.7px;
         text-align: center;
         text-transform: uppercase;
@@ -58,9 +70,22 @@
             line-height: 35px;
             letter-spacing: -0.4px;
         }
-
+        
         &--dark {
             color: #000;
+        }
+
+        @media (max-width: 1919px) {
+            padding: 40px 0 91px 70px;
+        }
+
+        @media (max-width: 1599px) {
+            padding: 30px 0 50px 70px;
+            font-size: 32px;
+
+            span {
+                font-size: 22px;
+            }
         }
     }
 
@@ -68,6 +93,15 @@
         position: relative;
         width: 950px;
         margin: 0 0 22px;
+
+        @media (max-width: 1919px) {
+            margin: 0 0 22px 100px;
+        }
+
+        @media (max-width: 1599px) {
+            width: 800px;
+            margin: 0 0 22px 50px;
+        }
     }
 
     &__subtitle-num {
@@ -76,9 +110,13 @@
         left: 57px;
         font-family: "RussoOne";
         font-size: 225px;
-        line-height: 225px;
+        line-height: 1;
         letter-spacing: -3px;
         color: #bf1e2e;
+
+        @media (max-width: 1599px) {
+            font-size: 170px;
+        }
 
         &:after {
             content: '';
@@ -101,6 +139,10 @@
         font-size: 35px;
         letter-spacing: -0.7px;
         color: #bf1e2e;
+
+        @media (max-width: 1599px) {
+            font-size: 24px;
+        }
     }
 
     &__subtitle-text {
@@ -109,6 +151,10 @@
         font-size: 25px;
         letter-spacing: -0.7px;
         color: #3b3b3b;
+
+        @media (max-width: 1599px) {
+            font-size: 19px;
+        }
     }
 
     &__subtitle-decor--top {
@@ -137,6 +183,10 @@
         align-items: flex-start;
         flex-wrap: wrap;
         padding: 0 0 0 88px;
+
+        @media (max-width: 1919px) {
+            justify-content: flex-start;
+        }
     }
 
     &__user {
@@ -145,10 +195,27 @@
         align-items: flex-start;
         width: 583px;
         margin: 0 0 36px;
+
+        @media (max-width: 1919px) {
+            width: 48%;
+            margin: 0 0 15px;
+        }
+
+        @media (max-width: 1599px) {
+            width: 46%;
+        }
     }
 
     &__user-photo {
+        @media (max-width: 1599px) {
+            width: 130px;
+            height: 130px;
 
+            img {
+                transform: scale(0.7);
+                transform-origin: 0% 20%;
+            }
+        }
     }
 
     &__user-content {
@@ -161,6 +228,10 @@
         font-family: "RoadRadio-Bold";
         font-size: 20px;
         color: #000;
+
+        @media (max-width: 1599px) {
+            font-size: 17px;
+        }
     }
 
     &__user-descr {
@@ -168,6 +239,10 @@
         font-size: 18px;
         color: #000;
         margin: 0 0 3px;
+
+        @media (max-width: 1599px) {
+            font-size: 15px;
+        }
     }
 
     &__user-text {
@@ -178,6 +253,14 @@
 
         span {
             font-size: 24px;
+        }
+
+        @media (max-width: 1599px) {
+            font-size: 15px;
+
+            span {
+                font-size: 19px;
+            }
         }
     }
 

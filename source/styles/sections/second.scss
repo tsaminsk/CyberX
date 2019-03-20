@@ -18,6 +18,10 @@
             background-color: #bf1e2e;
             transform: rotate(45deg);
             box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+            @media (max-width: 1599px) {
+                right: -331px;
+            }
         }
 
         &:after {
@@ -30,6 +34,10 @@
             background-color: #bf1e2e;
             transform: rotate(-45deg);
             box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
+
+            @media (max-width: 1599px) {
+                right: -331px;
+            }
         }
     }
 
@@ -43,10 +51,23 @@
 
     &__logo {
         padding: 83px 0 35px;
-        
+
         img {
             width: 681px;
             margin: 0 0 0 -25px;
+        }
+
+        @media (max-width: 1919px) {
+            padding: 20px 0 0;
+        }
+
+        @media (max-width: 1599px) {
+            padding: 3vw 0;
+
+            img {
+                width: 350px;
+                margin: 0 0 0 8.33vw;
+            }
         }
     }
 
@@ -93,6 +114,16 @@
         &--last {
             padding: 5px 0px 6px 8px !important;
             letter-spacing: -2px;
+        }
+    }
+
+    @media (max-width: 1599px) {
+        font-size: 32px;
+        border-spacing: 8px;
+        margin: 0 0 0 8.33vw;
+
+        &__title {
+            font-size: 40px;
         }
     }
 }

@@ -20,10 +20,27 @@
         float: left;
         padding: 11.2% 0 0;
         color: #fff;
+
+        @media (max-width: 1919px) {
+            padding: 50px 0 0;
+        }
+
+        @media (max-width: 1599px) {
+            padding: 30px 0 0;
+        }
     }
 
     &__logo {
         margin: 0 0 28px 1px;
+
+        @media (max-width: 1599px) {
+            margin: 0 0 2vw;
+
+            img {
+                width: 350px;
+                margin: 0 0 0 50%;
+            }
+        }
     }
 
     &__title {
@@ -53,6 +70,25 @@
             text-transform: uppercase;
             font-size: 45px;
             font-weight: 400;
+        }
+
+        @media (max-width: 1599px) {
+            max-width: 500px;
+            padding: 0 0 5px;
+            margin: 0 0 0 120px;
+
+            h1 {
+                font-size: 20px;
+                line-height: 1.1;
+            }
+
+            span {
+                font-size: 36px;
+            }
+
+            b {
+                font-size: 30px;
+            }
         }
     }
 
@@ -92,11 +128,31 @@
             background: #240003;
             padding: 15px 0 0;
         }
+
+        @media (max-width: 1599px) {
+            padding: 3vw 0 0 14px;
+            margin: 0 0 0 108px;
+
+            li {
+                font-size: 22px;
+                line-height: 26px;
+                letter-spacing: -0.8px;
+                margin: 0 0 20px 53px;
+            }
+        }
     }
 
     &__right {
         float: right;
         padding: 287px 0 0;
+
+        @media (max-width: 1919px) {
+            padding: 200px 90px 0;
+        }
+
+        @media (max-width: 1599px) {
+            padding: 100px 3.5vw 0;
+        }
     }
 
     &__right-tel {
@@ -159,6 +215,11 @@
         font-family: "Jura-DemiBold";
         font-size: 20px;
         margin: 0 0 22px;
+
+        @media (max-width: 1599px) {
+            font-size: 18px;
+            margin: 0 0 33px;
+        }
     }
 
     &__footer-button {

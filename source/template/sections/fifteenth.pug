@@ -12,10 +12,15 @@ section.fifteenth
                                 .fifteenth__form-title
                                     | А мы в свою очередь отправим вам финансовую модель работы заведения для вашего города!
                                 .fifteenth__form-inputs
-                                    input(type="text" id="form15name" placeholder="Ваше имя")
-                                    input(type="text" id="form15phone" placeholder="Ваш телефон")
-                                    input(type="text" id="form15mail" placeholder="Ваш e-mail")
-                                    input(type="text" id="form15city" placeholder="Ваш город")
+                                    .fifteenth__form-input
+                                        input(type="text" id="form15name" placeholder="Ваше имя")
+                                    .fifteenth__form-input.is-necessarily
+                                        input(type="text" id="form15phone" name="form15phone" placeholder="Ваш телефон")
+                                    //- label(for="form15phone") *
+                                    .fifteenth__form-input.is-necessarily
+                                        input(type="text" id="form15mail" placeholder="Ваш e-mail")
+                                    .fifteenth__form-input
+                                        input(type="text" id="form15city" placeholder="Ваш город")
 
                                 .fifteenth__note_title 
                                     | Поля отмеченные <span>звездочкой</span> - обязательны к заполнению! 

@@ -21,6 +21,10 @@
         justify-content: space-around;
         align-items: center;
         padding: 0 98px;
+
+        @media (max-width: 1599px) {
+            padding: 0 15px;
+        }
         
     }
 
@@ -34,6 +38,10 @@
         color: #fff;
         border-bottom: 2px solid #fff;
         margin: 5px 0 0 31px;
+
+        @media (max-width: 1599px) {
+            font-size: 27px;
+        }
     }
 
     &__button {

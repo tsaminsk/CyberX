@@ -34,6 +34,7 @@ ol {
 }
 
 .container {
+  width: 100%;
   max-width: 1560px;
   padding: 0 15px;
   margin: 0 auto;
@@ -65,6 +66,11 @@ button.button--red {
   background-color: #bf1e2e;
   opacity: 1;
   transition: box-shadow 0.5s ease, opacity 0.5s ease;
+
+  @media (max-width: 1599px) {
+    height: 40px;
+    font-size: 17px;
+  }
 
   span {
     position: relative;
