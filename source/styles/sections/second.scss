@@ -1,45 +1,9 @@
 .second {
     position: relative;
-    
-    &__outer {
-        position: relative;
-        padding: 56.75% 0 0;
-        background: url('../images/second/second_bg.png') center center no-repeat;
-        background-size: cover;
-        overflow: hidden;
-
-        &:before {
-            content: '';
-            position: absolute;
-            top: -83px;
-            right: -202px;
-            width: 550px;
-            height: 300px;
-            background-color: #bf1e2e;
-            transform: rotate(45deg);
-            box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
-
-            @media (max-width: 1599px) {
-                right: -331px;
-            }
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: -83px;
-            right: -202px;
-            width: 550px;
-            height: 300px;
-            background-color: #bf1e2e;
-            transform: rotate(-45deg);
-            box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
-
-            @media (max-width: 1599px) {
-                right: -331px;
-            }
-        }
-    }
+    padding: 56.75% 0 0;
+    background: url('../images/second/second_bg.png') center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
 
     &__inner {
         position: absolute;

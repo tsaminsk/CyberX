@@ -5,39 +5,6 @@
     background-size: cover;
     overflow: hidden;
 
-    &:before {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        bottom: -83px;
-        left: -224px;
-        width: 550px;
-        height: 300px;
-        background-color: #bf1e2e;
-        transform: rotate(45deg);
-        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
-
-        @media (max-width: 1599px) {
-            left: -316px
-        }
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: -83px;
-        right: -202px;
-        width: 550px;
-        height: 300px;
-        background-color: #bf1e2e;
-        transform: rotate(45deg);
-        box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2);
-
-        @media (max-width: 1599px) {
-            right: -331px;
-        }
-    }
-
     &__outer {
         position: absolute;
         top: 0;
