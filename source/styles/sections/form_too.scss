@@ -7,8 +7,11 @@
     margin: -5px 0 0;
 
     .container {
-
         padding: 0 98px;
+
+        @media (max-width: 799px) {
+            padding: 0 4.6875%;
+        }
     }
 
     &__title {
@@ -23,6 +26,13 @@
         color: #fff;
         border-bottom: 2px solid #fff;
         margin: 5px auto 31px;
+
+        @media (max-width: 799px) {
+            width: 100%;
+            padding: 76px 0 7px;
+            font-size: 25px;
+            margin: 5px auto 20px;
+        }
     }
 
     &__button {
@@ -32,6 +42,12 @@
             width: 470px;
             height: 50px;
             margin: 0 auto;
+            
+            @media (max-width: 799px) {
+                width: 290px;
+                font-size: 18px;
+            }
         }
+
     }
 }

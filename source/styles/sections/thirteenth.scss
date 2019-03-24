@@ -15,17 +15,33 @@
         letter-spacing: -0.4px;
         text-transform: uppercase;
         margin: 0 0 39px;
+
+        @media (max-width: 799px) {
+            padding: 33px 0 0;
+            font-size: 25px;
+            text-align: center;
+        }
     }
 
     &__title--red {
+        display: block;
         color: #bf1e2e;
         text-align: center;
         margin: 0 0 -2px;
+
+        @media (max-width: 799px) {
+            display: inline;
+        }
     }
 
     &__title--dark {
+        display: block;
         color: #000;
         text-align: center;
+
+        @media (max-width: 799px) {
+            display: inline;
+        }
     }
 
     &__player {

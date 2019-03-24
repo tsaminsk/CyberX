@@ -4,14 +4,6 @@
     background-size: cover;
     overflow: hidden;
     
-    &__outer {
-        padding: 0;
-    }
-
-    &__inner {
-
-    }
-
     &__left {
         padding: 28px 0 0;
         color: #fff;
@@ -29,6 +21,7 @@
 
     &__title {
         width: 400px;
+        max-width: 100%;
         padding: 0 0 14px;
         text-align: center;
         border-bottom: 2px #dbdbdb solid;
@@ -42,6 +35,19 @@
             text-transform: none;
             letter-spacing: -0.5px;
             margin: 0;
+
+            @media (max-width: 400px) {
+                letter-spacing: -2.5px;
+            }
+
+            @media (max-width: 799px){
+                font-size: 16px;
+                line-height: 26px;
+
+                br {
+                    display: none;
+                }
+            }
         }
         
         span {
@@ -55,6 +61,10 @@
             text-transform: uppercase;
             font-size: 25px;
             font-weight: 400;
+
+            @media (max-width: 799px) {
+                font-size: 24px;
+            }
         }
     }
 
@@ -62,6 +72,10 @@
         counter-reset: myCounter;
         padding: 25px 78px 8px;
         margin: 0;
+
+        @media (max-width: 799px) {
+            padding: 1px 0 9px;
+        }
 
         li {
             position: relative;
@@ -72,6 +86,12 @@
             line-height: 24px;
             letter-spacing: -0.8px;
             margin: 0 0 15px 53px;
+
+            @media (max-width: 799px) {
+                padding: 0;
+                text-align: center;
+                margin: 74px 0 15px;
+            }
         }
 
         li:before {
@@ -92,12 +112,17 @@
             border: 1px solid #754145;
             background: #240003;
             padding: 15px 0 0;
+
+            @media (max-width: 799px) {
+                top: -60px;
+                left: calc(50% - 26px);
+            }
         }
     }
 
     &__right {
         display: none;
-
+        height: 0;
     }
 
     &__footer {
@@ -107,6 +132,10 @@
         color: #fff;
         background-color: rgb(238, 18, 41);
         opacity: 0.8;
+
+        @media (max-width: 799px) {
+            padding: 0 0 30px;
+        }
     }
 
     &__footer-title {
@@ -114,6 +143,12 @@
         font-family: "Jura-DemiBold";
         font-size: 16px;
         margin: 0 0 12px;
+
+        @media (max-width: 799px) {
+            padding: 15px 0 0;
+            line-height: 18px;
+            margin: 0 0 9px;
+        }
     }
 
     &__footer-button {

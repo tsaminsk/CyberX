@@ -3,9 +3,6 @@
     background-size: cover;
     overflow: hidden;
 
-    &__inner {
-    }
-
     &__logo {
         padding: 16px 0 0;
         text-align: center;
@@ -35,11 +32,15 @@
     td {
         border-radius: 3px;
         padding: 10px 5px 10px 15px;
-
+        
         .tab__large {
             display: inline-block;
             vertical-align: top;
             width: 150%;
+
+            @media (max-width: 799px) {
+                width: 100%;
+            }
         }
     }
     
@@ -48,19 +49,57 @@
         font-size: 35px;
         letter-spacing: -1.5px;
         transform: translate3d(-50px, 0, 0);
+
+        @media (max-width: 799px) {
+            font-size: 30px;
+            text-align: center;
+            transform: translate3d(0, 0, 0);
+        }
     }
 
+    @media (max-width: 799px) {
+        width: 100%;
+        font-size: 20px;
+        margin: -36px auto 34px;
+
+        tr {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        td:not(.tab__red),
+        td.tab__red--last {
+            width: 100%;
+            text-align: center;
+        }
+
+        td.tab__red {
+            margin: 0 auto;
+        }
+    }
+    
     &__red {
         width: 125px;
         padding: 3px 5px 3px 0 !important;
         font-size: 32px;
         text-align: center;
         background-color: #bf1e2e;
-
+        
         &--last {
             padding: 5px 0px 6px 8px !important;
             font-size: 22px;
             letter-spacing: -2px;
+        }
+
+        @media (max-width: 799px) {
+            width: 125px;
+
+            &--last {
+                max-width: 450px;
+                font-size: 20px;
+                margin: 0 auto;
+            }
         }
     }
 }

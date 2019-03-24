@@ -21,11 +21,20 @@
         text-transform: uppercase;
         text-align: center;
         color: #fff;
+
+        @media (max-width: 799px) {
+            font-size: 25px;
+        }
     }
 
     &__content {
         width: 70%;        
         margin: 0 auto 2px;
+
+        @media (max-width: 799px) {
+            width: 100%;
+            max-width: 470px
+        }
     }
 
     &__item {
@@ -55,6 +64,11 @@
 
     &__button .button--red {
         margin: 0 auto;
+
+        @media (max-width: 799px) {
+            max-width: 90%;
+            height: 40px;
+        }
     }
 }
 

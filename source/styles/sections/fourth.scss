@@ -7,6 +7,10 @@
 
     &__wrapp {
         padding: 34px 0 0;
+
+        @media (max-width: 799px) {
+            padding: 38px 0 0;
+        }
     }
 
     &__title {
@@ -20,6 +24,11 @@
         line-height: 1.2;
         text-align: center;
         margin: 0 0 108px;
+
+        @media (max-width: 799px) {
+            font-size: 25px;
+            margin: 0 0 116px;
+        }
 
         span {
             padding: 0 10px 0 0;
@@ -64,6 +73,10 @@
             height: 100%;
             background: linear-gradient(to bottom, rgba(#fff, 0.5) 50%, rgba(#fff, 1) 95%);
         }
+
+        @media (max-width: 799px) {
+            left: 2px;
+        }
     }
 
     &__item-title {
@@ -74,6 +87,13 @@
         font-family: "RoadRadio-Bold";
         font-size: 25px;
         opacity: 0.99;
+
+        @media (max-width: 799px) {
+            top: -83px;
+            padding: 0 0 0 71px;
+            font-size: 20px;
+            text-align: left;
+        }
 
         br {
             display: none;
@@ -90,6 +110,10 @@
         font-family: "Jura-DemiBold";
         font-size: 18px;
         border: 1px dashed #6a6a6a;
+
+        @media (max-width: 799px) {
+            height: 231px;
+        }
 
         p {
             text-align: center;

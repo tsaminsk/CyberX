@@ -9,17 +9,32 @@
         letter-spacing: -0.7px;
         text-transform: uppercase;
         margin: 0 0 65px;
+
+        @media (max-width: 799px) {
+            font-size: 25px;
+            text-align: center;
+        }
     }
 
     &__title--red  {
+        display: block;
         color: #bf1e2e;
         text-align: center;
         margin: 0 0;
+
+        @media (max-width: 799px) {
+            display: inline;
+        }
     }
 
     &__title--dark {
+        display: block;
         color: #000;
         text-align: center;
+
+        @media (max-width: 799px) {
+            display: inline;
+        }
     }
 
     &__logo {

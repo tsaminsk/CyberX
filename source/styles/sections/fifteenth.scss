@@ -1,12 +1,15 @@
 .fifteenth {
-    position: relative;
-    padding: 0 0 100px;
+    padding: 0 0 40px;
     background: url('../images/fifteenth/fifteenth_bg.png') center center no-repeat;
     background-size: cover;
     overflow: hidden;
 
     &__outer {
         color: #000;
+    }
+
+    .container {
+        padding: 0;
     }
 
     &__inner {
@@ -22,17 +25,29 @@
         text-transform: uppercase;
         text-align: center;
         margin: 0 0 21px;
+
+        @media (max-width: 799px) {
+            font-size: 25px;
+        }
     }
 
     &__title--red {
         color: #bf1e2e;
         text-align: center;
         margin: 0 0 -2px;
+
+        @media (max-width: 799px) {
+            display: block;
+        }
     }
 
     &__title--white {
         color: #fff;
         text-align: center;
+
+        @media (max-width: 799px) {
+            display: block;
+        }
     }
 
     &__content {
@@ -46,6 +61,11 @@
         background-color: rgb(255, 255, 255);
         box-shadow: 0px 2px 9.5px 0.5px rgba(0, 0, 0, 0.25);
         margin: 0 auto;
+
+        @media (max-width: 799px) {
+            max-width: 95%;
+            min-width: 310px;
+        }
 
         form {
             width: 100%;
@@ -75,6 +95,11 @@
         letter-spacing: -0.5px;
         color: #000;
         margin: 0 auto;
+
+        @media (max-width: 799px) {
+            min-width: 290px;
+            font-size: 18px;
+        }
     }
 
     &__form-inputs {
@@ -86,6 +111,10 @@
     &__form-input {
         margin: 28px 0 20px;
 
+        @media (max-width: 799px) {
+            margin: 21px 0 29px;
+        }
+
         input {
             width: 100%;
             height: 33px;
@@ -93,6 +122,10 @@
             font-size: 20px;
             border: none;
             border-bottom: 2px solid #818181;
+
+            @media (max-width: 799px) {
+                font-size: 18px;
+            }
         }
 
         &.is-necessarily {
@@ -133,6 +166,10 @@
 
         button {
             margin: 0 auto;
+
+            @media (max-width: 799px) {
+                max-width: 95%;
+            }
         }
     }
 

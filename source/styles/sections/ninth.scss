@@ -1,24 +1,44 @@
 .ninth {
-    padding: 0 0 60px;
     background: url('../images/ninth/ninth_bg.png') center center no-repeat;
     background-size: cover;
     overflow: hidden;
-
+    
     &__outer {
+        padding: 0 0 60px;
         color: #fff;
         background: url('../images/ninth/red.png') 11% 35% no-repeat;
+
+        @media (max-width: 799px) {
+            height: 100%;
+            background-position-x: center;
+            background-position-y: -100%;
+        }
+
+        @media (max-width: 450px) {
+            background-position-y: -400%;
+        }
     }
     
     &__inner {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+
+        @media (max-width: 799px) {
+            flex-direction: column;
+        }
     }
     
     &__item {
         width: 47.5%;
         padding: 29px 0 0;
         margin: 0 2.5% 0 8px;
+
+        @media (max-width: 799px) {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
         &--red {
             .ninth__item-title {
