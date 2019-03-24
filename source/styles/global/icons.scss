@@ -5,6 +5,10 @@
     vertical-align: top;
 }
 
+.icon-swipe {
+    @include sprite($swipe);
+}
+
 .icon-close {
     @include sprite($close);
 }

@@ -1,41 +1,29 @@
 .eleventh {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url('../images/eleventh/eleventh_bg.png') center center no-repeat;
+    padding: 0 0 60px;
+    background: url('../images/eleventh/eleventh_bg_750.png') center center no-repeat;
     background-size: cover;
     overflow: hidden;
 
     &__outer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         color: #000;
+    }
+    &__inner {
+        width: 100%;
+        overflow: hidden;
     }
 
     &__title {
-        padding: 112px 113px 0 0;
+        padding: 32px 0 0 0;
         font-family: "RussoOne";
-        font-size: 40px;
+        font-size: 30px;
         letter-spacing: -0.7px;
         text-transform: uppercase;
         margin: 0 0 11px;
-
-        @media (max-width: 1919px) {
-            padding: 60px 100px 30px 0;
-        }
-
-        @media (max-width: 1599px) {
-            padding: 40px 100px 20px 0;
-            font-size: 32px;
-        }
     }
 
     &__title--red {
         color: #bf1e2e;
         text-align: center;
-        margin: 0 0 -2px;
     }
 
     &__title--dark {
@@ -44,62 +32,43 @@
     }
 
     &__content {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+        width: 200%;
     }
 
     &__questions {
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        max-width: 1082px;
-        padding: 27px 0 0 300px;
-        border-radius: 3px;
-        border: 1px dashed #6a6a6a;
-        margin: 0 0 0 -300px;
-
-        @media (max-width: 1599px) {
-            max-width: 900px;
-        }
+        display: inline-block;
+        width: 50%;
+        padding: 27px 0 0;
     }
 
     &__questions-elem {
-        position: absolute;
-        top: 67px;
-        right: -17px;
-        width: 30px;
-        height: 30px;
-        border-radius: 3px;
-        border-right: 1px dashed #6a6a6a;
-        border-bottom: 1px dashed #6a6a6a;
-        transform: rotate(-45deg);
-        overflow: hidden;
+        // position: absolute;
+        // top: 67px;
+        // right: -17px;
+        // width: 30px;
+        // height: 30px;
+        // border-radius: 3px;
+        // border-right: 1px dashed #6a6a6a;
+        // border-bottom: 1px dashed #6a6a6a;
+        // transform: rotate(-45deg);
+        // overflow: hidden;
         
         &_img {
-            width: 141%;
-            height: 141%;
-            transform: rotate(45deg);
+            display: none;
         }
     }
 
     &__questions-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 45%;
 
         &:first-child {
-            max-width: 53.1%;
+            margin: 0 5% 0 0;
+            // max-width: 53.1%;
             .eleventh__item-title {
                 padding: 37px 0 39px 34px;
                 color: #bf1e2e;
-
-                @media (max-width: 1919px) {
-                    padding: 27px 0 29px 34px;
-                }
-
-                @media (max-width: 1599px) {
-                    padding: 18px 0 15px 36px;
-                    transform: translate3d(30px, 0, 0);
-                }
             }
         }
     }
@@ -110,18 +79,8 @@
         min-width: 347px;
         padding: 16px 0 17px 36px;
         font-family: "RoadRadio-Black";
-        font-size: 35px;
+        font-size: 30px;
         letter-spacing: -0.6px;
-
-        @media (max-width: 1919px) {
-            padding: 6px 0 7px 36px;
-        }
-
-        @media (max-width: 1599px) {
-            min-width: 0;
-            padding: 11px 0 7px 36px;
-            font-size: 22px;
-        }
     }
 
     &__item-decor--top {
@@ -130,10 +89,6 @@
         left: 7px;
         width: 30px;
         height: 30px;
-
-        @media (max-width: 1599px) {
-            left: 20px;
-        }
     }
 
     &__item-decor--bottom {
@@ -150,27 +105,15 @@
 
     &__item-list {
         padding: 1px 0 0 64px;
-
-        @media (max-width: 1599px) {
-            margin-top: 0;
-        }
         
         li {
             position: relative;
             font-family: "Jura-DemiBold";
-            font-size: 18px;
+            font-size: 15px;
             line-height: 1.22;
             letter-spacing: -0.4px;
             padding: 0;
             margin: 0 0 13px;
-
-            @media (max-width: 1919px) {
-                margin: 0 0 5px;
-            }
-
-            @media (max-width: 1599px) {
-                font-size: 13px;
-            }
 
             &:before {
                 content: '';
@@ -184,17 +127,15 @@
             span {
                 font-size: 16px;
                 line-height: 1;
-
-                @media (max-width: 1599px) {
-                    font-size: 13px;
-                }
             }
         }
     }
 
     &__howmuch {
-        width: 620px;
-        margin: 0 0 0 14px;
+        display: inline-block;
+        vertical-align: top;
+        width: 40%;
+        margin: 0 0 0;
     }
 
     &__howmuch-title {
@@ -204,11 +145,6 @@
         letter-spacing: -0.6px;
         color: #bf1e2e;
         margin: 0 0 12px;
-
-        @media (max-width: 1599px) {
-            font-size: 22px;
-            margin: 0;
-        }
     }
 
     &__howmuch-text {
@@ -221,19 +157,34 @@
             width: 100%;
             padding: 8px 120px 8px 16px;
             margin: 0 0 2px;
-
-            @media (max-width: 1919px) {
-                font-size: 17px;
-            }
-
-            @media (max-width: 1599px) {
-                padding: 8px 190px 8px 16px;
-                font-size: 13px;
-            }
             
             &:last-child {
                 background-image: linear-gradient(to right, rgba(#bf1e2e, 0.2), rgba(#bf1e2e, 0));
             }
         }
+    }
+
+    &__pagination {
+        text-align: center;
+    }
+
+    &__pagination-left,
+    &__pagination-right {
+        display: inline-block;
+        vertical-align: top;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid #bf1e2e;
+        cursor: pointer;
+
+        &.is-active {
+            background-color: #bf1e2e;
+            pointer-events: none;
+        }
+    }
+
+    &__pagination-right {
+        margin: 0 0 0 10px;
     }
 }

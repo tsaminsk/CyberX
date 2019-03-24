@@ -45,7 +45,7 @@ button.button--red {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 360px;
+  width: 470px;
   height: 50px;
   font-family: "Jura-DemiBold";
   font-size: 20px;
@@ -56,11 +56,6 @@ button.button--red {
   background-color: #bf1e2e;
   opacity: 1;
   transition: box-shadow 0.5s ease, opacity 0.5s ease;
-
-  @media (max-width: 1599px) {
-    height: 40px;
-    font-size: 17px;
-  }
 
   span {
     position: relative;

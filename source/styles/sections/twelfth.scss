@@ -1,86 +1,60 @@
 .twelfth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url('../images/twelfth/twelfth_bg.png') center center no-repeat;
+    padding: 0 0 60px;
+    background: url('../images/twelfth/twelfth_bg_750.png') center center no-repeat;
     background-size: cover;
     overflow: hidden;
 
     &__outer {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
-        
     }
 
     &__inner {
-        padding: 112px 16.67% 0 8.33%;
-
-        @media (max-width: 1919px) {
-            padding: 40px 16.67% 0 8.33%;
-        }
+        width: 100%;
+        padding: 12px 0 0 0;
     }
 
     &__title {
-        padding: 0 0 63px 15px;
+        padding: 20px 0 48px 15px;
         font-family: "RussoOne";
-        font-size: 40px;
+        font-size: 30px;
         letter-spacing: -0.5px;
         text-transform: uppercase;
         text-align: center;
         color: #fff;
-
-        @media (max-width: 1919px) {
-            padding: 0 0 23px 15px;
-        }
-
-        @media (max-width: 1599px) {
-            font-size: 28px;
-        }
     }
 
     &__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        margin: 0 0 2px;
+        width: 70%;        
+        margin: 0 auto 2px;
     }
 
     &__item {
+        display: block;
         font-family: "RoadRadio";
-        font-size: 16px;
+        font-size: 18px;
         color: #fff;
         text-decoration: none;
-        margin: 5px 0 51px;
+        margin: 5px auto 24px;
 
         img {
+            width: 100%;
             display: block;
             border: 2px solid #bf1e2e;
             transition: box-shadow 0.5s ease;
-            margin: 0 0 5px;
-        }
-
-        @media (max-width: 1599px) {
-            font-size: 13px;
-
-            img {
-                width: 22vw;
-            }
+            margin: 0 auto 5px;
         }
 
         &:hover img {
             box-shadow: 0 0 15px 8px rgba(#fff, 0.4);
         }
+
+        &.is-close {
+            display: none;
+        }
     }
 
-    &__button {
-        @media (max-width: 1919px) {
-            button.button--red {
-                margin: 0 auto;
-            }
-        }
+    &__button .button--red {
+        margin: 0 auto;
     }
 }
 

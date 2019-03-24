@@ -1,101 +1,66 @@
 .first {
     position: relative;
-    background: url('../images/first/first_bg.png') center center no-repeat;
+    background: url('../images/first/first_bg_750.png') center center no-repeat;
     background-size: cover;
     overflow: hidden;
     
     &__outer {
-        padding: 56.75% 0 0;
+        padding: 0;
     }
 
     &__inner {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: calc(100% - 145px);
+
     }
 
     &__left {
-        float: left;
-        padding: 11.2% 0 0;
+        padding: 28px 0 0;
         color: #fff;
-
-        @media (max-width: 1919px) {
-            padding: 50px 0 0;
-        }
-
-        @media (max-width: 1599px) {
-            padding: 30px 0 0;
-        }
     }
 
     &__logo {
-        margin: 0 0 28px 1px;
+        text-align: center;
+        margin: 0 0 12px;
 
-        @media (max-width: 1599px) {
-            margin: 0 0 2vw;
-
-            img {
-                width: 350px;
-                margin: 0 0 0 50%;
-            }
+        img {
+            width: 270px;
+            margin: 0 0 0 15px;
         }
     }
 
     &__title {
-        max-width: 750px;
-        padding: 0 0 19px;
+        width: 400px;
+        padding: 0 0 14px;
+        text-align: center;
         border-bottom: 2px #dbdbdb solid;
-        margin: 0 0 0 3.5px;
+        margin: 0 auto 5px;
 
         h1 {
             font-family: "RoadRadio";
-            font-size: 30px;
             font-weight: 400;
-            line-height: 54px;
+            font-size: 25px;
+            line-height: 28px;
             text-transform: none;
-            letter-spacing: -0.6px;
+            letter-spacing: -0.5px;
             margin: 0;
         }
         
         span {
-            font-family: "RoadRadio";
+            font-family: "RoadRadio-Black";
             text-transform: uppercase;
-            font-size: 50px;
+            font-size: 35px;
         }
 
         b {
             font-family: "RoadRadio";
             text-transform: uppercase;
-            font-size: 45px;
+            font-size: 25px;
             font-weight: 400;
-        }
-
-        @media (max-width: 1599px) {
-            max-width: 500px;
-            padding: 0 0 5px;
-            margin: 0 0 0 120px;
-
-            h1 {
-                font-size: 20px;
-                line-height: 1.1;
-            }
-
-            span {
-                font-size: 36px;
-            }
-
-            b {
-                font-size: 30px;
-            }
         }
     }
 
     &__context {
-        max-width: 735px;
         counter-reset: myCounter;
-        padding: 31px 0 0 14px;
+        padding: 25px 78px 8px;
         margin: 0;
 
         li {
@@ -103,10 +68,10 @@
             display: block;
             padding: 0 0 0 19px;
             font-family: "Jura-DemiBold";
-            font-size: 24px;
-            line-height: 29px;
+            font-size: 20px;
+            line-height: 24px;
             letter-spacing: -0.8px;
-            margin: 0 0 28px 53px;
+            margin: 0 0 15px 53px;
         }
 
         li:before {
@@ -117,10 +82,10 @@
             left: -60px;
             display: inline-block;
             vertical-align: top;
-            height: 60px;
-            width: 59px;
+            height: 52px;
+            width: 52px;
             font-family: "RussoOne";
-            font-size: 50px;
+            font-size: 40px;
             text-align: center;
             color: white;
             border-radius: 10px;
@@ -128,82 +93,15 @@
             background: #240003;
             padding: 15px 0 0;
         }
-
-        @media (max-width: 1599px) {
-            padding: 3vw 0 0 14px;
-            margin: 0 0 0 108px;
-
-            li {
-                font-size: 22px;
-                line-height: 26px;
-                letter-spacing: -0.8px;
-                margin: 0 0 20px 53px;
-            }
-        }
     }
 
     &__right {
-        float: right;
-        padding: 287px 0 0;
+        display: none;
 
-        @media (max-width: 1919px) {
-            padding: 200px 90px 0;
-        }
-
-        @media (max-width: 1599px) {
-            padding: 100px 3.5vw 0;
-        }
-    }
-
-    &__right-tel {
-        text-align: right;
-    }
-
-    &__right-tel_icon {
-        display: inline-block;
-        vertical-align: top;
-        width: 36px;
-        height: 36px;
-        text-align: center;
-        padding: 9px 2px 0 0;
-        background-color: #bf1e2e;
-        transform: rotate(45deg);
-        margin: 9px 0 0;
-
-        img {
-            transform: rotate(-45deg);
-        }
-    }
-
-    &__right-tel_info {
-        display: inline-block;
-        vertical-align: top;
-        letter-spacing: -0.6px;
-    }
-
-    &__right-tel_number {
-        font-family: "RussoOne";
-        font-size: 20px;
-        color: #fff;
-        padding: 0 0 5px 16px;
-    }
-
-    &__right-tel_order {
-        a {
-            font-family: "RoadRadio-Bold";
-            font-size: 17px;
-            text-decoration: none;
-            color: #bf1e2e;
-        }
     }
 
     &__footer {
-        position: absolute;
-        top: calc(100% - 145px);
-        left: 0px;
-        width: 100%;
-        height: 145px;
-        padding: 21px 0 0;
+        padding: 0 0 19px;
         letter-spacing: -0.6px;
         text-align: center;
         color: #fff;
@@ -212,20 +110,15 @@
     }
 
     &__footer-title {
+        padding: 15px 79px 0;
         font-family: "Jura-DemiBold";
-        font-size: 20px;
-        margin: 0 0 22px;
-
-        @media (max-width: 1599px) {
-            font-size: 18px;
-            margin: 0 0 33px;
-        }
+        font-size: 16px;
+        margin: 0 0 12px;
     }
 
     &__footer-button {
         img {
-            display: inline-block;
-            vertical-align: top;
+            display: none;
         }
 
         a {
@@ -233,7 +126,7 @@
             vertical-align: top;
             padding: 0 0 0 15px;
             font-family: "RoadRadio-Light";
-            font-size: 22px;
+            font-size: 20px;
             text-transform: uppercase;
             text-decoration-skip-ink: none;
             color: #fff;

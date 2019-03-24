@@ -1,46 +1,18 @@
 .third {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url('../images/third/thr_bg.png') center center no-repeat;
+    padding: 0 0 40px;
+    background: url('../images/third/thr_bg_750.png') center center no-repeat;
     background-size: cover;
     overflow: hidden;
 
-    &__wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 111px 0 0;
-
-        @media (max-width: 1919px) {
-            padding: 60px 0 0;
-        }
-
-        .container {
-            text-align: left;
-        }
-    }
-
     &__title {
-        padding: 0 100px 0 0;
-        font-size: 40px;
+        padding: 36px 0 13px;
+        font-size: 30px;
         font-family: "RussoOne";
         letter-spacing: -0.6px;
         color: #bf1e2e;
         text-transform: uppercase;
         line-height: 1.2;
         text-align: center;
-        margin: 0 0 119px;
-
-        @media (max-width: 1919px) {
-            margin: 0 0 70px;
-        }
-
-        @media (max-width: 1599px) {
-            font-size: 32px;
-            margin: 0 0 30px;
-        }
 
         span {
             padding: 0 10px 0 0;
@@ -50,15 +22,8 @@
 
     &__content {
         position: relative;
-        width: 83.33%;
-        height: 465px;
-        overflow: hidden;
+        padding: 31px 0;
 
-        @media (max-width: 1919px) {
-            width: 75%;
-            height: 500px;
-            margin: 0 0 0 8.33%;
-        }
     }
 
     &__content-decor {
@@ -113,48 +78,42 @@
 
         .icon {
             position: absolute;
-            top: calc(50% - 15px);
-
-            @media (max-width: 1599px) {
-                top: calc(50% - 25px);
-            }
+            left: calc(50% - 15px);
 
             &:first-child {
-                left: 20%;
+                top: 16%;
             }
 
             &:nth-child(2) {
-                left: 40%;
+                top: 36%;
             }
 
             &:nth-child(3) {
-                left: 60%;
+                top: 56%;
             }
 
             &:nth-child(4) {
-                left: 80%;
+                top: 76%;
             }
         }
     }
 
     &__content-items {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: stretch;
         flex-wrap: wrap;
     }
 
     &__item {
-        width: 20%;
-        padding: 29px 15px 121px;
+        width: 45%;
+        padding: 0;
         text-align: center;
-
-        @media (max-width: 1599px) {
-            padding: 29px 15px 50px;
-        }
+        margin: 0 0 84px;
     }
 
     &__item-img {
+        margin: 0 0 8px;
         .icon {
             transform: scale(0.9);
         }
@@ -162,8 +121,12 @@
 
     &__item--text {
         font-family: "Jura-DemiBold";
-        font-size: 18px;
+        font-size: 16px;
         letter-spacing: -0.5px;
+
+        br {
+            display: none;
+        }
     }
 }
 

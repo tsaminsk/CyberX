@@ -1,41 +1,27 @@
 .fifteenth {
     position: relative;
-    padding: 56.75% 0 0;
+    padding: 0 0 100px;
     background: url('../images/fifteenth/fifteenth_bg.png') center center no-repeat;
     background-size: cover;
     overflow: hidden;
 
     &__outer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         color: #000;
     }
 
     &__inner {
-        padding: 0 110px 0 0;
+        padding: 0 10px 0 0;
     }
 
 
     &__title {
-        padding: 109px 113px 0 0;
+        padding: 35px 0 0 0;
         font-family: "RussoOne";
-        font-size: 40px;
+        font-size: 30px;
         letter-spacing: -0.7px;
         text-transform: uppercase;
-        margin: 0 0 124px;
-
-        @media (max-width: 1919px) {
-            margin: 0 0 20px;
-        }
-
-        @media (max-width: 1599px) {
-            padding: 4vw 0 0 50px;
-            font-size: 32px;
-            margin: 0 0 3vw;
-        }
+        text-align: center;
+        margin: 0 0 21px;
     }
 
     &__title--red {
@@ -54,23 +40,12 @@
     }
 
     &__form {
-        width: 1140px;
-        height: 609px;
-        padding: 11px;
+        width: 595px;
+        padding: 2px;
         border-radius: 3px;
         background-color: rgb(255, 255, 255);
-        opacity: 0.902;
         box-shadow: 0px 2px 9.5px 0.5px rgba(0, 0, 0, 0.25);
         margin: 0 auto;
-
-        @media (max-width: 1919px) {
-            height: 545px;
-        }
-
-        @media (max-width: 1599px) {
-            width: 800px;
-            height: 400px;
-        }
 
         form {
             width: 100%;
@@ -86,55 +61,30 @@
     &__form-inner {
         width: 100%;
         height: 100%;
-        padding: 61px 0 0;
+        padding: 23px 0 36px;
         border-width: 2px;
         border-color: rgb(191, 30, 46);
         border-style: solid;
         border-radius: 3px;
-        opacity: 0.902;
-
-        @media (max-width: 1919px) {
-            padding: 30px 0 0;
-        }
-
-        @media (max-width: 1599px) {
-            padding: 10px 0 0;
-        }
     }
 
     &__form-title {
-        width: 75%;
+        width: 80%;
         font-family: "RoadRadio-Black";
-        font-size: 30px;
+        font-size: 22px;
         letter-spacing: -0.5px;
         color: #000;
-        margin: 0 auto 28px;
-
-        @media (max-width: 1599px) {
-            font-size: 20px;
-            margin: 0 auto 10px;
-        }
+        margin: 0 auto;
     }
 
     &__form-inputs {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        width: 72%;
+        width: 87%;
         text-align: center;
         margin: 0 auto 7px;
-
-        @media (max-width: 1599px) {
-            width: 90%;
-        }
     }
 
     &__form-input {
-        display: inline-block;
-        vertical-align: top;
-        width: 365px;
-        margin: 30px 0 31px;
+        margin: 28px 0 20px;
 
         input {
             width: 100%;
@@ -145,19 +95,14 @@
             border-bottom: 2px solid #818181;
         }
 
-        @media (max-width: 1599px) {
-            width: 320px;
-            margin: 10px 0;
-        }
-
         &.is-necessarily {
             position: relative;
 
             &:after {
                 content: '*';
                 position: absolute;
-                top: 0;
-                right: 15px;
+                top: 3px;
+                right: 11px;
                 font-size: 30px;
                 color: #bf1e2e;
             }
@@ -169,10 +114,6 @@
         font-size: 15px;
         color: #000;
         margin: 0 0 22px;
-
-        @media (max-width: 1599px) {
-            font-size: 13px;
-        }
 
         span {
             color: #bf1e2e;
@@ -196,20 +137,12 @@
     }
 
     &__footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 107px;
-
-        @media (max-width: 1599px) {
-            height: 70px;
-        }
+        padding: 20px 0 0;
         
         .container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             font-family: "Jura-DemiBold";
             color: #fff;
         }
@@ -220,7 +153,7 @@
     }
 
     &__footer-phone {
-        padding: 13px 0 0;
+        order: 1;
         font-family: "RussoOne";
         font-size: 20px;
 
@@ -230,11 +163,6 @@
             padding: 13px 0 0;
             text-decoration: none;
             margin: 0 0 0 20px;
-        }
-
-        @media (max-width: 1599px) {
-            padding: 0;
-            font-size: 16px;
         }
     }
 
@@ -249,56 +177,41 @@
         transform: rotate(45deg);
         margin: 9px 0 0;
 
-        @media (max-width: 1599px) {
-            margin: 5px 0 0;
-        }
-
         img {
             transform: rotate(-45deg);
         }
     }
 
     &__footer-mail {
-        padding: 27px 0 0;
+        order: 2;
+        padding: 17px 0 0;
         font-size: 18px;
         letter-spacing: -0.6px;
-
-        @media (max-width: 1599px) {
-            padding: 13px 0 0;
-            font-size: 13px;
-        }
     }
 
     &__footer-logo {
+        order: 0;
 
         img {
             width: 260px;
-
-            @media (max-width: 1599px) {
-                width: 150px;
-            }
         }
     }
 
     &__footer-address {
-        padding: 25px 0 0;
+        order: 3;
+        width: 250px;
+        padding: 15px 0 0;
         font-size: 20px;
+        line-height: 20px;
         letter-spacing: -0.6px;
-
-        @media (max-width: 1599px) {
-            padding: 12px 0 0;
-            font-size: 14px;
-        }
+        text-align: center;
+        margin: 0 auto;
     }
 
     &__footer-copy {
-        padding: 30px 0 0;
+        order: 4;
+        padding: 15px 0 0;
         font-size: 15px;
         letter-spacing: -0.6px;
-
-        @media (max-width: 1599px) {
-            padding: 13px 0 0;
-            font-size: 13px;
-        }
     }
 }

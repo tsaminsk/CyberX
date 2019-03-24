@@ -1,100 +1,59 @@
 .fourth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: linear-gradient(to left, #e8e8e8 15.791%, #fff 15.791%);
     overflow: hidden;
 
     &__bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    &__bg-first,
-    &__bg-second {
-        position: absolute;
-        z-index: 3;
-        top: calc(50% - 120px);
-        width: 100%;
-        height: 240px;
-        background-color: rgba(64, 0, 6, 0.02);
-    }
-    
-    &__bg-first {
-        left: 25px;
-        transform: rotate(45deg);
-    }
-
-    &__bg-second {
-        transform: rotate(-45deg);
-        left: -173px;
+        display: none;
     }
 
     &__wrapp {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 110px 0 0;
-
-        @media (max-width: 1919px) {
-            padding: 70px 0 0;
-        }
+        padding: 34px 0 0;
     }
 
     &__title {
-        padding: 0 107px 0 0;
-        font-size: 40px;
+        padding: 0 0 0 0;
+        font-size: 30px;
         font-family: "RussoOne";
         letter-spacing: -0.6px;
         color: #bf1e2e;
+        text-align: center;
         text-transform: uppercase;
         line-height: 1.2;
         text-align: center;
-        margin: 0 0 106px;
-
-        @media (max-width: 1919px) {
-            margin: 0 0 60px;
-        }
-
-        @media (max-width: 1599px) {
-            font-size: 32px;
-            margin: 0 0 20px;
-        }
+        margin: 0 0 108px;
 
         span {
             padding: 0 10px 0 0;
             color: #000;
         }
+
+        br {
+            display: none;
+        }
     }
 
     &__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 83.33%;
-        padding: 0 0 0 13px;
+        padding: 0 0 0 0;
     }
 
     &__item {
-        width: 30%;
-        text-align: center;
+        position: relative;
+        text-align: left;
+        margin: 0 0 102px;
+
+        &:last-child {
+            margin: 0 0 36px;
+        }
     }
 
     &__item-num {
-        position: relative;
+        position: absolute;
+        z-index: -1;
+        top: -97px;
+        left: 134px;
         font-family: "RussoOne";
-        font-size: 290px;
+        font-size: 115px;
         line-height: 1;
         color: #bf1e2e;
-
-        @media (max-width: 1599px) {
-            font-size: 240px;
-        }
 
         &:after {
             content: '';
@@ -103,18 +62,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(#fff, 0) 40%, rgba(#fff, 1) 80%);
+            background: linear-gradient(to bottom, rgba(#fff, 0.5) 50%, rgba(#fff, 1) 95%);
         }
     }
 
     &__item-title {
+        position: absolute;
+        top: -60px;
+        left: 0;
+        padding: 0 0 0 209px;
         font-family: "RoadRadio-Bold";
         font-size: 25px;
         opacity: 0.99;
-        margin: -47px 0 11px;
 
-        @media (max-width: 1599px) {
-            font-size: 20px;
+        br {
+            display: none;
         }
     }
 
@@ -123,23 +85,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 230px;
+        height: 168px;
         padding: 0 12px;
         font-family: "Jura-DemiBold";
         font-size: 18px;
         border: 1px dashed #6a6a6a;
 
-        @media (max-width: 1599px) {
-            height: 200px;
-            font-size: 16px;
-        }
-
         p {
+            text-align: center;
             margin: 0;
-
-            &:first-child {
-                margin: 0 0 6px;
-            }
         }
     }
 }
