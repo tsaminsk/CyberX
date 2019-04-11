@@ -376,7 +376,6 @@ window.onload = function () {
 
     // валидация и отправка заявки
     var forms = $('.js-form').find('input'); // массив инпутов основной формы
-
     for (let i = 0; i < forms.length; i++){
         forms[i].addEventListener('input', function () {
             if (this.classList.contains('popup__form-ok')) {
@@ -384,9 +383,7 @@ window.onload = function () {
             }
             this.classList.add('popup__form-active');
         });
-
         let pattern = new RegExp(formData[i]);
-
         forms[i].addEventListener('change', function () {
             if ((pattern).test(this.value)) {
                 if (this.classList.contains('popup__form-error')) {
@@ -410,7 +407,16 @@ window.onload = function () {
     $('.js-form').submit(function () {
         event.preventDefault();
         $('.fifteenth__form-inner').html('<div class="fifteenth__form-title">Ваша заявка отправленна!<br>мы скоро с вами свяжемся.</div><img src="/images/first/logo.png">')
-        console.log(event);
+        $.ajax({
+            type: "POST",
+            url: "mail.php",
+            data: $(this).serialize()
+        }).done(function () {
+            $(this).find("input").val("");
+            alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+            $("#form").trigger("reset");
+        });
+        return false;
     });
 
     function checkSubmitForm() {
