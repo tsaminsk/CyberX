@@ -293,10 +293,17 @@ window.onload = function () {
     formSubmit.addEventListener('click', function (event) {
         event.preventDefault();
         // ето передать на сервер и на почту
-        console.log($(formItems[0]).val(), $(formItems[1]).val(), $(formItems[2]).val());
-        
-        document.querySelector('.popup__wrap').style.display = 'none';
-        document.querySelector('.popup__submited').style.display = 'block';
+        $.ajax({
+            type: "POST",
+            url: "order.php",
+            data: { name: $(formItems[0]).val(), phone: $(formItems[1]).val(), email: $(formItems[2]).val(), text: $('.popup__title').html() }
+        }).done(function () {
+            $(this).find("input").val("");
+            alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+            document.querySelector('.popup__wrap').style.display = 'none';
+            document.querySelector('.popup__submited').style.display = 'block';
+        });
+        return false;
     });
     
     // кнопка закрыть в попап "ваше сообщение отправленно"
@@ -406,11 +413,11 @@ window.onload = function () {
 
     $('.js-form').submit(function () {
         event.preventDefault();
-        $('.fifteenth__form-inner').html('<div class="fifteenth__form-title">Ваша заявка отправленна!<br>мы скоро с вами свяжемся.</div><img src="/images/first/logo.png">')
+        // $('.fifteenth__form-inner').html('<div class="fifteenth__form-title">Ваша заявка отправленна!<br>мы скоро с вами свяжемся.</div><img src="/images/first/logo.png">')
         $.ajax({
             type: "POST",
-            url: "mail.php",
-            data: $(this).serialize()
+            url: "request.php",
+            data: { name: $(forms[0]).val(), phone: $(forms[1]).val(), email: $(forms[2]).val(), sity: $(forms[2]).val() }
         }).done(function () {
             $(this).find("input").val("");
             alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
