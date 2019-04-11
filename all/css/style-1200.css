@@ -1191,6 +1191,13 @@ button.button--red:hover:after {
     width: 100%
 }
 
+.popup__form-active {
+    box-shadow: 0px 0px 2px 0px green;
+}
+.popup__form-error {
+    box-shadow: 0px 0px 2px 0px red;
+}
+
 .popup__note {
     font-family: "Jura-DemiBold";
     font-size: 15px;
@@ -1209,8 +1216,13 @@ button.button--red:hover:after {
 
 .popup__submited {
     display: none;
-    height: 200px;
+    min-height: 200px;
+    padding: 50px 0 48px;
     text-align: center
+}
+
+.popup__submited button.button--red {
+    margin: 0 auto;
 }
 
 @-webkit-keyframes fadePopup {
@@ -3220,13 +3232,15 @@ button.button--red:hover:after {
     transform: rotate(180deg)
 }
 
-.thirteenth__player-address {
+.thirteenth__player-address span {
+    display: inline-block;
+    vertical-align: top;
     font-family: "RoadRadio";
     font-size: 18px
 }
 
 @media (max-width: 1599px) {
-    .thirteenth__player-address {
+    .thirteenth__player-address span {
         font-size: 16px
     }
 }

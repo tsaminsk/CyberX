@@ -96,7 +96,7 @@
             <input type="text" id="popup1-name" placeholder="Ваше имя">
             <input type="text" id="popup1-phone" placeholder="Ваш телефон">
             <input type="email" id="popup1-email" placeholder="Email">
-            <button class="button--red" id="popup__submited-button"><span>Получить доступ</span></button>
+            <button class="button--red" id="popup__submited-button" disabled="disabled"><span>Получить доступ</span></button>
           </form>
           <div class="popup__note">Ваши данные не будут переданы третьим лицам </div>
         </div>
@@ -106,7 +106,7 @@
       </div>
       <div class="popup__submited">
         <div class="popup__title">Ваше сообщение отправленно</div>
-        <button class="button--red"><span>Закрыть</span></button>
+        <button class="button--red" id="js-submited-close"><span>Закрыть</span></button>
       </div>
     </div>
     <section class="second is-decor--top-right is-decor--bottom-right"  id="elem-02">
@@ -769,7 +769,7 @@
             <div class="twelfth__title">наши открытые клубы</div>
             <div class="twelfth__content"><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a></div>
             <div class="twelfth__button">
-              <button class="button--red"><span>Больше клубов</span></button>
+              <button class="button--red js-clubs"><span>Больше клубов</span></button>
             </div>
           </div>
         </div>
@@ -827,11 +827,25 @@
                     </div>
                   </div>
                   <div class="thirteenth__player-address">
-                    <div class="icon icon-play"></div>г. Москва, ул. центральная 19
+                    <div class="icon icon-play"></div>
+                    <span>г. Москва, ул. центральная 19</span>
                   </div>
                 </div>
               </div>
-              <div class="thirteenth__items"><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a></div>
+              <div class="thirteenth__items js-video-items">
+                <a class="twelfth__item" href="#" data-video="/images/video/video_2.mp4">
+                  <img src="./images/twelfth/club.jpg">
+                  <span>г. Москва, ул. сказочная 16</span>
+                </a>
+                <a class="twelfth__item" href="#" data-video="/images/video/video_3.mp4">
+                  <img src="./images/twelfth/club.jpg">
+                  <span>г. С-Петербург, ул. вокзальная 17</span>
+                </a>
+                <a class="twelfth__item" href="#" data-video="/images/video/sample.mp4">
+                  <img src="./images/twelfth/club.jpg">
+                  <span>г. Новгород, ул. ботаническая 18</span>
+                </a>
+              </div>
             </div>
             <div class="thirteenth__button">
               <button class="button--red" id="popup_4"><span>Получить доступ к другим камерам</span></button>

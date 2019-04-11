@@ -1111,6 +1111,14 @@ button.button--red:hover:after {
     width: 100%
 }
 
+.popup__form-active {
+    box-shadow: 0px 0px 2px 0px green;
+}
+
+.popup__form-error {
+    box-shadow: 0px 0px 2px 0px red;
+}
+
 .popup__note {
     font-family: "Jura-DemiBold";
     font-size: 15px;

@@ -1,5 +1,10 @@
 window.onload = function () {
 
+    // больше клубов - ссылка на сайт, котрого еще нет
+    $('.js-clubs').on('click', function () {
+        alert('Извините, пока недоступно');
+    })
+
     // video
     $('.js-play').on('click', e => {
         e.preventDefault();
@@ -7,6 +12,30 @@ window.onload = function () {
         // и само видео запустим
         $('.js-video-wrapper').find('video')[0].play();
     });
+
+    $('.js-video-items').find('a.twelfth__item').on('click', function (event) {
+        event.preventDefault();
+        let datas = {};
+        if (event.target.tagName == 'A') {
+            datas.address = $(event.target).find('span').html();
+            datas.src = $(event.target).data('video')
+        }
+        else if (event.target.tagName == 'SPAN') {
+            datas.address = $(event.target).html();
+            datas.src = $(event.target).parent('a').data('video')
+        }
+        else if (event.target.tagName == 'IMG') {
+            datas.address = $(event.target).next().html();
+            datas.src = $(event.target).parent('a').data('video')
+        }
+        
+        $('.js-video-wrapper').find('video > source').attr('src', datas.src);
+        $('.js-video-wrapper').find('video')[0].load();
+        $('.thirteenth__player-address span').html(datas.address);
+        $('.js-video-wrapper').addClass('is-active');
+        // и само видео запустим
+        $('.js-video-wrapper').find('video')[0].play();
+    })
 
     // слайдер в блоке "с чего начать?"
     var items = $('.js-sixth').find('.sixth__pagination-item');
@@ -104,7 +133,7 @@ window.onload = function () {
     // плавный скролл от кнопки далее
     $('.js-link').on('click', function () {
         event.preventDefault();
-        var top = $('#elem-02').offset().top;
+        var top = $('#elem-14').offset().top;
         $('body,html').animate({ scrollTop: top }, 750);
     });
 
@@ -207,16 +236,9 @@ window.onload = function () {
             .add(myPlacemark_1);
     }
 
-    // 
-
-    var formData = {
-        'name': '^[А-ЯA-Z][а-яёa-z]',
-        'email': '^[a-zA-Z-.]+@[a-z]+\.[a-z]{2,3}$',
-        'phone': '[0-9]{6,15}',
-        'message': ''
-    };
-
-    var formSubmit = document.querySelector('#popup__form-button');
+    // валидация форм
+    var formData = ['^[А-ЯA-Z][а-яёa-z]', '[0-9]{6,15}', '^[a-zA-Z-.]+@[a-z]+\.[a-z]{2,3}$']; //патерны для валидации name phone email соответственно
+    var formSubmit = document.querySelector('#popup__submited-button');
     var formItems = [];
 
     Array.prototype.forEach.call(document.querySelector('.popup__form').children, function (elem, i) {
@@ -235,14 +257,14 @@ window.onload = function () {
             this.classList.add('popup__form-active');
         });
 
-        formItems[i].addEventListener('change', function () {
-            let key = this.getAttribute('id').substring(12);
-            let pattern = new RegExp(formData[key]);
+        let pattern = new RegExp(formData[i]);
+
+        formItems[i].addEventListener('change', function () {            
             if ((pattern).test(this.value)) {
                 if (this.classList.contains('popup__form-error')) {
                     this.classList.remove('popup__form-error');
                 }
-                if (this.classList.contains('popup__form-active')) {
+                else if (this.classList.contains('popup__form-active')) {
                     this.classList.remove('popup__form-active');
                 }
                 this.classList.add('popup__form-ok');
@@ -264,18 +286,26 @@ window.onload = function () {
                 count++;
             }
         }
-        if (count == 4) {
+        if (count == 3) {
             formSubmit.removeAttribute('disabled');
         }
-
     }
 
-    // formSubmit.addEventListener('click', function (event) {
-    //     event.preventDefault();
-    //     document.querySelector('.popup__wrap').style.display = 'none';
-    //     document.querySelector('.popup__submited').style.display = 'block';
-
-    // });    
+    // отправка сообщения
+    formSubmit.addEventListener('click', function (event) {
+        event.preventDefault();
+        // ето передать на сервер и на почту
+        console.log($(formItems[0]).val(), $(formItems[1]).val(), $(formItems[2]).val());
+        
+        document.querySelector('.popup__wrap').style.display = 'none';
+        document.querySelector('.popup__submited').style.display = 'block';
+    });
+    
+    // кнопка закрыть в попап "ваше сообщение отправленно"
+    $('#js-submited-close').on('click', function () {
+        popupClean();
+        document.querySelector('.popup').style.display = 'none';
+    });
 
     var popupOpen4 = document.querySelector('#popup_4'); // попап заказать звонок
     var popupOpen3 = document.querySelector('#popup_3'); // попап заказать звонок
@@ -326,7 +356,7 @@ window.onload = function () {
     popupSubmitedButton = document.querySelector('#popup__submited-button');
 
     popupSubmitedButton.addEventListener('click', () => {
-        document.querySelector('.popup').style.display = 'none';
+        // document.querySelector('.popup').style.display = 'none';
         popupClean();
     });
 
@@ -343,137 +373,6 @@ window.onload = function () {
                 formItems[i].classList.remove('popup__form-active')
             }
         }
-
+        formSubmit.setAttribute('disabled', 'disabled');
     }
-
 }
-
-
-
-
-// window.onload = function () {
-
-    // var formData = {
-    //     'name': '^[А-ЯA-Z][а-яёa-z]',
-    //     'email': '^[a-zA-Z-.]+@[a-z]+\.[a-z]{2,3}$',
-    //     'phone': '[0-9]{6,15}',
-    //     'message': ''
-    // };
-
-    // var formSubmit = document.querySelector('#popup__form-button');
-    // var formItems = [];
-
-    // Array.prototype.forEach.call(document.querySelector('.popup__form').children, function (elem, i) {
-    //     if (elem.tagName == 'INPUT' || elem.tagName == 'TEXTAREA') {
-    //         if (elem.getAttribute('type') != 'submit') {
-    //             formItems.push(elem);
-    //         }
-    //     }
-    // });
-
-    // for (var i = 0; i < formItems.length; i++) {
-    //     formItems[i].addEventListener('input', function () {
-    //         if (this.classList.contains('popup__form-ok')) {
-    //             this.classList.remove('popup__form-ok');
-    //         }
-    //         this.classList.add('popup__form-active');
-    //     });
-
-    //     formItems[i].addEventListener('change', function () {
-    //         let key = this.getAttribute('id').substring(12);
-    //         let pattern = new RegExp(formData[key]);
-    //         if ((pattern).test(this.value)) {
-    //             if (this.classList.contains('popup__form-error')) {
-    //                 this.classList.remove('popup__form-error');
-    //             }
-    //             if (this.classList.contains('popup__form-active')) {
-    //                 this.classList.remove('popup__form-active');
-    //             }
-    //             this.classList.add('popup__form-ok');
-    //         } else {
-    //             this.classList.remove('popup__form-active');
-    //             this.classList.add('popup__form-error');
-    //             if (this.value == '') {
-    //                 this.value = 'Поле обязательно для заполнения';
-    //             }
-    //         }
-    //         checkSubmit();
-    //     });
-    // }
-
-    // function checkSubmit() {
-    //     let count = 0;
-    //     for (var i = 0; i < formItems.length; i++) {
-    //         if (formItems[i].classList.contains('popup__form-ok')) {
-    //             count++;
-    //         }
-    //     }
-    //     if (count == 4) {
-    //         formSubmit.removeAttribute('disabled');
-    //     }
-
-    // }
-
-    // // formSubmit.addEventListener('click', function (event) {
-    // //     event.preventDefault();
-    // //     document.querySelector('.popup__wrap').style.display = 'none';
-    // //     document.querySelector('.popup__submited').style.display = 'block';
-
-    // // });
-
-    // var popupOpen1 = document.querySelector('#popup_1');
-    // var popupOpen2 = document.querySelector('#popup_2');
-    // var popupClouse = document.querySelector('.popup__clouse');
-
-    // popupOpen1.addEventListener('click', (event) => {
-    //     event.preventDefault();
-    //     document.querySelector('.popup__title').innerHTML = 'доступ к финансовым документам';
-    //     document.querySelector('.popup').style.display = 'block';
-    //     document.querySelector('.popup__wrap').style.display = 'block';
-    //     document.querySelector('.popup__submited').style.display = 'none';
-    //     document.querySelector('body').addClass = 'modal-open';
-
-    // });
-
-    // popupOpen2.addEventListener('click', (event) => {
-    //     event.preventDefault();
-        
-    //     document.querySelector('.popup__title').innerHTML = 'Свободен ли ваш<br>город?';
-    //     document.querySelector('.popup').style.display = 'block';
-    //     document.querySelector('.popup__wrap').style.display = 'block';
-    //     document.querySelector('.popup__submited').style.display = 'none';
-    //     document.querySelector('body').addClass = 'modal-open';
-
-    // });
-
-    // popupClouse.addEventListener('click', () => {
-    //     popupClean();
-    //     document.querySelector('.popup').style.display = 'none';
-    //     document.querySelector('body').removeClass = 'modal-open';
-
-    // });
-
-    // popupSubmitedButton = document.querySelector('#popup__submited-button');
-
-    // popupSubmitedButton.addEventListener('click', () => {
-    //     document.querySelector('.popup').style.display = 'none';
-    //     popupClean();
-    // });
-
-    // function popupClean() {
-    //     for (var i = 0; i < formItems.length; i++) {
-    //         formItems[i].value = '';
-    //         if (formItems[i].classList.contains('popup__form-ok')) {
-    //             formItems[i].classList.remove('popup__form-ok')
-    //         }
-    //         if (formItems[i].classList.contains('popup__form-error')) {
-    //             formItems[i].classList.remove('popup__form-error')
-    //         }
-    //         if (formItems[i].classList.contains('popup__form-active')) {
-    //             formItems[i].classList.remove('popup__form-active')
-    //         }
-    //     }
-
-    // }
-
-// }
