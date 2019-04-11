@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" media="(min-width: 320px)" href="css/main.min.css">
-    <link rel="stylesheet" media="(min-width: 1200px)" href="images/main.min.css"><script src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" media="(min-width: 1200px)" href="css/style-1200.css">
+    <link rel="stylesheet"  media="(max-width: 1199px)" href="css/style-320.css">
+    <script type="text/javascript" src="//api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU" /></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <title>CyberX</title>
   </head>
   <body>
-    <section class="first">
+    
+    <section class="first" id="elem-01">
       <div class="first__outer">
         <div class="first__inner">
           <div class="container">
@@ -25,14 +29,17 @@
               </ol>
             </div>
             <div class="first__right">
+              <a href="#" class="first__right-close js-close-phone">
+                <div class="icon-plus-red"></div>
+              </a>
               <div class="first__right-tel">
-                <div class="first__right-tel_icon"><img src="data:image/png;;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABHNCSVQICAgIfAhkiAAAATJJREFUOI2d1LFqFFEYhuFvlwUDa++CFsEuWIggglgLsQhCTJ82FxC8ArHxDjQRG1lYsPFKQopkg6RKEZIiISGgKcJjsTOwTCa7M3nhwPAN551zzv/PCYIeljHGOjpF3niUknfYMeEEi/cRvZ2SlHwpPtBKtOs2B3jVRtRNspTbPE3yPkmn5l0t3STjmvwiyVFTSSn6XZMPk/xMoo1olOS8kv9LctV2RYeFbJqVJC/biMpTf11UquQGIzxp2pzlwwNs4mJKdo2veFyZ1EX/LlHwCNuVfrrGEC+KlfWxgS2s4WGdKBjgV0V2gz18Mun40yI/xg88Q6duv50a2SzOsH7X4Q3wHZcNZYezKjHAR/yZIxljdV5ZF/AG34otVNnHB/Sa/t19PMdnkyvnr0kBVhTXzX+HeB067Ly9HQAAAABJRU5ErkJggg=="></div>
+                <a href="#" class="first__right-tel_icon js-open-phone"><img src="data:image/png;;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABHNCSVQICAgIfAhkiAAAATJJREFUOI2d1LFqFFEYhuFvlwUDa++CFsEuWIggglgLsQhCTJ82FxC8ArHxDjQRG1lYsPFKQopkg6RKEZIiISGgKcJjsTOwTCa7M3nhwPAN551zzv/PCYIeljHGOjpF3niUknfYMeEEi/cRvZ2SlHwpPtBKtOs2B3jVRtRNspTbPE3yPkmn5l0t3STjmvwiyVFTSSn6XZMPk/xMoo1olOS8kv9LctV2RYeFbJqVJC/biMpTf11UquQGIzxp2pzlwwNs4mJKdo2veFyZ1EX/LlHwCNuVfrrGEC+KlfWxgS2s4WGdKBjgV0V2gz18Mun40yI/xg88Q6duv50a2SzOsH7X4Q3wHZcNZYezKjHAR/yZIxljdV5ZF/AG34otVNnHB/Sa/t19PMdnkyvnr0kBVhTXzX+HeB067Ly9HQAAAABJRU5ErkJggg=="></a>
                 <div class="first__right-tel_info">
-                  <div class="first__right-tel_number">8 499 288 27 35</div>
-                  <div class="first__right-tel_order"><a href="tel:8 499 288 27 35">Заказать звонок</a></div>
+                  <div class="first__right-tel_number"><a href="tel:+74992882735">8 499 288 27 35</a></div>
+                  <div class="first__right-tel_order"><a href="#" id="popup_3">Заказать звонок</a></div>
                 </div>
               </div>
-              <div class="first__right-nav"></div>
+              <div class="first__right-popup"></div>
             </div>
           </div>
         </div>
@@ -40,9 +47,33 @@
           <div class="container">
             <div class="first__footer-title">Если хотя бы один из этих вопросов для Вас актуален, тогда здесь вы узнаете как разом решить все эти и другие задачи.</div>
             <div class="first__footer-button">
-              <div class="icon icon-swipe"></div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAsCAYAAABygggEAAAABHNCSVQICAgIfAhkiAAAAnFJREFUWIXtmE1rE1EUhp9cg42QVFCwAWtBKmKFuAkU6UY3aukP8Hutv6Efv0KQLuvCjZsuS0tduBSz0QQUP1AoldKFqLRoqTWvi3tGQjqZ5EpnQMiBF+bj3ve5d4a5c8/JSaJL5IEhYAy4ClwEzgLH7f4X4D3wHFgB3gCbwF6SaS4B7IALwB3gCnAe+GrG68B3a3cUGAbOAceA18Aq8BhoAM1Yd0mddF/ShqTfkhqSbkkqSypJKkg6bCrYtbK1qVufDfOI9Y+7OCxpQdIvSTVJtyW5hAG2y9kAaubxSNIpSbkk8AlJi5J2Jc1LGm3v0KKyKe5ezvrOm9eieXcEP5GPuS6zKtgjrdtxUttZSU3z3gfOS5qx0T2UVOxiNijpnWmwS9uiee5KmjbWX/CEpHVJrySN9PAeQ8CYZ90YE5JwwABw077VWWAt6fv7x1gDZoxxAxhwdnINeAYspQCNYskYk8CQA6rAKPCATh/7wUTTGGeAqrMRfMavMmlHA7/qTTpgHPgAbGcA3jbWeB44jV9/dwIMfgAvW457jR38D6SaB0rAT8Le7x5wPaB9FE1jlRz+LyRT2hFxnMsAFht9cB/cB/fBffD/AW4COVPaEXGaDtgCjpDN7J2xthzwCb/TLGQALhjrowNe4Hd+xQzARWPVHLAMnAQqGYAr+Fx6OUov3kp6qrB0NFRO0qqxRhx+17cCXAKmUpztFHAZ/4Q325O2eo9JW6j2JW2taep0QJoaosQ0NTQxD9GcecYm5pFCShFJCi5FoPjiy6EAqLM+UfFlQT0UX1p1TymWm7oV2CrAXXyBbQz4xgEV2JLAUaRSUvwD9wIxfyd+kE0AAAAASUVORK5CYII="><a href="#">Дальше</a>
+              <div class="icon icon-swipe"></div>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAsCAYAAABygggEAAAABHNCSVQICAgIfAhkiAAAAnFJREFUWIXtmE1rE1EUhp9cg42QVFCwAWtBKmKFuAkU6UY3aukP8Hutv6Efv0KQLuvCjZsuS0tduBSz0QQUP1AoldKFqLRoqTWvi3tGQjqZ5EpnQMiBF+bj3ve5d4a5c8/JSaJL5IEhYAy4ClwEzgLH7f4X4D3wHFgB3gCbwF6SaS4B7IALwB3gCnAe+GrG68B3a3cUGAbOAceA18Aq8BhoAM1Yd0mddF/ShqTfkhqSbkkqSypJKkg6bCrYtbK1qVufDfOI9Y+7OCxpQdIvSTVJtyW5hAG2y9kAaubxSNIpSbkk8AlJi5J2Jc1LGm3v0KKyKe5ezvrOm9eieXcEP5GPuS6zKtgjrdtxUttZSU3z3gfOS5qx0T2UVOxiNijpnWmwS9uiee5KmjbWX/CEpHVJrySN9PAeQ8CYZ90YE5JwwABw077VWWAt6fv7x1gDZoxxAxhwdnINeAYspQCNYskYk8CQA6rAKPCATh/7wUTTGGeAqrMRfMavMmlHA7/qTTpgHPgAbGcA3jbWeB44jV9/dwIMfgAvW457jR38D6SaB0rAT8Le7x5wPaB9FE1jlRz+LyRT2hFxnMsAFht9cB/cB/fBffD/AW4COVPaEXGaDtgCjpDN7J2xthzwCb/TLGQALhjrowNe4Hd+xQzARWPVHLAMnAQqGYAr+Fx6OUov3kp6qrB0NFRO0qqxRhx+17cCXAKmUpztFHAZ/4Q325O2eo9JW6j2JW2taep0QJoaosQ0NTQxD9GcecYm5pFCShFJCi5FoPjiy6EAqLM+UfFlQT0UX1p1TymWm7oV2CrAXXyBbQz4xgEV2JLAUaRSUvwD9wIxfyd+kE0AAAAASUVORK5CYII=">
+              <a class="js-link" href="#elem-02">Дальше</a>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="nav is-first">
+        <ul class="nav__menu js-menu">
+          <li class="is-active"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.93"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.86"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.79"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.72"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.65"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.58"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.51"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.44"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.37"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.30"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.23"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.16"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.09"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
         </div>
       </div>
     </section>
@@ -78,7 +109,7 @@
         <button class="button--red"><span>Закрыть</span></button>
       </div>
     </div>
-    <section class="second is-decor--top-right is-decor--bottom-right">
+    <section class="second is-decor--top-right is-decor--bottom-right"  id="elem-02">
       <div class="second__inner">
         <div class="container">
           <div class="second__logo"><img src="/images/first/logo.png"></div>
@@ -114,8 +145,30 @@
           </div>
         </div>
       </div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.93"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li class="is-active"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.93"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.86"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.79"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.72"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.65"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.58"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.51"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.44"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.37"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.3"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.23"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.16"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
+      </div>
     </section>
-    <section class="third is-decor--top-right is-decor--bottom-left">
+    <section class="third is-decor--top-right is-decor--bottom-left"  id="elem-03">
       <div class="third__wrapper">
         <div class="container">
           <div class="third__title">Мы докажем, что Вы можете быть <br><span>успешным владельцем кибер&#8209;клуба</span></div>
@@ -199,8 +252,30 @@
           </div>
         </div>
       </div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.86"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.93"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li class="is-active" ><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.93"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.86"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.79"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.72"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.65"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.58"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.51"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.44"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.37"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.30"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.23"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
+      </div>
     </section>
-    <section class="fourth is-decor--top-left is-decor--bottom-right">
+    <section class="fourth is-decor--top-left is-decor--bottom-right"  id="elem-04">
       <div class="fourth__bg">
         <div class="fourth__bg-first"></div>
         <div class="fourth__bg-second"></div>
@@ -236,8 +311,30 @@
           </div>
         </div>
       </div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.79"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.86"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.93"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li class="is-active" ><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.93"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.86"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.79"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.72"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.65"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.58"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.51"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.44"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.37"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.3"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
+      </div>
     </section>
-    <section class="fifth is-decor--top-right is-decor--bottom-left">
+    <section class="fifth is-decor--top-right is-decor--bottom-left"  id="elem-05">
       <div class="fifth__outer">
         <div class="container">
           <div class="fifth__inner">
@@ -260,6 +357,28 @@
           </div>
         </div>
       </div>
+      <div class="nav">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.72"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.79"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.86"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.93"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li class="is-active" ><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.93"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.86"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.79"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.72"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.65"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.58"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.51"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.44"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.37"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-white"></div>
+          <div class="icon icon-mouse-white"></div>
+        </div>
+      </div>
     </section>
     <div class="form_too">
       <div class="form_too__outer">
@@ -273,7 +392,7 @@
         </div>
       </div>
     </div>
-    <section class="sixth is-decor--top-left is-decor--bottom-right">
+    <section class="sixth is-decor--top-left is-decor--bottom-right"  id="elem-06">
       <div class="sixth__outer">
         <div class="container">
           <div class="sixth__inner">
@@ -306,36 +425,36 @@
                   </div>
                 </div>
               </div>
-              <div class="sixth__pagination">
+              <div class="sixth__pagination js-sixth">
+                <div class="sixth__pagination-item "></div>
                 <div class="sixth__pagination-item is-active"></div>
-                <div class="sixth__pagination-item"></div>
                 <div class="sixth__pagination-item"></div>
                 <div class="sixth__pagination-item"></div>
               </div>
               <div class="sixth__col-too">
                 <div class="sixth__item">
-                  <div class="sixth__item-image"><img src="images/sixth/comp.png"></div>
+                  <div class="sixth__item-image"><img src="./images/sixth/comp.png"></div>
                   <div class="sixth__item-content">
                     <div class="sixth__item-title">компьютеры <b>и</b> s<b>ony</b>ps</div>
                     <div class="sixth__item-text">Мощное и современное «железо», которое обычные россияне не могут себе позволить. Для Вас компьютеры обойдутся дешевле до 20%, от обычной закупочной цены. При заказе от 15 компьютеров, Вы полностью компенсирует выделенные средства на паушальный взнос.</div>
                   </div>
                 </div>
                 <div class="sixth__item">
-                  <div class="sixth__item-image"><img src="images/sixth/food.png"></div>
+                  <div class="sixth__item-image"><img src="./images/sixth/food.png"></div>
                   <div class="sixth__item-content">
                     <div class="sixth__item-title">Еда и напитки</div>
                     <div class="sixth__item-text">Кибер-пространство от CyberX уникально тем, что соединяет в себе множество видов отдыха, поэтому доля дохода будет приходить от продажи закусок.</div>
                   </div>
                 </div>
                 <div class="sixth__item">
-                  <div class="sixth__item-image"><img src="images/sixth/events.png"></div>
+                  <div class="sixth__item-image"><img src="./images/sixth/events.png"></div>
                   <div class="sixth__item-content">
                     <div class="sixth__item-title">Мероприятия</div>
                     <div class="sixth__item-text">Мероприятия играют важную роль в популяризации заведения, и в Вашем заработке. Игроки готовятся к ним не меньше чем мы, и с радостью тратят свои деньги на турнирах, это их способ хорошо отдохнуть с друзьями.</div>
                   </div>
                 </div>
                 <div class="sixth__item">
-                  <div class="sixth__item-image"><img src="images/sixth/hookah.png"></div>
+                  <div class="sixth__item-image"><img src="./images/sixth/hookah.png"></div>
                   <div class="sixth__item-content">
                     <div class="sixth__item-title">Кальяны</div>
                     <div class="sixth__item-text">Одна из важнейших составляющих успешного места для отдыха - это кальяны. Они популярные, они востребованные и выгодные. Геймеры будут приходить не в одиночку, а с друзьями. Чем больше Вы можете дать клиенту, тем больше он будет отдавать взамен. </div>
@@ -346,8 +465,30 @@
           </div>
         </div>
       </div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.65"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.72"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.79"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.86"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.93"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li class="is-active" ><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.93"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.86"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.79"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.72"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.65"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.58"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.51"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.44"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
+      </div>
     </section>
-    <section class="eighth is-decor--top-right is-decor--bottom-left">
+    <section class="eighth is-decor--top-right is-decor--bottom-left"  id="elem-07">
       <div class="eighth__outer">
         <div class="container">
           <div class="eighth__inner">
@@ -370,7 +511,7 @@
             </div>
             <div class="eighth__content">
               <div class="eighth__user">
-                <div class="eighth__user-photo"><img src="images/eighth/user_1.png"></div>
+                <div class="eighth__user-photo"><img src="./images/eighth/user_1.png"></div>
                 <div class="eighth__user-content">
                   <div class="eighth__user-name">Михаил</div>
                   <div class="eighth__user-descr">19 лет</div>
@@ -381,7 +522,7 @@
                 </div>
               </div>
               <div class="eighth__user">
-                <div class="eighth__user-photo"><img src="images/eighth/user_3.png"></div>
+                <div class="eighth__user-photo"><img src="./images/eighth/user_3.png"></div>
                 <div class="eighth__user-content">
                   <div class="eighth__user-name">Группа друзей</div>
                   <div class="eighth__user-descr">от 3 до 5 человек</div>
@@ -392,7 +533,7 @@
                 </div>
               </div>
               <div class="eighth__user">
-                <div class="eighth__user-photo"><img src="images/eighth/user_2.png"></div>
+                <div class="eighth__user-photo"><img src="./images/eighth/user_2.png"></div>
                 <div class="eighth__user-content">
                   <div class="eighth__user-name">Павел</div>
                   <div class="eighth__user-descr">16 лет</div>
@@ -403,7 +544,7 @@
                 </div>
               </div>
               <div class="eighth__user">
-                <div class="eighth__user-photo"><img src="images/eighth/user_4.png"></div>
+                <div class="eighth__user-photo"><img src="./images/eighth/user_4.png"></div>
                 <div class="eighth__user-content">
                   <div class="eighth__user-name">Сергей</div>
                   <div class="eighth__user-descr">34 года</div>
@@ -417,8 +558,30 @@
           </div>
         </div>
       </div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.58"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.65"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.72"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.79"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.86"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.93"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li class="is-active"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.93"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.86"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.79"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.72"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.65"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.58"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.51"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
+      </div>
     </section>
-    <section class="ninth is-decor--top-left is-decor--bottom-right">
+    <section class="ninth is-decor--top-left is-decor--bottom-right"  id="elem-08">
       <div class="ninth__outer">
         <div class="container">
           <div class="ninth__inner">
@@ -448,16 +611,60 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="tenth is-decor--top-right is-decor--bottom-left">
-      <div class="tenth__outer">
-        <div class="container">
-          <div class="tenth__title"><span class="tenth__title--red">Добро пожаловать в офис!&nbsp;</span><span class="tenth__title--dark">Давайте знакомиться:</span></div>
-          <div class="tenth__logo"><img src="images/tenth/logo_dark.png"></div>
+      <div class="nav">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.51"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.58"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.65"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.72"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.79"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.86"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.93"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li class="is-active"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.93"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.86"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.79"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.72"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.65"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.58"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-white"></div>
+          <div class="icon icon-mouse-white"></div>
         </div>
       </div>
     </section>
-    <section class="eleventh is-decor--top-left is-decor--bottom-right">
+    <section class="tenth is-decor--top-right is-decor--bottom-left"  id="elem-09">
+      <div class="tenth__outer">
+        <div class="container">
+          <div class="tenth__title"><span class="tenth__title--red">Добро пожаловать в офис!&nbsp;</span><span class="tenth__title--dark">Давайте знакомиться:</span></div>
+          <div class="tenth__logo"><img src="./images/tenth/logo_dark.png"></div>
+        </div>
+      </div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.44"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.51"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.58"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.65"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.72"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.79"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.86"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.93"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li class="is-active"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.93"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.86"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.79"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.72"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.65"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
+      </div>
+    </section>
+    <section class="eleventh is-decor--top-left is-decor--bottom-right"  id="elem-10">
       <div class="eleventh__outer">
         <div class="container">
           <div class="eleventh__inner">
@@ -532,21 +739,65 @@
           </div>
         </div>
       </div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.37"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.44"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.51"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.58"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.65"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.72"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.79"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.86"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.93"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li class="is-active"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.93"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.86"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.79"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.72"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
+      </div>
     </section>
-    <section class="twelfth is-decor--top-right is-decor--bottom-left">
+    <section class="twelfth is-decor--top-right is-decor--bottom-left"  id="elem-11">
       <div class="twelfth__outer">
         <div class="container">
           <div class="twelfth__inner">
             <div class="twelfth__title">наши открытые клубы</div>
-            <div class="twelfth__content"><a class="twelfth__item" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a></div>
+            <div class="twelfth__content"><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item is-close" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a></div>
             <div class="twelfth__button">
               <button class="button--red"><span>Больше клубов</span></button>
             </div>
           </div>
         </div>
       </div>
+      <div class="nav">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.3"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.37"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.44"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.51"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.58"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.65"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.72"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.79"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.86"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.93"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li class="is-active" ><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.93"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.86"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.79"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-white"></div>
+          <div class="icon icon-mouse-white"></div>
+        </div>
+      </div>
     </section>
-    <section class="thirteenth is-decor--top-left is-decor--bottom-right">
+    <section class="thirteenth is-decor--top-left is-decor--bottom-right"  id="elem-12">
       <div class="thirteenth__outer">
         <div class="container">
           <div class="thirteenth__title"><span class="thirteenth__title--red">CyberX - самая прозрачная франшиза </span><span class="thirteenth__title--dark">в сфере развлечений</span></div>
@@ -558,8 +809,10 @@
                     <source type="video/mp4" src="/images/video/vide01.mp4">
                   </video>
                   <div class="video__overlay" style="background-image: url(/images/thirteenth/video_bg.jpg)">
-                    <div class="video__overlay-hover" style="background-image: url(/images/thirteenth/hover.jpg)"></div><a class="video__btn js-play" href="#">
-                      <div class="icon icon-play-big"></div></a>
+                    <div class="video__overlay-hover" style="background-image: url(/images/thirteenth/hover.jpg)"></div>
+                    <a class="video__btn js-play" href="#">
+                      <div class="icon icon-play-big"></div>
+                    </a>
                   </div>
                 </div>
                 <div class="thirteenth__player-descr">
@@ -578,22 +831,69 @@
                   </div>
                 </div>
               </div>
-              <div class="thirteenth__items"><a class="twelfth__item" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="images/twelfth/club.jpg">г. Москва, ул. центральная 19</a></div>
+              <div class="thirteenth__items"><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a><a class="twelfth__item" href="#"><img src="./images/twelfth/club.jpg">г. Москва, ул. центральная 19</a></div>
             </div>
             <div class="thirteenth__button">
-              <button class="button--red"><span>Получить доступ к другим камерам</span></button>
+              <button class="button--red" id="popup_4"><span>Получить доступ к другим камерам</span></button>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="fourteenth is-decor--top-right is-decor--bottom-left">
-      <div class="fourteenth__outer">
-        <div class="fourteenth__title">Где уже есть CyberX?</div>
-        <div class="fourteenth__map"><div id="map"></div></div>
+      <div class="nav nav__dark">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.23"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.30"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.37"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.44"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.51"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.58"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.65"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.72"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.79"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.86"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.93"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li class="is-active"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.93"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li style="opacity: 0.86"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-red"></div>
+          <div class="icon icon-mouse-red"></div>
+        </div>
       </div>
     </section>
-    <section class="fifteenth is-decor--top-left">
+    <section class="fourteenth is-decor--top-right is-decor--bottom-left"  id="elem-13">
+      <div class="fourteenth__outer">
+        <div class="fourteenth__title">Где уже есть CyberX?</div>
+        <div class="fourteenth__map">
+          <div id="map"></div>
+        </div>
+        
+        <div class="nav" style="top: 30%;">
+          <ul class="nav__menu js-menu">
+            <li style="opacity: 0.16"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+            <li style="opacity: 0.23"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+            <li style="opacity: 0.30"><a href="#elem-03"><b>03</b> Вы можете</a></li>
+            <li style="opacity: 0.37"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+            <li style="opacity: 0.44"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+            <li style="opacity: 0.51"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+            <li style="opacity: 0.58"><a href="#elem-07"><b>07</b> Выбор</a></li>
+            <li style="opacity: 0.65"><a href="#elem-08"><b>08</b> Варианты</a></li>
+            <li style="opacity: 0.72"><a href="#elem-09"><b>09</b> Офис</a></li>
+            <li style="opacity: 0.79"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+            <li style="opacity: 0.86"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+            <li style="opacity: 0.93"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+            <li class="is-active"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+            <li style="opacity: 0.93"><a href="#elem-14"><b>14</b> Команда</a></li>
+          </ul>
+          <div class="nav__decor">
+            <div class="icon icon-arrow-white"></div>
+            <div class="icon icon-mouse-white"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="fifteenth is-decor--top-left"  id="elem-14">
       <div class="fifteenth__outer">
         <div class="container">
           <div class="fifteenth__title"><span class="fifteenth__title--red">заполни анкету потенциального партнёра и </span><span class="fifteenth__title--white">стань частью команды CyberX уже сейчас!</span></div>
@@ -633,7 +933,10 @@
         <div class="fifteenth__footer">
           <div class="container">
             <div class="fifteenth__footer-phone">
-              <div class="fifteenth__footer-phone_icon"><img src="data:image/png;;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABHNCSVQICAgIfAhkiAAAATJJREFUOI2d1LFqFFEYhuFvlwUDa++CFsEuWIggglgLsQhCTJ82FxC8ArHxDjQRG1lYsPFKQopkg6RKEZIiISGgKcJjsTOwTCa7M3nhwPAN551zzv/PCYIeljHGOjpF3niUknfYMeEEi/cRvZ2SlHwpPtBKtOs2B3jVRtRNspTbPE3yPkmn5l0t3STjmvwiyVFTSSn6XZMPk/xMoo1olOS8kv9LctV2RYeFbJqVJC/biMpTf11UquQGIzxp2pzlwwNs4mJKdo2veFyZ1EX/LlHwCNuVfrrGEC+KlfWxgS2s4WGdKBjgV0V2gz18Mun40yI/xg88Q6duv50a2SzOsH7X4Q3wHZcNZYezKjHAR/yZIxljdV5ZF/AG34otVNnHB/Sa/t19PMdnkyvnr0kBVhTXzX+HeB067Ly9HQAAAABJRU5ErkJggg=="></div><a href="tel:8 499 288 27 35">8 499 288 27 35</a>
+              <div class="fifteenth__footer-phone_icon">
+                <img src="data:image/png;;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABHNCSVQICAgIfAhkiAAAATJJREFUOI2d1LFqFFEYhuFvlwUDa++CFsEuWIggglgLsQhCTJ82FxC8ArHxDjQRG1lYsPFKQopkg6RKEZIiISGgKcJjsTOwTCa7M3nhwPAN551zzv/PCYIeljHGOjpF3niUknfYMeEEi/cRvZ2SlHwpPtBKtOs2B3jVRtRNspTbPE3yPkmn5l0t3STjmvwiyVFTSSn6XZMPk/xMoo1olOS8kv9LctV2RYeFbJqVJC/biMpTf11UquQGIzxp2pzlwwNs4mJKdo2veFyZ1EX/LlHwCNuVfrrGEC+KlfWxgS2s4WGdKBjgV0V2gz18Mun40yI/xg88Q6duv50a2SzOsH7X4Q3wHZcNZYezKjHAR/yZIxljdV5ZF/AG34otVNnHB/Sa/t19PMdnkyvnr0kBVhTXzX+HeB067Ly9HQAAAABJRU5ErkJggg==">
+              </div>
+              <a href="tel:+74992882735">8 499 288 27 35</a>
             </div>
             <div class="fifteenth__footer-mail"><a href="mailto: info@cyberx-franchise.ru">info@cyberx-franchise.ru</a></div>
             <div class="fifteenth__footer-logo"><img src="/images/first/logo.png"></div>
@@ -642,6 +945,63 @@
           </div>
         </div>
       </div>
+      
+      <div class="nav">
+        <ul class="nav__menu js-menu">
+          <li style="opacity: 0.09"><a href="#elem-01"><b>01</b> Cyber:X</a></li>
+          <li style="opacity: 0.16"><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li style="opacity: 0.23"><a href="#elem-03"><b>03</b> Владельцам</a></li>
+          <li style="opacity: 0.30"><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li style="opacity: 0.37"><a href="#elem-05"><b>05</b> О Киберспорте</a></li>
+          <li style="opacity: 0.44"><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li style="opacity: 0.51"><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li style="opacity: 0.58"><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li style="opacity: 0.65"><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li style="opacity: 0.72"><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li style="opacity: 0.79"><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li style="opacity: 0.86"><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li style="opacity: 0.93"><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li class="is-active"><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+        <div class="nav__decor">
+          <div class="icon icon-arrow-white"></div>
+          <div class="icon icon-mouse-white"></div>
+        </div>
+      </div>
     </section>
+
+    <div class="nav-mobile">
+      <a href="javascript:void(0);" class="nav-mobile__icon js-open-mobmenu">
+        <div class="icon icon-mobmenu"></div>
+      </a>
+      <div class="nav-mobile__list">
+        <a href="javascript:void(0);" class="nav-mobile__list-close js-close-mobmenu">
+          <div class="icon icon-plus-red"></div>
+        </a>
+        <ul class="nav-mobile__menu js-mobmenu js-menu">
+          <li class="is-active"><a href="#elem-01"><b>01</b> CyberX</a></li>
+          <li><a href="#elem-02"><b>02</b> CyberX сегодня</a></li>
+          <li><a href="#elem-03"><b>01</b> Владельцам</a></li>
+          <li><a href="#elem-04"><b>04</b> Гарантии</a></li>
+          <li><a href="#elem-05"><b>05</b> О Киберспорте</a></li> 
+          <li><a href="#elem-06"><b>06</b> Калькулятор</a></li>
+          <li><a href="#elem-07"><b>07</b> Выбор</a></li>
+          <li><a href="#elem-08"><b>08</b> Варианты</a></li>
+          <li><a href="#elem-09"><b>09</b> Офис</a></li>
+          <li><a href="#elem-10"><b>10</b> Преимущества</a></li>
+          <li><a href="#elem-11"><b>11</b> Наши клубы</a></li>
+          <li><a href="#elem-12"><b>12</b> Онлайн-видео</a></li>
+          <li><a href="#elem-13"><b>13</b> Где есть?</a></li>
+          <li><a href="#elem-14"><b>14</b> Команда</a></li>
+        </ul>
+      </div>
+      <a href="#elem-01" class="nav-mobile__icon-top js-top">
+        <div class="icon icon-totop"></div>
+      </a>
+    </div>
+      
+
+    <div class="body-decor"></div>
+    <script src="js/main.js" type="text/javascript"></script>
   </body>
-</html>
+</html> 

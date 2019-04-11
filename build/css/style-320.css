@@ -298,13 +298,6 @@ body {
     line-height: 1.25
 }
 
-body.modal-open {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%
-}
-
 *,
 *:before,
 *:after {
@@ -324,19 +317,8 @@ ol {
 
 .container {
     width: 100%;
-    max-width: 1560px;
-    min-width: 1200px;
-    padding: 0 15px;
+    padding: 0 4.6875%;
     margin: 0 auto
-}
-
-.is-hidden {
-    display: none !important
-}
-
-.visually-hidden {
-    text-indent: -9999px;
-    font-size: 0
 }
 
 button.button--red {
@@ -345,7 +327,7 @@ button.button--red {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 360px;
+    width: 470px;
     height: 50px;
     font-family: "Jura-DemiBold";
     font-size: 20px;
@@ -356,13 +338,6 @@ button.button--red {
     background-color: #bf1e2e;
     opacity: 1;
     transition: box-shadow 0.5s ease, opacity 0.5s ease
-}
-
-@media (max-width: 1599px) {
-    button.button--red {
-        height: 40px;
-        font-size: 17px
-    }
 }
 
 button.button--red span {
@@ -397,16 +372,72 @@ button.button--red:hover:after {
     vertical-align: top
 }
 
+.icon-totop {
+    background-image: url(../images/sprite.png);
+    background-position: -180px -136px;
+    width: 16px;
+    height: 30px
+}
+
+.icon-mouse-red {
+    background-image: url(../images/sprite.png);
+    background-position: -262px -102px;
+    width: 30px;
+    height: 44px
+}
+
+.icon-arrow-red {
+    background-image: url(../images/sprite.png);
+    background-position: -222px -180px;
+    width: 20px;
+    height: 13px
+}
+
+.icon-mouse-white {
+    background-image: url(../images/sprite.png);
+    background-position: -262px -146px;
+    width: 30px;
+    height: 44px
+}
+
+.icon-arrow-white {
+    background-image: url(../images/sprite.png);
+    background-position: -242px -180px;
+    width: 20px;
+    height: 13px
+}
+
+.icon-menu-select {
+    background-image: url(../images/sprite.png);
+    background-position: -142px -120px;
+    width: 19px;
+    height: 13px
+}
+
+.icon-mobmenu {
+    background-image: url(../images/sprite.png);
+    background-position: -202px -180px;
+    width: 20px;
+    height: 14px
+}
+
+.icon-swipe {
+    background-image: url(../images/sprite.png);
+    background-position: -262px -65px;
+    width: 40px;
+    height: 37px
+}
+
 .icon-close {
     background-image: url(../images/sprite.png);
-    background-position: -262px -154px;
+    background-position: -149px -196px;
     width: 25px;
     height: 25px
 }
 
 .icon-play {
     background-image: url(../images/sprite.png);
-    background-position: -262px -179px;
+    background-position: -180px -166px;
     width: 20px;
     height: 20px
 }
@@ -420,7 +451,7 @@ button.button--red:hover:after {
 
 .icon-plus-red-mini {
     background-image: url(../images/sprite.png);
-    background-position: -287px -154px;
+    background-position: -77px -118px;
     width: 18px;
     height: 18px
 }
@@ -434,21 +465,21 @@ button.button--red:hover:after {
 
 .icon-angle {
     background-image: url(../images/sprite.png);
-    background-position: -262px -125px;
+    background-position: -120px -196px;
     width: 29px;
     height: 29px
 }
 
 .icon-plus {
     background-image: url(../images/sprite.png);
-    background-position: -262px -95px;
+    background-position: -262px -220px;
     width: 30px;
     height: 30px
 }
 
 .icon-plus-red {
     background-image: url(../images/sprite.png);
-    background-position: -262px -65px;
+    background-position: -262px -190px;
     width: 30px;
     height: 30px
 }
@@ -544,187 +575,227 @@ button.button--red:hover:after {
     height: 60px
 }
 
-.is-decor--top-right:before {
-    content: '';
+.nav {
+    display: none;
+}
+
+.nav-mobile {
     position: absolute;
-    z-index: 5;
-    top: -83px;
-    right: -202px;
-    width: 550px;
-    height: 300px;
-    background-color: #bf1e2e;
+    top: 34px;
+    right: 30px;
+}
+
+.nav-mobile.is-scrolled {
+    position: fixed;
+}
+
+@media (max-width: 430px) {
+    .nav-mobile {
+        top: 91px;
+    }
+}
+
+.nav-mobile.is-open {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    animation-name: fadePopup;
+    animation-duration: 0.5s;
+    animation-timing-function: ease
+}
+
+.nav-mobile__icon {
+    display: inline-block;
+    vertical-align: top;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    padding: 9px 2px 0 0;
+    background-color: #fff;
     transform: rotate(45deg);
-    box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2)
+    margin: 9px 0 0;
+    box-shadow: 0 0 10px 3px #fff;
+    cursor: pointer;
 }
 
-@media (max-width: 1599px) {
-    .is-decor--top-right:before {
-        right: -331px
-    }
-}
-
-.is-decor--bottom-right:after {
-    content: '';
-    position: absolute;
-    bottom: -83px;
-    right: -202px;
-    width: 550px;
-    height: 300px;
-    background-color: #bf1e2e;
-    transform: rotate(-45deg);
-    box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2)
-}
-
-@media (max-width: 1599px) {
-    .is-decor--bottom-right:after {
-        right: -331px
-    }
-}
-
-.is-decor--bottom-left:after {
-    content: '';
-    position: absolute;
-    bottom: -83px;
-    left: -224px;
-    width: 550px;
-    height: 300px;
-    background-color: #bf1e2e;
+.nav-mobile__icon-top {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    display: none;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    padding: 3px 0 0;
+    background-color: #fff;
     transform: rotate(45deg);
-    box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2)
+    margin: 9px 0 0;
+    cursor: pointer;
+    opacity: 0.5;
 }
 
-@media (max-width: 1599px) {
-    .is-decor--bottom-left:after {
-        left: -316px
-    }
+.nav-mobile__icon-top .icon-totop {
+    transform: rotate(-45deg);
 }
 
-.is-decor--top-left:before {
+.nav-mobile.is-scrolled .nav-mobile__icon-top {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.nav-mobile.is-scrolled .nav-mobile__icon {
+    box-shadow: none;
+    opacity: 0.5;
+}
+
+.nav-mobile__icon .icon-mobmenu {
+    transform: rotate(-45deg);
+    margin: 2px 0 0 2px;
+}
+
+.nav-mobile.is-open .nav-mobile__icon {
+    display: none;
+}
+
+.nav-mobile__list {
+    display: none;
+}
+
+.nav-mobile.is-open .nav-mobile__list {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 83px 0 0 46px;
+    background-color: #fff;
+}
+
+.nav-mobile__list-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+}
+.nav-mobile__list-close .icon-plus-red {
+    transform: rotate(-45deg)
+}
+ 
+.nav-mobile__menu li {
+    position: relative;
+    margin: 0 0 20px;
+}
+
+.nav-mobile__menu li.is-active:before {
     content: '';
     position: absolute;
-    top: -83px;
-    left: -224px;
-    width: 550px;
-    height: 300px;
-    background-color: #bf1e2e;
-    transform: rotate(-45deg);
-    box-shadow: 0px 0px 9.1px 3.9px rgba(0, 0, 0, 0.2)
+    top: 4px;
+    left: -29px;
+    background-image: url(../images/sprite.png);
+    background-position: -142px -120px;
+    width: 19px;
+    height: 13px
 }
 
-@media (max-width: 1599px) {
-    .is-decor--top-left:before {
-        left: -316px
-    }
+.nav-mobile__menu li > a {
+    font-family: "Jura-DemiBold";
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-mobile__menu li>a>b {
+     font-family: "RussoOne";
+     margin: 0 10px 0 0;
 }
 
 .first {
     position: relative;
-    background: url("../images/first/first_bg.png") center center no-repeat;
+    background: url("../images/first/first_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
-.first__outer {
-    padding: 56.75% 0 0
-}
-
-.first__inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 145px)
-}
-
 .first__left {
-    float: left;
-    padding: 11.2% 0 0;
+    padding: 28px 0 0;
     color: #fff
 }
 
-@media (max-width: 1919px) {
-    .first__left {
-        padding: 50px 0 0
-    }
-}
-
-@media (max-width: 1599px) {
-    .first__left {
-        padding: 30px 0 0
-    }
-}
-
 .first__logo {
-    margin: 0 0 28px 1px
+    text-align: center;
+    margin: 0 0 12px
 }
 
-@media (max-width: 1599px) {
-    .first__logo {
-        margin: 0 0 2vw
-    }
-
-    .first__logo img {
-        width: 350px;
-        margin: 0 0 0 50%
-    }
+.first__logo img {
+    width: 270px;
+    margin: 0 0 0 15px
 }
 
 .first__title {
-    max-width: 750px;
-    padding: 0 0 19px;
+    width: 400px;
+    max-width: 100%;
+    padding: 0 0 14px;
+    text-align: center;
     border-bottom: 2px #dbdbdb solid;
-    margin: 0 0 0 3.5px
+    margin: 0 auto 5px
 }
 
 .first__title h1 {
     font-family: "RoadRadio";
-    font-size: 30px;
     font-weight: 400;
-    line-height: 54px;
+    font-size: 25px;
+    line-height: 28px;
     text-transform: none;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.5px;
     margin: 0
 }
 
+@media (max-width: 400px) {
+    .first__title h1 {
+        letter-spacing: -2.5px
+    }
+}
+
+@media (max-width: 799px) {
+    .first__title h1 {
+        font-size: 16px;
+        line-height: 26px
+    }
+
+    .first__title h1 br {
+        display: none
+    }
+}
+
 .first__title span {
-    font-family: "RoadRadio";
+    font-family: "RoadRadio-Black";
     text-transform: uppercase;
-    font-size: 50px
+    font-size: 35px
 }
 
 .first__title b {
     font-family: "RoadRadio";
     text-transform: uppercase;
-    font-size: 45px;
+    font-size: 25px;
     font-weight: 400
 }
 
-@media (max-width: 1599px) {
-    .first__title {
-        max-width: 500px;
-        padding: 0 0 5px;
-        margin: 0 0 0 120px
-    }
-
-    .first__title h1 {
-        font-size: 20px;
-        line-height: 1.1
-    }
-
-    .first__title span {
-        font-size: 36px
-    }
-
+@media (max-width: 799px) {
     .first__title b {
-        font-size: 30px
+        font-size: 24px
     }
 }
 
 .first__context {
-    max-width: 735px;
     counter-reset: myCounter;
-    padding: 31px 0 0 14px;
+    padding: 25px 78px 8px;
     margin: 0
+}
+
+@media (max-width: 799px) {
+    .first__context {
+        padding: 1px 0 9px
+    }
 }
 
 .first__context li {
@@ -732,10 +803,18 @@ button.button--red:hover:after {
     display: block;
     padding: 0 0 0 19px;
     font-family: "Jura-DemiBold";
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
     letter-spacing: -0.8px;
-    margin: 0 0 28px 53px
+    margin: 0 0 15px 53px
+}
+
+@media (max-width: 799px) {
+    .first__context li {
+        padding: 0;
+        text-align: center;
+        margin: 74px 0 15px
+    }
 }
 
 .first__context li:before {
@@ -746,10 +825,10 @@ button.button--red:hover:after {
     left: -60px;
     display: inline-block;
     vertical-align: top;
-    height: 60px;
-    width: 59px;
+    height: 52px;
+    width: 52px;
     font-family: "RussoOne";
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     color: white;
     border-radius: 10px;
@@ -758,39 +837,56 @@ button.button--red:hover:after {
     padding: 15px 0 0
 }
 
-@media (max-width: 1599px) {
-    .first__context {
-        padding: 3vw 0 0 14px;
-        margin: 0 0 0 108px
-    }
-
-    .first__context li {
-        font-size: 22px;
-        line-height: 26px;
-        letter-spacing: -0.8px;
-        margin: 0 0 20px 53px
+@media (max-width: 799px) {
+    .first__context li:before {
+        top: -60px;
+        left: calc(50% - 26px)
     }
 }
 
 .first__right {
-    float: right;
-    padding: 287px 0 0
+    position: absolute;
+    top: 34px;
+    left: 30px;
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 430px) {
     .first__right {
-        padding: 200px 90px 0
+        top: 90px;
     }
 }
 
-@media (max-width: 1599px) {
-    .first__right {
-        padding: 100px 3.5vw 0
-    }
+.first__right.is-open {
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 91px 0 0 30px;
+    background-color: rgba(0,0,0, 0.95);
+    animation-name: fadePopup;
+    animation-duration: 0.5s;
+    animation-timing-function: ease
+}
+
+.first__right-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: none;
+}
+
+.first__right.is-open .first__right-close {
+    display: inline-block;
+}
+
+.first__right-close .icon-plus-red {
+    transform: rotate(-45deg);
+    cursor: pointer;
 }
 
 .first__right-tel {
-    text-align: right
+    text-align: left
 }
 
 .first__right-tel_icon {
@@ -802,7 +898,9 @@ button.button--red:hover:after {
     padding: 9px 2px 0 0;
     background-color: #bf1e2e;
     transform: rotate(45deg);
-    margin: 9px 0 0
+    margin: 9px 0 0;
+    box-shadow: 0 0 10px 3px #bf1e2e;
+    cursor: pointer;
 }
 
 .first__right-tel_icon img {
@@ -810,16 +908,25 @@ button.button--red:hover:after {
 }
 
 .first__right-tel_info {
+    display: none;
+}
+
+.first__right.is-open .first__right-tel_info {
     display: inline-block;
     vertical-align: top;
     letter-spacing: -0.6px
 }
 
-.first__right-tel_number {
+.first__right-tel_number a {
     font-family: "RussoOne";
     font-size: 20px;
     color: #fff;
-    padding: 0 0 5px 16px
+    padding: 0 0 5px 16px;
+    text-decoration: none;
+}
+
+.first__right-tel_order {
+    margin: 0 0 0 15px;
 }
 
 .first__right-tel_order a {
@@ -830,12 +937,7 @@ button.button--red:hover:after {
 }
 
 .first__footer {
-    position: absolute;
-    top: calc(100% - 145px);
-    left: 0px;
-    width: 100%;
-    height: 145px;
-    padding: 21px 0 0;
+    padding: 0 0 19px;
     letter-spacing: -0.6px;
     text-align: center;
     color: #fff;
@@ -843,22 +945,29 @@ button.button--red:hover:after {
     opacity: 0.8
 }
 
-.first__footer-title {
-    font-family: "Jura-DemiBold";
-    font-size: 20px;
-    margin: 0 0 22px
+@media (max-width: 799px) {
+    .first__footer {
+        padding: 0 0 30px
+    }
 }
 
-@media (max-width: 1599px) {
+.first__footer-title {
+    padding: 15px 79px 0;
+    font-family: "Jura-DemiBold";
+    font-size: 16px;
+    margin: 0 0 12px
+}
+
+@media (max-width: 799px) {
     .first__footer-title {
-        font-size: 18px;
-        margin: 0 0 33px
+        padding: 15px 0 0;
+        line-height: 18px;
+        margin: 0 0 9px
     }
 }
 
 .first__footer-button img {
-    display: inline-block;
-    vertical-align: top
+    display: none
 }
 
 .first__footer-button a {
@@ -866,7 +975,7 @@ button.button--red:hover:after {
     vertical-align: top;
     padding: 0 0 0 15px;
     font-family: "RoadRadio-Light";
-    font-size: 22px;
+    font-size: 20px;
     text-transform: uppercase;
     text-decoration-skip-ink: none;
     color: #fff;
@@ -874,64 +983,55 @@ button.button--red:hover:after {
 }
 
 .form_one {
-    position: relative
+    height: 310px;
+    background: url("../images/first/first_bg_750.png") center top no-repeat;
+    background-size: cover;
+    margin: -5px 0 0
 }
 
-.form_one__outer {
-    padding: 15.625% 0 0;
-    background: url("../images/form_one/form_one_bg.png") center center no-repeat;
-    background-size: cover
-}
-
-.form_one__inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
-}
-
-.form_one .container {
-    display: flex;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 98px
-}
-
-@media (max-width: 1599px) {
-    .form_one .container {
-        padding: 0 15px
+@media (max-width: 799px) {
+    .form_one {
+        height: 350px
     }
 }
 
+.form_one__outer {
+    display: none
+}
+
+.form_one__inner {
+    height: 100%;
+    background: rgba(255, 0, 0, 0.4)
+}
+
 .form_one__title {
-    padding: 0 0 5px;
+    width: 600px;
+    padding: 70px 0 9px;
     font-family: "RoadRadio-Bold";
     font-size: 30px;
     line-height: 1.2;
     letter-spacing: -0.8px;
+    text-align: center;
     text-transform: uppercase;
     color: #fff;
     border-bottom: 2px solid #fff;
-    margin: 5px 0 0 31px
+    margin: 5px auto 31px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .form_one__title {
-        font-size: 27px
+        width: 100%;
+        padding: 76px 0 7px;
+        font-size: 25px;
+        margin: 5px auto 20px
     }
-}
-
-.form_one__button {
-    margin: 14px 96px 0 0
 }
 
 .form_one__button button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 360px;
+    width: 460px;
     height: 50px;
     font-family: "Jura-DemiBold";
     font-size: 20px;
@@ -940,11 +1040,19 @@ button.button--red:hover:after {
     border-radius: 2px;
     border: none;
     background-color: #fff;
-    transition: box-shadow 0.5s ease
+    transition: box-shadow 0.5s ease;
+    margin: 0 auto
 }
 
 .form_one__button button:hover {
     box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4)
+}
+
+@media (max-width: 799px) {
+    .form_one__button button {
+        width: 290px;
+        font-size: 18px
+    }
 }
 
 .popup {
@@ -964,7 +1072,8 @@ button.button--red:hover:after {
 .popup__wrap,
 .popup__submited {
     position: relative;
-    width: 492px;
+    width: 90%;
+    max-width: 492px;
     padding: 50px 0 48px;
     border-radius: 4px;
     background-color: #fff;
@@ -973,14 +1082,14 @@ button.button--red:hover:after {
 
 .popup__title {
     font-family: "RoadRadio-Black";
-    font-size: 35px;
+    font-size: 30px;
     color: #000;
     text-align: center;
     margin: 0 0 23px
 }
 
 .popup__content {
-    padding: 20px 60px 0
+    padding: 20px 15px 0
 }
 
 .popup__form {
@@ -992,7 +1101,7 @@ button.button--red:hover:after {
     width: 100%;
     height: 33px;
     font-family: "Jura-DemiBold";
-    font-size: 20px;
+    font-size: 18px;
     border: none;
     border-bottom: 2px solid #818181;
     margin: 5px 0 22px
@@ -1045,45 +1154,18 @@ button.button--red:hover:after {
 }
 
 .second {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/second/second_bg.png") center center no-repeat;
+    background: url("../images/second/second_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
-.second__inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
-}
-
 .second__logo {
-    padding: 83px 0 35px
+    padding: 16px 0 0;
+    text-align: center
 }
 
 .second__logo img {
-    width: 681px;
-    margin: 0 0 0 -25px
-}
-
-@media (max-width: 1919px) {
-    .second__logo {
-        padding: 20px 0 0
-    }
-}
-
-@media (max-width: 1599px) {
-    .second__logo {
-        padding: 3vw 0
-    }
-
-    .second__logo img {
-        width: 350px;
-        margin: 0 0 0 8.33vw
-    }
+    width: 270px
 }
 
 .second__info {
@@ -1091,21 +1173,21 @@ button.button--red:hover:after {
 }
 
 .tab {
-    width: 740px;
+    width: 470px;
     font-family: "RoadRadio-Bold";
-    font-size: 40px;
+    font-size: 22px;
     line-height: 1.2;
     letter-spacing: -0.9px;
     text-transform: none;
     text-shadow: 0px 2px 9.5px rgba(0, 0, 0, 0.3);
     border-collapse: separate;
-    border-spacing: 16px;
-    margin: 0 0 0 312px
+    border-spacing: 5px;
+    margin: 0 auto 34px
 }
 
 .tab td {
     border-radius: 3px;
-    padding: 3px 5px 3px 15px
+    padding: 10px 5px 10px 15px
 }
 
 .tab td .tab__large {
@@ -1114,86 +1196,93 @@ button.button--red:hover:after {
     width: 150%
 }
 
+@media (max-width: 799px) {
+    .tab td .tab__large {
+        width: 100%
+    }
+}
+
 .tab__title {
     font-family: "RussoOne";
-    font-size: 50px;
-    letter-spacing: -1.5px
+    font-size: 35px;
+    letter-spacing: -1.5px;
+    transform: translate3d(-50px, 0, 0)
+}
+
+@media (max-width: 799px) {
+    .tab__title {
+        font-size: 30px;
+        text-align: center;
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+@media (max-width: 799px) {
+    .tab {
+        width: 100%;
+        font-size: 20px;
+        margin: -36px auto 34px
+    }
+
+    .tab tr {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap
+    }
+
+    .tab td:not(.tab__red),
+    .tab td.tab__red--last {
+        width: 100%;
+        text-align: center
+    }
+
+    .tab td.tab__red {
+        margin: 0 auto
+    }
 }
 
 .tab__red {
-    width: 150px;
+    width: 125px;
     padding: 3px 5px 3px 0 !important;
+    font-size: 32px;
     text-align: center;
     background-color: #bf1e2e
 }
 
 .tab__red--last {
     padding: 5px 0px 6px 8px !important;
+    font-size: 22px;
     letter-spacing: -2px
 }
 
-@media (max-width: 1599px) {
-    .tab {
-        font-size: 32px;
-        border-spacing: 8px;
-        margin: 0 0 0 8.33vw
+@media (max-width: 799px) {
+    .tab__red {
+        width: 125px
     }
 
-    .tab__title {
-        font-size: 40px
+    .tab__red--last {
+        max-width: 450px;
+        font-size: 20px;
+        margin: 0 auto
     }
 }
 
 .third {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/third/thr_bg.png") center center no-repeat;
+    padding: 0 0 40px;
+    background: url("../images/third/thr_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
-.third__wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 111px 0 0
-}
-
-@media (max-width: 1919px) {
-    .third__wrapper {
-        padding: 60px 0 0
-    }
-}
-
-.third__wrapper .container {
-    text-align: left
-}
-
 .third__title {
-    padding: 0 100px 0 0;
-    font-size: 40px;
+    padding: 36px 0 13px;
+    font-size: 30px;
     font-family: "RussoOne";
     letter-spacing: -0.6px;
     color: #bf1e2e;
     text-transform: uppercase;
     line-height: 1.2;
-    text-align: center;
-    margin: 0 0 119px
-}
-
-@media (max-width: 1919px) {
-    .third__title {
-        margin: 0 0 70px
-    }
-}
-
-@media (max-width: 1599px) {
-    .third__title {
-        font-size: 32px;
-        margin: 0 0 30px
-    }
+    text-align: center
 }
 
 .third__title span {
@@ -1201,19 +1290,18 @@ button.button--red:hover:after {
     color: #000
 }
 
-.third__content {
-    position: relative;
-    width: 83.33%;
-    height: 465px;
-    overflow: hidden
+@media (max-width: 799px) {
+    .third__title {
+        width: 110%;
+        font-size: 25px;
+        background-color: #fff;
+        margin: 0 0 9px -5%
+    }
 }
 
-@media (max-width: 1919px) {
-    .third__content {
-        width: 75%;
-        height: 500px;
-        margin: 0 0 0 8.33%
-    }
+.third__content {
+    position: relative;
+    padding: 31px 0
 }
 
 .third__content-decor {
@@ -1267,50 +1355,56 @@ button.button--red:hover:after {
     height: 100%
 }
 
-.third__content-decor--pluses .icon {
-    position: absolute;
-    top: calc(50% - 15px)
-}
-
-@media (max-width: 1599px) {
-    .third__content-decor--pluses .icon {
-        top: calc(50% - 25px)
+@media (max-width: 799px) {
+    .third__content-decor--pluses {
+        display: none
     }
 }
 
+.third__content-decor--pluses .icon {
+    position: absolute;
+    left: calc(50% - 15px)
+}
+
 .third__content-decor--pluses .icon:first-child {
-    left: 20%
+    top: 16%
 }
 
 .third__content-decor--pluses .icon:nth-child(2) {
-    left: 40%
+    top: 36%
 }
 
 .third__content-decor--pluses .icon:nth-child(3) {
-    left: 60%
+    top: 56%
 }
 
 .third__content-decor--pluses .icon:nth-child(4) {
-    left: 80%
+    top: 76%
 }
 
 .third__content-items {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: stretch;
     flex-wrap: wrap
 }
 
 .third__item {
-    width: 20%;
-    padding: 29px 15px 121px;
-    text-align: center
+    width: 45%;
+    padding: 0;
+    text-align: center;
+    margin: 0 0 84px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .third__item {
-        padding: 29px 15px 50px
+        width: 100%;
+        margin: 0 0 11px
     }
+}
+
+.third__item-img {
+    margin: 0 0 8px
 }
 
 .third__item-img .icon {
@@ -1319,83 +1413,49 @@ button.button--red:hover:after {
 
 .third__item--text {
     font-family: "Jura-DemiBold";
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -0.5px
 }
 
+.third__item--text br {
+    display: none
+}
+
 .fourth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: linear-gradient(to left, #e8e8e8 15.791%, #fff 15.791%);
     overflow: hidden
 }
 
 .fourth__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden
-}
-
-.fourth__bg-first,
-.fourth__bg-second {
-    position: absolute;
-    z-index: 3;
-    top: calc(50% - 120px);
-    width: 100%;
-    height: 240px;
-    background-color: rgba(64, 0, 6, 0.02)
-}
-
-.fourth__bg-first {
-    left: 25px;
-    transform: rotate(45deg)
-}
-
-.fourth__bg-second {
-    transform: rotate(-45deg);
-    left: -173px
+    display: none
 }
 
 .fourth__wrapp {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 110px 0 0
+    padding: 34px 0 0
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .fourth__wrapp {
-        padding: 70px 0 0
+        padding: 38px 0 0
     }
 }
 
 .fourth__title {
-    padding: 0 107px 0 0;
-    font-size: 40px;
+    padding: 0 0 0 0;
+    font-size: 30px;
     font-family: "RussoOne";
     letter-spacing: -0.6px;
     color: #bf1e2e;
+    text-align: center;
     text-transform: uppercase;
     line-height: 1.2;
     text-align: center;
-    margin: 0 0 106px
+    margin: 0 0 108px
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .fourth__title {
-        margin: 0 0 60px
-    }
-}
-
-@media (max-width: 1599px) {
-    .fourth__title {
-        font-size: 32px;
-        margin: 0 0 20px
+        font-size: 25px;
+        margin: 0 0 116px
     }
 }
 
@@ -1404,31 +1464,33 @@ button.button--red:hover:after {
     color: #000
 }
 
+.fourth__title br {
+    display: none
+}
+
 .fourth__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 83.33%;
-    padding: 0 0 0 13px
+    padding: 0 0 0 0
 }
 
 .fourth__item {
-    width: 30%;
-    text-align: center
+    position: relative;
+    text-align: left;
+    margin: 0 0 102px
+}
+
+.fourth__item:last-child {
+    margin: 0 0 36px
 }
 
 .fourth__item-num {
-    position: relative;
+    position: absolute;
+    z-index: -1;
+    top: -97px;
+    left: 134px;
     font-family: "RussoOne";
-    font-size: 290px;
+    font-size: 115px;
     line-height: 1;
     color: #bf1e2e
-}
-
-@media (max-width: 1599px) {
-    .fourth__item-num {
-        font-size: 240px
-    }
 }
 
 .fourth__item-num:after {
@@ -1438,20 +1500,36 @@ button.button--red:hover:after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, #fff 80%)
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 50%, #fff 95%)
+}
+
+@media (max-width: 799px) {
+    .fourth__item-num {
+        left: 2px
+    }
 }
 
 .fourth__item-title {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    padding: 0 0 0 209px;
     font-family: "RoadRadio-Bold";
     font-size: 25px;
-    opacity: 0.99;
-    margin: -47px 0 11px
+    opacity: 0.99
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .fourth__item-title {
-        font-size: 20px
+        top: -83px;
+        padding: 0 0 0 71px;
+        font-size: 20px;
+        text-align: left
     }
+}
+
+.fourth__item-title br {
+    display: none
 }
 
 .fourth__item-text {
@@ -1459,78 +1537,45 @@ button.button--red:hover:after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 230px;
+    height: 168px;
     padding: 0 12px;
     font-family: "Jura-DemiBold";
     font-size: 18px;
     border: 1px dashed #6a6a6a
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .fourth__item-text {
-        height: 200px;
-        font-size: 16px
+        height: 231px
     }
 }
 
 .fourth__item-text p {
+    text-align: center;
     margin: 0
 }
 
-.fourth__item-text p:first-child {
-    margin: 0 0 6px
-}
-
 .fifth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/fifth/fifth_bg.png") center center no-repeat;
+    background: url("../images/fifth/fifth_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
-.fifth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: left
-}
-
-.fifth__inner {
-    width: 83.33%
-}
-
-@media (max-width: 1919px) {
-    .fifth__inner {
-        width: 75%;
-        margin: 0 0 0 8.33%
-    }
-}
-
 .fifth__title {
-    padding: 111px 53px 0 8px;
-    font-size: 30px;
+    padding: 35px 0 0;
+    font-size: 25px;
     font-family: "RussoOne";
     letter-spacing: -0.4px;
     color: #bf1e2e;
     text-transform: uppercase;
     line-height: 1.2;
     text-align: left;
-    margin: 0 0 83px
+    margin: 0 0 16px
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .fifth__title {
-        padding: 50px 53px 0 8px
-    }
-}
-
-@media (max-width: 1599px) {
-    .fifth__title {
-        font-size: 27px;
-        margin: 0 0 30px
+        font-size: 22px
     }
 }
 
@@ -1540,44 +1585,51 @@ button.button--red:hover:after {
 }
 
 .fifth__grafics {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
     color: #fff;
     margin: 0 0 22px
 }
 
 .fifth__grafics-gold,
 .fifth__grafics-ciber {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between
+    width: 640px;
+    margin: 0 auto 26px
 }
 
-@media (max-width: 1919px) {
-    .fifth__grafics-image img {
-        width: 550px
+@media (max-width: 799px) {
+
+    .fifth__grafics-gold,
+    .fifth__grafics-ciber {
+        width: 100%
     }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .fifth__grafics-image img {
-        width: 420px
+        width: 100%;
+        max-width: 640px;
+        height: 300px
     }
 }
 
 .fifth__grafics-title {
     padding: 0 0 0 10px;
     font-family: "RoadRadio";
-    font-size: 25px;
-    margin: 0 0 -25px
+    font-size: 20px;
+    margin: 0 0 22px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .fifth__grafics-title {
-        font-size: 18px;
-        margin: 0
+        font-size: 18px
     }
+}
+
+.fifth__grafics-title br {
+    display: none
+}
+
+.fifth__grafics-ciber .fifth__grafics-title {
+    margin: 0 0 -39px
 }
 
 .fifth__text {
@@ -1587,46 +1639,31 @@ button.button--red:hover:after {
 
 .fifth__link-forbes {
     font-family: "RoadRadio";
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: -0.2px;
-    margin: 0 0 55px
-}
-
-@media (max-width: 1919px) {
-    .fifth__link-forbes {
-        font-size: 19px
-    }
-}
-
-@media (max-width: 1599px) {
-    .fifth__link-forbes {
-        font-size: 14px;
-        margin: 0 0 20px
-    }
+    margin: 0 0 18px
 }
 
 .fifth__link-forbes a {
     color: #bf1e2e
 }
 
+.fifth__link-forbes br {
+    display: none
+}
+
 .fifth__text-title {
-    padding: 0 0 30px 11px;
+    padding: 0 0 16px;
     font-family: "RussoOne";
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: -0.45px;
     text-transform: uppercase
 }
 
-@media (max-width: 1599px) {
-    .fifth__text-title {
-        font-size: 19px
-    }
-}
-
 .fifth__text-call {
-    padding: 0 0 0 13px;
+    padding: 0 0 32px 0;
     font-family: "RussoOne";
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: -0.5px;
     color: #fff;
     text-transform: uppercase;
@@ -1636,231 +1673,149 @@ button.button--red:hover:after {
         -15px -15px 20px #bf1e2e
 }
 
-@media (max-width: 1599px) {
-    .fifth__text-call {
-        font-size: 32px
-    }
-}
-
 .form_too {
+    padding: 0 0 40px;
     position: relative;
-    padding: 15.625% 0 0;
     background-color: #000;
-    margin: -1px 0 0
-}
-
-.form_too__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: url("../images/form_too/form_too_bg.jpg") left center no-repeat;
-    background-size: auto 100%
-}
-
-.form_too__inner {
-    height: 100%;
-    background: linear-gradient(to left, #3B0A0F 15.791%, rgba(255, 255, 255, 0) 15.791%)
+    background-size: cover;
+    margin: -5px 0 0
 }
 
 .form_too .container {
-    display: flex;
-    height: 100%;
-    justify-content: space-around;
-    align-items: center;
     padding: 0 98px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .form_too .container {
-        padding: 0 15px
+        padding: 0 4.6875%
     }
 }
 
 .form_too__title {
-    padding: 0 0 5px;
+    width: 600px;
+    padding: 70px 0 9px;
     font-family: "RoadRadio-Bold";
     font-size: 30px;
     line-height: 1.2;
     letter-spacing: -0.8px;
+    text-align: center;
     text-transform: uppercase;
     color: #fff;
-    border-bottom: 2px solid #bf1e2e;
-    margin: 0 0 0 31px
+    border-bottom: 2px solid #fff;
+    margin: 5px auto 31px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .form_too__title {
-        font-size: 27px
+        width: 100%;
+        padding: 76px 0 7px;
+        font-size: 25px;
+        margin: 5px auto 20px
     }
 }
 
 .form_too__button {
-    margin: 14px 88px 0 0
+    margin: 14px 0 40px
+}
+
+.form_too__button .button--red {
+    width: 470px;
+    height: 50px;
+    margin: 0 auto
+}
+
+@media (max-width: 799px) {
+    .form_too__button .button--red {
+        width: 290px;
+        font-size: 18px
+    }
 }
 
 .sixth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/sixth/sixth_bg.png") center center no-repeat;
+    padding: 0 0 100px;
+    background: url("../images/sixth/sixth_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
 .sixth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     text-align: left
 }
 
-.sixth__inner {
-    width: 91.667%;
-    padding: 101px 0 0
-}
-
-@media (max-width: 1919px) {
-    .sixth__inner {
-        padding: 40px 0 0
-    }
-}
-
 .sixth__title {
-    padding: 0 0 0 31px;
+    padding: 28px 0 0 0;
     font-family: "RussoOne";
-    font-size: 40px;
-    line-height: 70px;
+    font-size: 30px;
+    line-height: 50px;
     letter-spacing: -0.5px;
     text-align: center;
     text-transform: uppercase;
     color: #bf1e2e;
-    margin: 0 0 71px
+    margin: 0 0 21px
+}
+
+@media (max-width: 799px) {
+    .sixth__title {
+        margin: 0 0 13px
+    }
 }
 
 .sixth__title span {
     display: inline-block;
     vertical-align: top;
-    width: 67%;
     padding: 0 20px 0 0;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 25px;
     color: #000
-}
-
-@media (max-width: 1919px) {
-    .sixth__title {
-        margin: 0 0 30px
-    }
-}
-
-@media (max-width: 1599px) {
-    .sixth__title {
-        font-size: 32px;
-        line-height: 45px
-    }
-
-    .sixth__title span {
-        font-size: 22px;
-        line-height: 27px
-    }
 }
 
 .sixth__content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start
-}
-
-@media (max-width: 1599px) {
-    .sixth__content {
-        padding: 0 7vw 0 0
-    }
+    flex-direction: column-reverse;
+    overflow: hidden
 }
 
 .sixth__col-one {
     padding: 46px 0 0 5px
 }
 
-@media (max-width: 1919px) {
-    .sixth__col-one {
-        padding: 100px 0 0 5px
-    }
-}
-
-@media (max-width: 1919px) {
-    .sixth__col-one {
-        padding: 50px 0 0 10px
-    }
-}
-
-@media (max-width: 1599px) {
-    .sixth__col-too {
-        margin: 55px 0 0
-    }
-}
-
-.sixth__col-three {
-    margin: 125px 0 0
-}
-
-@media (max-width: 1919px) {
-    .sixth__col-three {
-        margin: 65px 20px 0 -20px
-    }
-}
-
-@media (max-width: 1599px) {
-    .sixth__col-three {
-        margin: 0
-    }
+.sixth__col-too {
+    display: flex;
+    justify-content: flex-start;
+    width: 400%;
+    transform: translate3d(-25%, 0, 0);
+    transition: transform 0.5s;
 }
 
 .sixth__item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 0 0 44px
-}
-
-@media (max-width: 1919px) {
-    .sixth__item {
-        margin: 0 0 30px
-    }
-}
-
-@media (max-width: 1599px) {
-    .sixth__item {
-        margin: 0 0 10px
-    }
+    width: 25%;
+    margin: 0 0 31px
 }
 
 .sixth__item-image {
-    display: inline-block;
-    vertical-align: top;
-    min-width: 269px
+    text-align: center;
+    margin: 0 0 -35px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .sixth__item-image {
-        min-width: 175px
+        margin: -11px 0 -35px
     }
+}
 
-    .sixth__item-image img {
-        transform: scale(0.6);
-        transform-origin: 0% 50%
-    }
+.sixth__item-image img {
+    width: 200px
 }
 
 .sixth__item-content {
     padding: 29px 0 0;
-    margin: 0 0 0 -49px
+    margin: 0 0 0
 }
 
 .sixth__item-title {
-    padding: 0 0 7px;
+    max-width: 470px;
+    padding: 0 0 3px;
     font-family: "RoadRadio-Bold";
     font-size: 25px;
     letter-spacing: -0.6px;
@@ -1873,52 +1828,86 @@ button.button--red:hover:after {
     font-weight: bold
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .sixth__item-title {
-        font-size: 18px
-    }
-
-    .sixth__item-title b {
-        font-size: 14px
+        margin: 0 0 10px 20px
     }
 }
 
 .sixth__item-text {
-    padding: 0 0 0 27px;
+    padding: 0 0 0;
     font-family: "Jura-DemiBold";
-    font-size: 15px
+    font-size: 18px
 }
 
-@media (max-width: 1599px) {
-    .sixth__item-text {
-        padding: 0 0 0 15px;
-        font-size: 13px
-    }
+.sixth__pagination {
+    text-align: center
+}
+
+.sixth__pagination-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #bf1e2e;
+    margin: 0 0 0 10px;
+    cursor: pointer
+}
+
+.sixth__pagination-item:first-child {
+    margin: 0
+}
+
+.sixth__pagination-item.is-active {
+    background-color: #bf1e2e;
+    pointer-events: none
 }
 
 .calculator {
-    width: 360px;
-    padding: 42px 34px;
+    width: 470px;
+    padding: 22px 87px;
     color: #fff;
     border-radius: 2px;
     background-image: linear-gradient(to right, #bf1e2e, #c35e68);
-    box-shadow: 0px 1px 5.7px 0.3px rgba(0, 0, 0, 0.3)
+    box-shadow: 0px 1px 5.7px 0.3px rgba(0, 0, 0, 0.3);
+    margin: 0 auto
+}
+
+@media (max-width: 799px) {
+    .calculator {
+        width: 290px;
+        padding: 22px 20px
+    }
 }
 
 .calculator__title {
-    padding: 0 0 14px;
+    padding: 0 0 11px;
     font-family: "RoadRadio-Bold";
     font-size: 25px;
     letter-spacing: -0.8px;
     border-bottom: 2px solid #fff
 }
 
+@media (max-width: 799px) {
+    .calculator__title {
+        padding: 0 0 7px;
+        text-align: center
+    }
+}
+
 .calculator__list {
-    padding: 20px 0 0 20px;
+    padding: 18px 0 0 22px;
     font-family: "Jura-DemiBold";
     font-size: 16px;
     border-bottom: 2px solid #da4453;
-    margin: 0 0 30px
+    margin: 0 30px 21px
+}
+
+@media (max-width: 799px) {
+    .calculator__list {
+        margin: 0 0 21px
+    }
 }
 
 .calculator__list input {
@@ -1932,12 +1921,12 @@ button.button--red:hover:after {
 .calculator__list label {
     position: relative;
     display: block;
-    margin: 0 0 30px 19px;
+    margin: 0 0 20px 19px;
     cursor: pointer
 }
 
 .calculator__list label:last-child {
-    margin: 0 0 27px 19px
+    margin: 0 0 21px 19px
 }
 
 .calculator__list label:after {
@@ -1961,7 +1950,13 @@ button.button--red:hover:after {
 .calculator__result-title {
     font-family: "RoadRadio-Bold";
     font-size: 16px;
-    margin: 0 0 9px
+    margin: 0 30px 9px
+}
+
+@media (max-width: 799px) {
+    .calculator__result-title {
+        margin: 0 0 9px
+    }
 }
 
 .calculator__result-month,
@@ -1974,68 +1969,33 @@ button.button--red:hover:after {
     font-size: 16px;
     line-height: 0.8;
     border-top: 1px solid #da4453;
-    margin: 0 0 -7px
+    margin: 0 30px -7px
+}
+
+@media (max-width: 799px) {
+
+    .calculator__result-month,
+    .calculator__result-year {
+        margin: 0 0 -7px
+    }
 }
 
 .calculator__result-month span,
 .calculator__result-year span {
-    font-size: 20px
-}
-
-@media (max-width: 1599px) {
-    .calculator {
-        width: 280px;
-        padding: 22px 20px
-    }
-
-    .calculator__title {
-        font-size: 20px
-    }
-
-    .calculator__result-title,
-    .calculator__result-month,
-    .calculator__result-year {
-        font-size: 14px
-    }
-
-    .calculator__result-title span,
-    .calculator__result-month span,
-    .calculator__result-year span {
-        font-size: 17px
-    }
+    font-size: 18px
 }
 
 .eighth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/eighth/eighth_bg.png") center center no-repeat;
+    padding: 0 0 60px;
+    background: url("../images/eighth/eighth_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
-.eighth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-align: left
-}
-
-.eighth__inner {
-    width: 83.33%
-}
-
-@media (max-width: 1919px) {
-    .eighth__inner {
-        margin: 0 0 0 7%
-    }
-}
-
 .eighth__title {
-    padding: 99px 0 91px 140px;
+    padding: 31px 0 39px;
     font-family: "RussoOne";
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1.85;
     letter-spacing: -0.7px;
     text-align: center;
@@ -2043,10 +2003,16 @@ button.button--red:hover:after {
     color: #bf1e2e
 }
 
+@media (max-width: 799px) {
+    .eighth__title {
+        padding: 31px 15px 39px
+    }
+}
+
 .eighth__title span {
     display: block;
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 25px;
     letter-spacing: -0.4px
 }
 
@@ -2054,57 +2020,21 @@ button.button--red:hover:after {
     color: #000
 }
 
-@media (max-width: 1919px) {
-    .eighth__title {
-        padding: 40px 0 91px 70px
-    }
-}
-
-@media (max-width: 1599px) {
-    .eighth__title {
-        padding: 30px 0 50px 70px;
-        font-size: 32px
-    }
-
-    .eighth__title span {
-        font-size: 22px
-    }
-}
-
 .eighth__subtitle {
     position: relative;
-    width: 950px;
-    margin: 0 0 22px
-}
-
-@media (max-width: 1919px) {
-    .eighth__subtitle {
-        margin: 0 0 22px 100px
-    }
-}
-
-@media (max-width: 1599px) {
-    .eighth__subtitle {
-        width: 800px;
-        margin: 0 0 22px 50px
-    }
+    width: 300px;
+    margin: 0 auto 3px
 }
 
 .eighth__subtitle-num {
     position: absolute;
-    top: -83px;
+    top: -31px;
     left: 57px;
     font-family: "RussoOne";
-    font-size: 225px;
+    font-size: 110px;
     line-height: 1;
     letter-spacing: -3px;
     color: #bf1e2e
-}
-
-@media (max-width: 1599px) {
-    .eighth__subtitle-num {
-        font-size: 170px
-    }
 }
 
 .eighth__subtitle-num:after {
@@ -2122,37 +2052,26 @@ button.button--red:hover:after {
 }
 
 .eighth__subtitle-title {
-    padding: 20px 0 6px 39px;
+    padding: 20px 0 6px 34px;
     font-family: "RoadRadio-Black";
-    font-size: 35px;
+    font-size: 22px;
     letter-spacing: -0.7px;
     color: #bf1e2e
 }
 
-@media (max-width: 1599px) {
-    .eighth__subtitle-title {
-        font-size: 24px
-    }
-}
-
 .eighth__subtitle-text {
-    padding: 0 0 25px 136px;
+    padding: 0 0 34px;
     font-family: "RoadRadio-Bold";
-    font-size: 25px;
+    font-size: 18px;
     letter-spacing: -0.7px;
+    text-align: center;
     color: #3b3b3b
-}
-
-@media (max-width: 1599px) {
-    .eighth__subtitle-text {
-        font-size: 19px
-    }
 }
 
 .eighth__subtitle-decor--top {
     position: absolute;
-    top: -5px;
-    left: 7px;
+    top: -1px;
+    left: 5px;
     width: 30px;
     height: 30px
 }
@@ -2160,7 +2079,7 @@ button.button--red:hover:after {
 .eighth__subtitle-decor--bottom {
     position: absolute;
     bottom: 0;
-    right: 3px;
+    right: 5px;
     width: 30px;
     height: 30px
 }
@@ -2174,51 +2093,38 @@ button.button--red:hover:after {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 0 0 0 88px
+    padding: 0 0 0 100px
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .eighth__content {
-        justify-content: flex-start
+        padding: 0 0 0 25px
     }
 }
 
 .eighth__user {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 583px;
-    margin: 0 0 36px
+    width: 50%;
+    margin: 0 0 -9px
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .eighth__user {
-        width: 48%;
-        margin: 0 0 15px
+        width: 100%;
+        margin: 0 0 10px
     }
 }
 
-@media (max-width: 1599px) {
-    .eighth__user {
-        width: 46%
-    }
-}
-
-@media (max-width: 1599px) {
-    .eighth__user-photo {
-        width: 130px;
-        height: 130px
-    }
-
-    .eighth__user-photo img {
-        transform: scale(0.7);
-        transform-origin: 0% 20%
-    }
+.eighth__user-photo {
+    text-align: center;
+    margin: 0 0 -6px
 }
 
 .eighth__user-content {
     position: relative;
-    padding: 37px 0 0 32px;
     letter-spacing: -0.5px
 }
 
@@ -2228,28 +2134,17 @@ button.button--red:hover:after {
     color: #000
 }
 
-@media (max-width: 1599px) {
-    .eighth__user-name {
-        font-size: 17px
-    }
-}
-
 .eighth__user-descr {
     font-family: "RoadRadio-Bold";
-    font-size: 18px;
+    font-size: 17px;
     color: #000;
     margin: 0 0 3px
 }
 
-@media (max-width: 1599px) {
-    .eighth__user-descr {
-        font-size: 15px
-    }
-}
-
 .eighth__user-text {
+    padding: 0 30px 0 0;
     font-family: "Jura-DemiBold";
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: -0.4px;
     color: #3b3b3b
 }
@@ -2258,108 +2153,72 @@ button.button--red:hover:after {
     font-size: 24px
 }
 
-@media (max-width: 1599px) {
-    .eighth__user-text {
-        font-size: 15px
-    }
-
-    .eighth__user-text span {
-        font-size: 19px
-    }
-}
-
 .eighth__user-decor {
     position: absolute;
-    top: 20px;
-    left: 5px;
+    top: -32px;
+    left: -26px;
     width: 30px;
     height: 30px
 }
 
 .ninth {
-    position: relative;
-    padding: 56.75% 0 0;
     background: url("../images/ninth/ninth_bg.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
 .ninth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    padding: 0 0 60px;
     color: #fff;
-    background: url("../images/ninth/red.png") 85% 35% no-repeat
+    background: url("../images/ninth/red.png") 11% 35% no-repeat
+}
+
+@media (max-width: 799px) {
+    .ninth__outer {
+        height: 100%;
+        background-position-x: center;
+        background-position-y: -100%
+    }
+}
+
+@media (max-width: 450px) {
+    .ninth__outer {
+        background-position-y: -400%
+    }
 }
 
 .ninth__inner {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    width: 83.33%;
-    padding: 208px 0 0
+    align-items: flex-start
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .ninth__inner {
-        padding: 150px 0 0;
-        margin: 0 0 0 150px
-    }
-}
-
-@media (max-width: 1599px) {
-    .ninth__inner {
-        padding: 112px 0 0;
-        margin: 0 0 0 8vw
+        flex-direction: column
     }
 }
 
 .ninth__item {
-    width: 490px;
-    margin: 0 0 0 8px
+    width: 47.5%;
+    padding: 29px 0 0;
+    margin: 0 2.5% 0 8px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .ninth__item {
-        width: 370px
-    }
-}
-
-.ninth__item:first-child {
-    margin: 0 225px 0 8px
-}
-
-@media (max-width: 1919px) {
-    .ninth__item:first-child {
-        margin: 0 100px 0 8px
-    }
-}
-
-@media (max-width: 1599px) {
-    .ninth__item:first-child {
-        margin: 0 70px 0 8px
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto
     }
 }
 
 .ninth__item--red .ninth__item-title {
-    padding: 0 106px 20px 0;
     color: #bf1e2e
-}
-
-@media (max-width: 1599px) {
-    .ninth__item--red .ninth__item-title {
-        padding: 0 50px 20px 0
-    }
 }
 
 .ninth__item--red .ninth__item-title span {
     border-color: #bf1e2e
-}
-
-.ninth__item--red .ninth__item-text {
-    padding: 22px 23px 18px 28px
 }
 
 .ninth__item--red .ninth__item-text p {
@@ -2376,9 +2235,9 @@ button.button--red:hover:after {
 }
 
 .ninth__item-title {
-    padding: 0 26px 20px 0;
+    padding: 0 26px 68px 0;
     font-family: "RoadRadio-bold";
-    font-size: 35px;
+    font-size: 25px;
     letter-spacing: -0.3px;
     text-align: center
 }
@@ -2393,18 +2252,12 @@ button.button--red:hover:after {
     border-bottom: 1px solid #fff
 }
 
-@media (max-width: 1599px) {
-    .ninth__item-title {
-        font-size: 24px
-    }
-}
-
 .ninth__item-text {
     position: relative;
-    padding: 59px 23px 59px 29px;
+    padding: 62px 17px 17px 11px;
     font-family: "Jura-DemiBold";
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 23px;
     letter-spacing: -0.3px;
     text-shadow: 0px 1px 17.1px rgba(0, 0, 0, 0.63);
     color: #fefefe;
@@ -2412,21 +2265,15 @@ button.button--red:hover:after {
     border: 1px dashed rgba(255, 255, 255, 0.2)
 }
 
-@media (max-width: 1599px) {
-    .ninth__item-text {
-        font-size: 16px
-    }
-}
-
 .ninth__item-icon {
     position: absolute;
     top: -58px;
-    right: -58px;
+    left: calc(50% - 55px);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 116px;
-    height: 116px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     border: 1px dashed rgba(255, 255, 255, 0.2)
 }
@@ -2442,109 +2289,88 @@ button.button--red:hover:after {
 }
 
 .tenth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: #e8e8e8 radial-gradient(circle, rgba(232, 232, 232, 0), #e8e8e8) right top no-repeat;
-    background-size: 15.75% 50%;
+    height: 310px;
     overflow: hidden
 }
 
-.tenth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0) 15.75%, #fff 15.75%) right center no-repeat;
-    background-size: 100% 100%;
-    opacity: 0.99
-}
-
 .tenth__title {
-    padding: 112px 113px 0 0;
+    padding: 32px 0 0;
     font-family: "RussoOne";
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: -0.7px;
     text-transform: uppercase;
-    margin: 0 0 265px
+    margin: 0 0 65px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .tenth__title {
-        font-size: 32px
-    }
-}
-
-@media (max-width: 1599px) {
-    .tenth__title {
-        margin: 0 0 150px
+        font-size: 25px;
+        text-align: center
     }
 }
 
 .tenth__title--red {
+    display: block;
     color: #bf1e2e;
     text-align: center;
-    margin: 0 0 -2px
+    margin: 0 0
+}
+
+@media (max-width: 799px) {
+    .tenth__title--red {
+        display: inline
+    }
 }
 
 .tenth__title--dark {
+    display: block;
     color: #000;
     text-align: center
 }
 
-.tenth__logo {
-    padding: 0 0 0 6px
-}
-
-@media (max-width: 1919px) {
-    .tenth__logo {
-        padding: 0 0 0 130px
+@media (max-width: 799px) {
+    .tenth__title--dark {
+        display: inline
     }
 }
 
+.tenth__logo {
+    padding: 0 0 0 6px;
+    text-align: center
+}
+
+.tenth__logo img {
+    max-width: 45%
+}
+
 .eleventh {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/eleventh/eleventh_bg.png") center center no-repeat;
+    padding: 0 0 60px;
+    background: url("../images/eleventh/eleventh_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
 .eleventh__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     color: #000
 }
 
+.eleventh__inner {
+    width: 100%;
+    overflow: hidden
+}
+
 .eleventh__title {
-    padding: 112px 113px 0 0;
+    padding: 32px 0 0 0;
     font-family: "RussoOne";
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: -0.7px;
     text-transform: uppercase;
     margin: 0 0 11px
 }
 
-@media (max-width: 1919px) {
-    .eleventh__title {
-        padding: 60px 100px 30px 0
-    }
-}
-
-@media (max-width: 1599px) {
-    .eleventh__title {
-        padding: 40px 100px 20px 0;
-        font-size: 32px
-    }
-}
-
 .eleventh__title--red {
     color: #bf1e2e;
-    text-align: center;
-    margin: 0 0 -2px
+    text-align: center
 }
 
 .eleventh__title--dark {
@@ -2553,50 +2379,34 @@ button.button--red:hover:after {
 }
 
 .eleventh__content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start
+    width: 200%;
+    transition: transform 0.5s;
 }
 
 .eleventh__questions {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-width: 1082px;
-    padding: 27px 0 0 300px;
-    border-radius: 3px;
-    border: 1px dashed #6a6a6a;
-    margin: 0 0 0 -300px
-}
-
-@media (max-width: 1599px) {
-    .eleventh__questions {
-        max-width: 900px
-    }
-}
-
-.eleventh__questions-elem {
-    position: absolute;
-    top: 67px;
-    right: -17px;
-    width: 30px;
-    height: 30px;
-    border-radius: 3px;
-    border-right: 1px dashed #6a6a6a;
-    border-bottom: 1px dashed #6a6a6a;
-    transform: rotate(-45deg);
-    overflow: hidden
+    display: inline-block;
+    width: 50%;
+    padding: 27px 0 0
 }
 
 .eleventh__questions-elem_img {
-    width: 141%;
-    height: 141%;
-    transform: rotate(45deg)
+    display: none
+}
+
+.eleventh__questions-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%
+}
+
+@media (max-width: 799px) {
+    .eleventh__questions-item {
+        width: 100%
+    }
 }
 
 .eleventh__questions-item:first-child {
-    max-width: 53.1%
+    margin: 0 5% 0 0
 }
 
 .eleventh__questions-item:first-child .eleventh__item-title {
@@ -2604,16 +2414,9 @@ button.button--red:hover:after {
     color: #bf1e2e
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .eleventh__questions-item:first-child .eleventh__item-title {
-        padding: 27px 0 29px 34px
-    }
-}
-
-@media (max-width: 1599px) {
-    .eleventh__questions-item:first-child .eleventh__item-title {
-        padding: 18px 0 15px 36px;
-        transform: translate3d(30px, 0, 0)
+        padding: 12px 0 10px 10px
     }
 }
 
@@ -2623,42 +2426,30 @@ button.button--red:hover:after {
     min-width: 347px;
     padding: 16px 0 17px 36px;
     font-family: "RoadRadio-Black";
-    font-size: 35px;
+    font-size: 30px;
     letter-spacing: -0.6px
 }
 
-@media (max-width: 1919px) {
-    .eleventh__item-title {
-        padding: 6px 0 7px 36px
-    }
-}
-
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .eleventh__item-title {
         min-width: 0;
-        padding: 11px 0 7px 36px;
-        font-size: 22px
+        padding: 12px 0 10px 10px;
+        color: #bf1e2e
     }
 }
 
 .eleventh__item-decor--top {
     position: absolute;
-    top: -5px;
-    left: 7px;
+    top: -9px;
+    left: 1px;
     width: 30px;
     height: 30px
 }
 
-@media (max-width: 1599px) {
-    .eleventh__item-decor--top {
-        left: 20px
-    }
-}
-
 .eleventh__item-decor--bottom {
     position: absolute;
-    bottom: 0;
-    right: 3px;
+    bottom: -8px;
+    right: -1px;
     width: 30px;
     height: 30px
 }
@@ -2671,32 +2462,20 @@ button.button--red:hover:after {
     padding: 1px 0 0 64px
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .eleventh__item-list {
-        margin-top: 0
+        padding: 1px 0 0 25px
     }
 }
 
 .eleventh__item-list li {
     position: relative;
     font-family: "Jura-DemiBold";
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.22;
     letter-spacing: -0.4px;
     padding: 0;
     margin: 0 0 13px
-}
-
-@media (max-width: 1919px) {
-    .eleventh__item-list li {
-        margin: 0 0 5px
-    }
-}
-
-@media (max-width: 1599px) {
-    .eleventh__item-list li {
-        font-size: 13px
-    }
 }
 
 .eleventh__item-list li:before {
@@ -2706,7 +2485,7 @@ button.button--red:hover:after {
     left: -27px;
     display: block;
     background-image: url(../images/sprite.png);
-    background-position: -287px -154px;
+    background-position: -77px -118px;
     width: 18px;
     height: 18px
 }
@@ -2716,15 +2495,11 @@ button.button--red:hover:after {
     line-height: 1
 }
 
-@media (max-width: 1599px) {
-    .eleventh__item-list li span {
-        font-size: 13px
-    }
-}
-
 .eleventh__howmuch {
-    width: 620px;
-    margin: 0 0 0 14px
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    margin: 0 0 0
 }
 
 .eleventh__howmuch-title {
@@ -2734,13 +2509,6 @@ button.button--red:hover:after {
     letter-spacing: -0.6px;
     color: #bf1e2e;
     margin: 0 0 12px
-}
-
-@media (max-width: 1599px) {
-    .eleventh__howmuch-title {
-        font-size: 22px;
-        margin: 0
-    }
 }
 
 .eleventh__howmuch-text {
@@ -2756,16 +2524,9 @@ button.button--red:hover:after {
     margin: 0 0 2px
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .eleventh__howmuch-text p {
-        font-size: 17px
-    }
-}
-
-@media (max-width: 1599px) {
-    .eleventh__howmuch-text p {
-        padding: 8px 190px 8px 16px;
-        font-size: 13px
+        padding: 6px 0 6px 10px
     }
 }
 
@@ -2773,203 +2534,196 @@ button.button--red:hover:after {
     background-image: linear-gradient(to right, rgba(191, 30, 46, 0.2), rgba(191, 30, 46, 0))
 }
 
+.eleventh__pagination {
+    text-align: center
+}
+
+.eleventh__pagination-left,
+.eleventh__pagination-right {
+    display: inline-block;
+    vertical-align: top;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #bf1e2e;
+    cursor: pointer
+}
+
+.eleventh__pagination-left.is-active,
+.eleventh__pagination-right.is-active {
+    background-color: #bf1e2e;
+    pointer-events: none
+}
+
+.eleventh__pagination-right {
+    margin: 0 0 0 10px
+}
+
 .twelfth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/twelfth/twelfth_bg.png") center center no-repeat;
+    padding: 0 0 60px;
+    background: url("../images/twelfth/twelfth_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
 .twelfth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
+    width: 100%
 }
 
 .twelfth__inner {
-    padding: 112px 16.67% 0 8.33%
-}
-
-@media (max-width: 1919px) {
-    .twelfth__inner {
-        padding: 40px 16.67% 0 8.33%
-    }
+    width: 100%;
+    padding: 12px 0 0 0
 }
 
 .twelfth__title {
-    padding: 0 0 63px 15px;
+    padding: 20px 0 48px 15px;
     font-family: "RussoOne";
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: -0.5px;
     text-transform: uppercase;
     text-align: center;
     color: #fff
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .twelfth__title {
-        padding: 0 0 23px 15px
-    }
-}
-
-@media (max-width: 1599px) {
-    .twelfth__title {
-        font-size: 28px
+        font-size: 25px
     }
 }
 
 .twelfth__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin: 0 0 2px
+    width: 70%;
+    margin: 0 auto 2px
+}
+
+@media (max-width: 799px) {
+    .twelfth__content {
+        width: 100%;
+        max-width: 470px
+    }
 }
 
 .twelfth__item {
+    display: block;
     font-family: "RoadRadio";
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     text-decoration: none;
-    margin: 5px 0 51px
-}
-
-.twelfth__item.is-close {
-    text-decoration: none;
+    margin: 5px auto 24px
 }
 
 .twelfth__item img {
+    width: 100%;
     display: block;
     border: 2px solid #bf1e2e;
     transition: box-shadow 0.5s ease;
-    margin: 0 0 5px
-}
-
-@media (max-width: 1599px) {
-    .twelfth__item {
-        font-size: 13px
-    }
-
-    .twelfth__item img {
-        width: 22vw
-    }
+    margin: 0 auto 5px
 }
 
 .twelfth__item:hover img {
     box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.4)
 }
 
-@media (max-width: 1919px) {
-    .twelfth__button button.button--red {
-        margin: 0 auto
+.twelfth__item.is-close {
+    display: none
+}
+
+.twelfth__button .button--red {
+    margin: 0 auto
+}
+
+@media (max-width: 799px) {
+    .twelfth__button .button--red {
+        max-width: 90%;
+        height: 40px
     }
 }
 
 .thirteenth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/thirteenth/thirteenth_bg.png") center center no-repeat;
+    padding: 0 0 60px;
+    background: url("../images/thirteenth/thirteenth_bg_750.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
 .thirteenth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     color: #000
 }
 
-.thirteenth__inner {
-    width: 75%;
-    padding: 0 15px;
-    margin: 0 0 0 8.33%
-}
-
 .thirteenth__title {
-    padding: 112px 113px 0 0;
+    padding: 33px 0 0 29px;
     font-family: "RussoOne";
-    font-size: 40px;
-    letter-spacing: -0.7px;
+    font-size: 30px;
+    letter-spacing: -0.4px;
     text-transform: uppercase;
     margin: 0 0 39px
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .thirteenth__title {
-        padding: 60px 113px 0 0
-    }
-}
-
-@media (max-width: 1599px) {
-    .thirteenth__title {
-        padding: 40px 113px 0 0;
-        font-size: 32px;
-        margin: 0 0 2vw
+        padding: 33px 0 0;
+        font-size: 25px;
+        text-align: center
     }
 }
 
 .thirteenth__title--red {
+    display: block;
     color: #bf1e2e;
     text-align: center;
     margin: 0 0 -2px
 }
 
+@media (max-width: 799px) {
+    .thirteenth__title--red {
+        display: inline
+    }
+}
+
 .thirteenth__title--dark {
+    display: block;
     color: #000;
     text-align: center
 }
 
-.thirteenth__player {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 0 23px
-}
-
-.thirteenth__player .video {
-    width: 572px;
-    height: 318px
-}
-
-@media (max-width: 1599px) {
-    .thirteenth__player .video {
-        width: 400px;
-        height: 222px
+@media (max-width: 799px) {
+    .thirteenth__title--dark {
+        display: inline
     }
 }
 
+.thirteenth__player {
+    margin: 0 0 0
+}
+
+.thirteenth__player .video {
+    width: 581px;
+    height: 288px;
+    margin: 0 auto
+}
+
 .thirteenth__player-descr {
+    display: flex;
+    flex-direction: column-reverse;
     font-family: "RoadRadio-Black";
     font-size: 25px;
-    margin: 0 52px 0 0
+    margin: 0 0 0 0
 }
 
 .thirteenth__player-descr span {
     display: block;
     font-family: "RoadRadio-Bold";
-    font-size: 22px
-}
-
-@media (max-width: 1599px) {
-    .thirteenth__player-descr {
-        font-size: 19px
-    }
-
-    .thirteenth__player-descr span {
-        font-size: 15px
-    }
+    font-size: 20px
 }
 
 .thirteenth__player-title {
     position: relative;
     padding: 19px 16px 24px 24px;
     margin: 0 0 23px
+}
+
+.thirteenth__player-title br {
+    display: none
 }
 
 .thirteenth__playr-decor--top,
@@ -2994,14 +2748,10 @@ button.button--red:hover:after {
 }
 
 .thirteenth__player-address {
+    width: 581px;
     font-family: "RoadRadio";
-    font-size: 18px
-}
-
-@media (max-width: 1599px) {
-    .thirteenth__player-address {
-        font-size: 16px
-    }
+    font-size: 18px;
+    margin: 12px auto
 }
 
 .thirteenth__player-address .icon {
@@ -3010,14 +2760,9 @@ button.button--red:hover:after {
 
 .thirteenth__items {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start
-}
-
-@media (max-width: 1599px) {
-    .thirteenth__items {
-        margin: 0 0 2vw
-    }
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap
 }
 
 .thirteenth__items .twelfth__item {
@@ -3025,22 +2770,9 @@ button.button--red:hover:after {
     color: #000
 }
 
-@media (max-width: 1919px) {
-    .thirteenth__items .twelfth__item {
-        margin: 0 0 20px
-    }
-}
-
 .thirteenth__items .twelfth__item img {
-    width: 356px;
-    height: 236px
-}
-
-@media (max-width: 1599px) {
-    .thirteenth__items .twelfth__item img {
-        width: 270px;
-        height: 179px
-    }
+    width: 300px;
+    height: 200px
 }
 
 .thirteenth__items .twelfth__item:after {
@@ -3054,6 +2786,12 @@ button.button--red:hover:after {
     background-position: 0px -66px;
     width: 70px;
     height: 70px
+}
+
+.thirteenth__button .button--red {
+    width: 460px;
+    height: 50px;
+    margin: 0 auto
 }
 
 .video {
@@ -3131,79 +2869,67 @@ button.button--red:hover:after {
 }
 
 .fourteenth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url("../images/fourteenth/fourteenth_bg.png") center center no-repeat;
-    background-size: cover;
     overflow: hidden
 }
 
-.fourteenth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
-}
-
 .fourteenth__title {
-    padding: 111px 111px 0 0;
+    padding: 32px 0 52px;
     font-family: "RussoOne";
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: -0.6px;
     color: #fff;
     text-align: center;
-    text-transform: uppercase
+    text-transform: uppercase;
+    background-color: #000
 }
 
-@media (max-width: 1599px) {
-    .fourteenth__title {
-        padding: 60px 111px 0 0;
-        font-size: 32px
-    }
+.fourteenth__map {
+    width: 100%;
+    height: 400px
+}
+
+.fourteenth__map #map {
+    width: 100%;
+    height: 400px;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(100%);
 }
 
 .fifteenth {
-    position: relative;
-    padding: 56.75% 0 0;
+    padding: 0 0 40px;
     background: url("../images/fifteenth/fifteenth_bg.png") center center no-repeat;
     background-size: cover;
     overflow: hidden
 }
 
 .fifteenth__outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     color: #000
 }
 
+.fifteenth .container {
+    padding: 0
+}
+
 .fifteenth__inner {
-    padding: 0 110px 0 0
+    padding: 0 10px 0 0
 }
 
 .fifteenth__title {
-    padding: 109px 113px 0 0;
+    padding: 35px 0 0 0;
     font-family: "RussoOne";
-    font-size: 40px;
+    font-size: 30px;
     letter-spacing: -0.7px;
     text-transform: uppercase;
-    margin: 0 0 124px
+    text-align: center;
+    margin: 0 0 21px
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .fifteenth__title {
-        margin: 0 0 20px
-    }
-}
-
-@media (max-width: 1599px) {
-    .fifteenth__title {
-        padding: 4vw 0 0 50px;
-        font-size: 32px;
-        margin: 0 0 3vw
+        font-size: 25px
     }
 }
 
@@ -3213,9 +2939,21 @@ button.button--red:hover:after {
     margin: 0 0 -2px
 }
 
+@media (max-width: 799px) {
+    .fifteenth__title--red {
+        display: block
+    }
+}
+
 .fifteenth__title--white {
     color: #fff;
     text-align: center
+}
+
+@media (max-width: 799px) {
+    .fifteenth__title--white {
+        display: block
+    }
 }
 
 .fifteenth__content {
@@ -3223,26 +2961,18 @@ button.button--red:hover:after {
 }
 
 .fifteenth__form {
-    width: 1140px;
-    height: 609px;
-    padding: 11px;
+    width: 595px;
+    padding: 2px;
     border-radius: 3px;
     background-color: #fff;
-    opacity: 0.902;
     box-shadow: 0px 2px 9.5px 0.5px rgba(0, 0, 0, 0.25);
     margin: 0 auto
 }
 
-@media (max-width: 1919px) {
+@media (max-width: 799px) {
     .fifteenth__form {
-        height: 545px
-    }
-}
-
-@media (max-width: 1599px) {
-    .fifteenth__form {
-        width: 800px;
-        height: 400px
+        max-width: 95%;
+        min-width: 310px
     }
 }
 
@@ -3259,63 +2989,43 @@ button.button--red:hover:after {
 .fifteenth__form-inner {
     width: 100%;
     height: 100%;
-    padding: 61px 0 0;
+    padding: 23px 0 36px;
     border-width: 2px;
     border-color: #bf1e2e;
     border-style: solid;
-    border-radius: 3px;
-    opacity: 0.902
-}
-
-@media (max-width: 1919px) {
-    .fifteenth__form-inner {
-        padding: 30px 0 0
-    }
-}
-
-@media (max-width: 1599px) {
-    .fifteenth__form-inner {
-        padding: 10px 0 0
-    }
+    border-radius: 3px
 }
 
 .fifteenth__form-title {
-    width: 75%;
+    width: 80%;
     font-family: "RoadRadio-Black";
-    font-size: 30px;
+    font-size: 22px;
     letter-spacing: -0.5px;
     color: #000;
-    margin: 0 auto 28px
+    margin: 0 auto
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 799px) {
     .fifteenth__form-title {
-        font-size: 20px;
-        margin: 0 auto 10px
+        min-width: 290px;
+        font-size: 18px
     }
 }
 
 .fifteenth__form-inputs {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 72%;
+    width: 87%;
     text-align: center;
     margin: 0 auto 7px
 }
 
-@media (max-width: 1599px) {
-    .fifteenth__form-inputs {
-        width: 90%
-    }
+.fifteenth__form-input {
+    margin: 28px 0 20px
 }
 
-.fifteenth__form-input {
-    display: inline-block;
-    vertical-align: top;
-    width: 365px;
-    margin: 30px 0 31px
+@media (max-width: 799px) {
+    .fifteenth__form-input {
+        margin: 21px 0 29px
+    }
 }
 
 .fifteenth__form-input input {
@@ -3327,10 +3037,9 @@ button.button--red:hover:after {
     border-bottom: 2px solid #818181
 }
 
-@media (max-width: 1599px) {
-    .fifteenth__form-input {
-        width: 320px;
-        margin: 10px 0
+@media (max-width: 799px) {
+    .fifteenth__form-input input {
+        font-size: 18px
     }
 }
 
@@ -3341,8 +3050,8 @@ button.button--red:hover:after {
 .fifteenth__form-input.is-necessarily:after {
     content: '*';
     position: absolute;
-    top: 0;
-    right: 15px;
+    top: 3px;
+    right: 11px;
     font-size: 30px;
     color: #bf1e2e
 }
@@ -3352,12 +3061,6 @@ button.button--red:hover:after {
     font-size: 15px;
     color: #000;
     margin: 0 0 22px
-}
-
-@media (max-width: 1599px) {
-    .fifteenth__note_title {
-        font-size: 13px
-    }
 }
 
 .fifteenth__note_title span {
@@ -3380,24 +3083,20 @@ button.button--red:hover:after {
     margin: 0 auto
 }
 
-.fifteenth__footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 107px
+@media (max-width: 799px) {
+    .fifteenth__form-button button {
+        max-width: 95%
+    }
 }
 
-@media (max-width: 1599px) {
-    .fifteenth__footer {
-        height: 70px
-    }
+.fifteenth__footer {
+    padding: 20px 0 0
 }
 
 .fifteenth__footer .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     font-family: "Jura-DemiBold";
     color: #fff
 }
@@ -3407,7 +3106,7 @@ button.button--red:hover:after {
 }
 
 .fifteenth__footer-phone {
-    padding: 13px 0 0;
+    order: 1;
     font-family: "RussoOne";
     font-size: 20px
 }
@@ -3418,13 +3117,6 @@ button.button--red:hover:after {
     padding: 13px 0 0;
     text-decoration: none;
     margin: 0 0 0 20px
-}
-
-@media (max-width: 1599px) {
-    .fifteenth__footer-phone {
-        padding: 0;
-        font-size: 16px
-    }
 }
 
 .fifteenth__footer-phone_icon {
@@ -3439,61 +3131,39 @@ button.button--red:hover:after {
     margin: 9px 0 0
 }
 
-@media (max-width: 1599px) {
-    .fifteenth__footer-phone_icon {
-        margin: 5px 0 0
-    }
-}
-
 .fifteenth__footer-phone_icon img {
     transform: rotate(-45deg)
 }
 
 .fifteenth__footer-mail {
-    padding: 27px 0 0;
+    order: 2;
+    padding: 17px 0 0;
     font-size: 18px;
     letter-spacing: -0.6px
 }
 
-@media (max-width: 1599px) {
-    .fifteenth__footer-mail {
-        padding: 13px 0 0;
-        font-size: 13px
-    }
+.fifteenth__footer-logo {
+    order: 0
 }
 
 .fifteenth__footer-logo img {
     width: 260px
 }
 
-@media (max-width: 1599px) {
-    .fifteenth__footer-logo img {
-        width: 150px
-    }
-}
-
 .fifteenth__footer-address {
-    padding: 25px 0 0;
+    order: 3;
+    width: 250px;
+    padding: 15px 0 0;
     font-size: 20px;
-    letter-spacing: -0.6px
-}
-
-@media (max-width: 1599px) {
-    .fifteenth__footer-address {
-        padding: 12px 0 0;
-        font-size: 14px
-    }
+    line-height: 20px;
+    letter-spacing: -0.6px;
+    text-align: center;
+    margin: 0 auto
 }
 
 .fifteenth__footer-copy {
-    padding: 30px 0 0;
+    order: 4;
+    padding: 15px 0 0;
     font-size: 15px;
     letter-spacing: -0.6px
-}
-
-@media (max-width: 1599px) {
-    .fifteenth__footer-copy {
-        padding: 13px 0 0;
-        font-size: 13px
-    }
 }
