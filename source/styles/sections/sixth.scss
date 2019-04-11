@@ -21,8 +21,13 @@
         text-align: center;
         text-transform: uppercase;
         color: #bf1e2e;
-        margin: 0 0 71px;
+        margin: 0 0 21px;
 
+        @media (max-width: 799px) {
+            margin: 0 0 13px;
+        }
+
+    
         span {
             display: inline-block;
             vertical-align: top;
@@ -35,8 +40,8 @@
 
     &__content {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        flex-direction: column-reverse;
+        overflow: hidden;
     }
 
     &__col-one {
@@ -44,34 +49,38 @@
     }
 
     &__col-too {
-        display: none;
-    }
-
-    &__col-three {
-        display: none;
-        margin: 125px 0 0;
+        display: flex;
+        justify-content: flex-start;
+        width: 400%;
     }
 
     &__item {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 0 0 44px;
+        width: 25%;
+        margin: 0 0 31px;
     }
 
     &__item-image {
-        display: inline-block;
-        vertical-align: top;
-        min-width: 269px;
+        text-align: center;
+        margin: 0 0 -35px;
+
+        @media (max-width: 799px) {
+            margin: -11px 0 -35px;
+        }
+
+        img {
+            width: 200px;
+        }
     }
+    
 
     &__item-content {
         padding: 29px 0 0;
-        margin: 0 0 0 -49px;
+        margin: 0 0 0;
     }
     
     &__item-title {
-        padding: 0 0 7px;
+        max-width: 470px;
+        padding: 0 0 3px;
         font-family: "RoadRadio-Bold";
         font-size: 25px;
         letter-spacing: -0.6px;
@@ -82,37 +91,80 @@
             font-size: 20px;
             font-weight: bold;
         }
+
+        @media (max-width: 799px) {
+            margin: 0 0 10px 20px;
+        }
     }
 
     &__item-text {
-        padding: 0 0 0 27px;
+        padding: 0 0 0;
         font-family: "Jura-DemiBold";
-        font-size: 15px;
+        font-size: 18px;
+    }
+
+    &__pagination {
+        text-align: center;
+    }
+
+    &__pagination-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #bf1e2e;
+        margin: 0 0 0 10px;
+        cursor: pointer;
+
+        &:first-child {
+            margin: 0;
+        }
+
+        &.is-active {
+            background-color: #bf1e2e;
+            pointer-events: none;
+        }
     }
 }
 
 .calculator {
-    width: 360px;
-    padding: 42px 34px;
+    width: 470px;
+    padding: 22px 87px;
     color: #fff;
     border-radius: 2px;
     background-image: linear-gradient(to right, #bf1e2e, #c35e68);
     box-shadow: 0px 1px 5.7px 0.3px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+
+    @media (max-width: 799px) {
+        width: 290px;
+        padding: 22px 20px;
+    }
 
     &__title {
-        padding: 0 0 14px;
+        padding: 0 0 11px;
         font-family: "RoadRadio-Bold";
         font-size: 25px;
         letter-spacing: -0.8px;
         border-bottom: 2px solid #fff;
+
+        @media (max-width: 799px) {
+            padding: 0 0 7px;
+            text-align: center;
+        }
     }
     
     &__list {
-        padding: 20px 0 0 20px;
+        padding: 18px 0 0 22px;
         font-family: "Jura-DemiBold";
         font-size: 16px;
         border-bottom: 2px solid #da4453;
-        margin: 0 0 30px;
+        margin: 0 30px 21px;
+
+        @media (max-width: 799px) {
+            margin: 0 0 21px;
+        }
         
         input {
             display: none;
@@ -125,11 +177,11 @@
         label {
             position: relative;
             display: block;
-            margin: 0 0 30px 19px;
+            margin: 0 0 20px 19px;
             cursor: pointer;
 
             &:last-child {
-                margin: 0 0 27px 19px;
+                margin: 0 0 21px 19px;
             }
 
             &:after {
@@ -155,7 +207,11 @@
     &__result-title {
         font-family: "RoadRadio-Bold";
         font-size: 16px;
-        margin: 0 0 9px;
+        margin: 0 30px 9px;
+
+        @media (max-width: 799px) {
+            margin: 0 0 9px;
+        }
     }
     
     &__result-month,
@@ -168,10 +224,14 @@
         font-size: 16px;
         line-height: 0.8;
         border-top: 1px solid #da4453;
-        margin: 0 0 -7px;
+        margin: 0 30px -7px;
+
+        @media (max-width: 799px) {
+            margin: 0 0 -7px;
+        }
 
         span {
-            font-size: 20px;
+            font-size: 18px;
         }
     }
 }

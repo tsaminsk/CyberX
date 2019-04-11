@@ -33,6 +33,7 @@
 
     &__content {
         width: 200%;
+        // transform: translate3d(-50%, 0, 0);
     }
 
     &__questions {
@@ -42,16 +43,6 @@
     }
 
     &__questions-elem {
-        // position: absolute;
-        // top: 67px;
-        // right: -17px;
-        // width: 30px;
-        // height: 30px;
-        // border-radius: 3px;
-        // border-right: 1px dashed #6a6a6a;
-        // border-bottom: 1px dashed #6a6a6a;
-        // transform: rotate(-45deg);
-        // overflow: hidden;
         
         &_img {
             display: none;
@@ -63,12 +54,20 @@
         vertical-align: top;
         width: 45%;
 
+        @media (max-width: 799px) {
+            width: 100%;
+        }
+
         &:first-child {
             margin: 0 5% 0 0;
-            // max-width: 53.1%;
+
             .eleventh__item-title {
                 padding: 37px 0 39px 34px;
                 color: #bf1e2e;
+
+                @media (max-width: 799px) {
+                    padding: 12px 0 10px 10px;
+                }
             }
         }
     }
@@ -81,20 +80,26 @@
         font-family: "RoadRadio-Black";
         font-size: 30px;
         letter-spacing: -0.6px;
+
+        @media (max-width: 799px) {
+            min-width: 0;
+            padding: 12px 0 10px 10px;
+            color: #bf1e2e;
+        }
     }
 
     &__item-decor--top {
         position: absolute;
-        top: -5px;
-        left: 7px;
+        top: -9px;
+        left: 1px;
         width: 30px;
         height: 30px;
     }
 
     &__item-decor--bottom {
         position: absolute;
-        bottom: 0;
-        right: 3px;
+        bottom: -8px;
+        right: -1px;
         width: 30px;
         height: 30px;
 
@@ -105,6 +110,10 @@
 
     &__item-list {
         padding: 1px 0 0 64px;
+
+        @media (max-width: 799px) {
+            padding: 1px 0 0 25px;
+        }
         
         li {
             position: relative;
@@ -157,6 +166,10 @@
             width: 100%;
             padding: 8px 120px 8px 16px;
             margin: 0 0 2px;
+
+            @media (max-width: 799px) {
+                padding: 6px 0 6px 10px;
+            }
             
             &:last-child {
                 background-image: linear-gradient(to right, rgba(#bf1e2e, 0.2), rgba(#bf1e2e, 0));
@@ -165,6 +178,7 @@
     }
 
     &__pagination {
+        // padding: 20px 0 0;
         text-align: center;
     }
 
@@ -172,8 +186,8 @@
     &__pagination-right {
         display: inline-block;
         vertical-align: top;
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         border: 1px solid #bf1e2e;
         cursor: pointer;

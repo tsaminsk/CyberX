@@ -1,30 +1,22 @@
 .fourteenth {
-    position: relative;
-    padding: 56.75% 0 0;
-    background: url('../images/fourteenth/fourteenth_bg.png') center center no-repeat;
-    background-size: cover;
     overflow: hidden;
 
     &__outer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
     }
 
     &__title {
-        padding: 111px 111px 0 0;
+        padding: 40px 0 50px;
         font-family: "RussoOne";
-        font-size: 40px;
+        font-size: 30px;
         letter-spacing: -0.6px;
         color:#fff;
         text-align: center;
         text-transform: uppercase;
+        background-color: #000;
+    }
 
-        @media (max-width: 1599px) {
-            padding: 60px 111px 0 0;
-            font-size: 32px;
-        }
+    &__map {
+        width: 100%;
+        height: 400px;
     }
 }

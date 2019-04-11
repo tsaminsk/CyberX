@@ -5,6 +5,34 @@
     vertical-align: top;
 }
 
+.icon-totop {
+    @include sprite($totop);
+}
+
+.icon-mouse-red {
+    @include sprite($mouse-red);
+}
+
+.icon-arrow-red {
+    @include sprite($arrow-red);
+}
+
+.icon-mouse-white {
+    @include sprite($mouse-white);
+}
+
+.icon-arrow-white {
+    @include sprite($arrow-white);
+}
+
+.icon-menu-select {
+    @include sprite($menu-select);
+}
+
+.icon-mobmenu {
+    @include sprite($mobmenu);
+}
+
 .icon-swipe {
     @include sprite($swipe);
 }
