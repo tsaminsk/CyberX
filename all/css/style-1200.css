@@ -2156,15 +2156,31 @@ button.button--red:hover:after {
     margin: 0 0 30px
 }
 
-.calculator__list input {
+.calculator__list input[type="checkbox"] {
     display: none
 }
 
-.calculator__list input:checked+label:after {
+.calculator__list input[type="text"] {
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    color: #000;
+    text-align: right;
+    margin: 0 0 20px;
+}
+
+.calculator__list input[type="checkbox"]:checked+label:after {
     background-color: #000
 }
 
-.calculator__list label {
+.calculator__list label.for-inputs {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 80px);
+    margin: 0 0 30px -8px;
+}
+
+.calculator__list label:not(.for-inputs) {
     position: relative;
     display: block;
     margin: 0 0 30px 19px;
@@ -2175,7 +2191,7 @@ button.button--red:hover:after {
     margin: 0 0 27px 19px
 }
 
-.calculator__list label:after {
+.calculator__list label:not(.for-inputs):after {
     content: '\2713';
     position: absolute;
     top: 3px;
@@ -3535,6 +3551,10 @@ button.button--red:hover:after {
     border-style: solid;
     border-radius: 3px;
     opacity: 0.902
+}
+
+.fifteenth__form-inner img {
+    margin: 110px 0 0;
 }
 
 @media (max-width: 1919px) {

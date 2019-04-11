@@ -1918,15 +1918,31 @@ button.button--red:hover:after {
     }
 }
 
-.calculator__list input {
+.calculator__list input[type="checkbox"] {
     display: none
 }
 
-.calculator__list input:checked+label:after {
+.calculator__list input[type="text"] {
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    color: #000;
+    text-align: right;
+    margin: 14px 0 0;
+}
+
+.calculator__list input[type="checkbox"]:checked+label:after {
     background-color: #000
 }
 
-.calculator__list label {
+.calculator__list label.for-inputs {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 80px);
+    margin: 0 0 15px -8px;
+}
+
+.calculator__list label:not(.for-inputs) {
     position: relative;
     display: block;
     margin: 0 0 20px 19px;
@@ -1937,7 +1953,7 @@ button.button--red:hover:after {
     margin: 0 0 21px 19px
 }
 
-.calculator__list label:after {
+.calculator__list label:not(.for-inputs):after {
     content: '\2713';
     position: absolute;
     top: 3px;

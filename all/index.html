@@ -399,16 +399,18 @@
             <div class="sixth__title">с чего начать? <br><span>Выберете, что вы хотите видеть в своем заведении, и узнайте какой заработок Вас ждет</span></div>
             <div class="sixth__content">
               <div class="sixth__col-one">
-                <div class="calculator">
+                <div class="calculator js-calculator">
                   <div class="calculator__title">
                      калькулятор прибыли</div>
                   <div class="calculator__list">
-                    <input type="checkbox" id="calc-game-pk" name="calc-game-pk">
+                    <label class="for-inputs" for="calc-pc">Кол-во компьютеров:</label>
+                    <input type="text" id="calc-pc" name="calc-events" value="20">
+                    <label class="for-inputs" for="calc-syties">Население города:</label>
+                    <input type="text" id="calc-syties" name="calc-events" value="500000">
+                    <input type="checkbox" id="calc-game-pk" name="calc-game-pk" checked>
                     <label for="calc-game-pk">Игровые компьютеры</label>
                     <input type="checkbox" id="calc-food" name="calc-food">
                     <label for="calc-food">Еда и напитки</label>
-                    <input type="checkbox" id="calc-events" name="calc-events">
-                    <label for="calc-events">Мероприятия</label>
                     <input type="checkbox" id="calc-hookah" name="calc-hookah">
                     <label for="calc-hookah">Кальяны</label>
                   </div>
@@ -416,11 +418,11 @@
                     <div class="calculator__result-title">Итого:</div>
                     <div class="calculator__result-month">
                       <p>1 месяц</p>
-                      <p><span>400 000</span> руб</p>
+                      <p><span>450 000</span> руб</p>
                     </div>
                     <div class="calculator__result-year">
                       <p>12 месяцев</p>
-                      <p><span>2 500 000</span> руб</p>
+                      <p><span>5 400 000</span> руб</p>
                     </div>
                   </div>
                 </div>
@@ -914,7 +916,7 @@
           <div class="fifteenth__inner">
             <div class="fifteenth__content">
               <div class="fifteenth__form">
-                <form action="#">
+                <form action="#" class="js-form">
                   <div class="fifteenth__form-inner">
                     <div class="fifteenth__form-title">А мы в свою очередь отправим вам финансовую модель работы заведения для вашего города!</div>
                     <div class="fifteenth__form-inputs">
@@ -936,7 +938,7 @@
                     <div class="fifteenth__note_politics">
                        Нажимая «Отправить заявку», Вы соглашаетесь с <a href="#">политикой конфиденциальности</a></div>
                     <div class="fifteenth__form-button">
-                      <button class="button--red"><span>Отправить заявку</span></button>
+                      <button class="button--red js-forms-submit" disabled="disabled"><span>Отправить заявку</span></button>
                     </div>
                   </div>
                 </form>

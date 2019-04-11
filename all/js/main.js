@@ -1,5 +1,16 @@
 window.onload = function () {
 
+    // калькулятор прибыли
+    $('.js-calculator').find('input').on('change', function (event) {
+        var pc = $('#calc-game-pk')[0].checked ? $('#calc-pc').val() * 35000 : 0;
+        var syties = $('#calc-syties').val() > 500000 ? 300000 : 250000;
+        var food = $('#calc-food')[0].checked ? 136000 : 0;
+        var hook = $('#calc-hookah')[0].checked ? 300000 : 0;
+        var summ = (pc - syties + food + hook) > 0 ? (pc - syties + food + hook) : 0;
+        $('.js-calculator').find('.calculator__result-month p span').html(String(summ).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+        $('.js-calculator').find('.calculator__result-year p span').html(String(summ * 12).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+    });
+
     // больше клубов - ссылка на сайт, котрого еще нет
     $('.js-clubs').on('click', function () {
         alert('Извините, пока недоступно');
@@ -116,16 +127,12 @@ window.onload = function () {
     var elems = document.querySelectorAll('.js-menu');
     for ( let j =0; j < elems.length; j++) {
         var links = $(elems[j]).find('li a');
-
         for ( let k = 0; k < links.length; k++) {
             links[k].addEventListener('click', function () {
                 event.preventDefault();
-
                 var id = $(this).attr('href'),
                     top = $(id).offset().top;
-
                 $('body,html').animate({ scrollTop: top }, 1500);
-                    
             });
         }        
     }
@@ -162,7 +169,6 @@ window.onload = function () {
                 }
             }
             mobMenu[i].classList.add('is-active');
-
             document.querySelector('.nav-mobile').classList.remove('is-open');
             openMobmenu.style.display = 'block';  
         });
@@ -171,13 +177,11 @@ window.onload = function () {
     // моб. меню открытие
     var openMobmenu = document.querySelector('.js-open-mobmenu');
     var closeMobmenu = document.querySelector('.js-close-mobmenu');
-
     openMobmenu.addEventListener('click', function (event) {
         event.preventDefault();
         document.querySelector('.nav-mobile').classList.add('is-open');
         openMobmenu.style.display = 'none';
     });
-
     closeMobmenu.addEventListener('click', function (event) {
         event.preventDefault();
         document.querySelector('.nav-mobile').classList.remove('is-open');
@@ -187,13 +191,11 @@ window.onload = function () {
     // моб. меню номера телефона
     var openPhone = document.querySelector('.js-open-phone');
     var closePhone = document.querySelector('.js-close-phone');
-
     openPhone.addEventListener('click', function (event) {
         event.preventDefault();
         document.querySelector('.first__right').classList.add('is-open');
         openMobmenu.style.display = 'none';
     });
-
     closePhone.addEventListener('click', function (event) {
         event.preventDefault();
         document.querySelector('.first__right').classList.remove('is-open');
@@ -202,7 +204,6 @@ window.onload = function () {
 
     // яндекс-карта
     ymaps.ready(init);
-
     function init() {
         var myMap = new ymaps.Map("map", {
             center: [55.76, 37.64],
@@ -212,11 +213,9 @@ window.onload = function () {
             suppressMapOpenBlock: true,
             searchControlProvider: 'yandex#search'
         });
-
         var MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
             '<div style="color: #000; font-weight: bold;">$[properties.iconContent]</div>'
         );
-
         var myPlacemark_1 = new ymaps.Placemark([55.663847, 37.511311], {
             ballonContentHeader: 'Заголовок',
             ballonContentBody: 'Тело описания',
@@ -231,7 +230,6 @@ window.onload = function () {
             iconImageSize: [50, 65],
             iconContentLayout: MyIconContentLayout
         });
-
         myMap.geoObjects
             .add(myPlacemark_1);
     }
@@ -242,7 +240,7 @@ window.onload = function () {
     var formItems = [];
 
     Array.prototype.forEach.call(document.querySelector('.popup__form').children, function (elem, i) {
-        if (elem.tagName == 'INPUT' || elem.tagName == 'TEXTAREA') {
+        if (elem.tagName == 'INPUT') {
             if (elem.getAttribute('type') != 'submit') {
                 formItems.push(elem);
             }
@@ -375,4 +373,55 @@ window.onload = function () {
         }
         formSubmit.setAttribute('disabled', 'disabled');
     }
+
+    // валидация и отправка заявки
+    var forms = $('.js-form').find('input'); // массив инпутов основной формы
+
+    for (let i = 0; i < forms.length; i++){
+        forms[i].addEventListener('input', function () {
+            if (this.classList.contains('popup__form-ok')) {
+                this.classList.remove('popup__form-ok');
+            }
+            this.classList.add('popup__form-active');
+        });
+
+        let pattern = new RegExp(formData[i]);
+
+        forms[i].addEventListener('change', function () {
+            if ((pattern).test(this.value)) {
+                if (this.classList.contains('popup__form-error')) {
+                    this.classList.remove('popup__form-error');
+                }
+                else if (this.classList.contains('popup__form-active')) {
+                    this.classList.remove('popup__form-active');
+                }
+                this.classList.add('popup__form-ok');
+            } else {
+                this.classList.remove('popup__form-active');
+                this.classList.add('popup__form-error');
+                if (this.value == '') {
+                    this.value = 'Поле обязательно для заполнения';
+                }
+            }
+            checkSubmitForm();
+        });
+    }
+
+    $('.js-form').submit(function () {
+        event.preventDefault();
+        $('.fifteenth__form-inner').html('<div class="fifteenth__form-title">Ваша заявка отправленна!<br>мы скоро с вами свяжемся.</div><img src="/images/first/logo.png">')
+        console.log(event);
+    });
+
+    function checkSubmitForm() {
+        let count = 0;
+        for (var i = 1; i < forms.length - 1; i++) {
+            if (forms[i].classList.contains('popup__form-ok')) {
+                count++;
+            }
+        }
+        if (count >= 2) {
+            $('.js-forms-submit').removeAttr("disabled");
+        }
+    }   
 }
