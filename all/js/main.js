@@ -1,15 +1,16 @@
 window.onload = function () {
 
+
     // калькулятор прибыли
-    $('.js-calculator').find('input').on('change', function (event) {
-        var pc = $('#calc-game-pk')[0].checked ? $('#calc-pc').val() * 35000 : 0;
-        var syties = $('#calc-syties').val() > 500000 ? 300000 : 250000;
-        var food = $('#calc-food')[0].checked ? 136000 : 0;
-        var hook = $('#calc-hookah')[0].checked ? 300000 : 0;
-        var summ = (pc - syties + food + hook) > 0 ? (pc - syties + food + hook) : 0;
-        $('.js-calculator').find('.calculator__result-month p span').html(String(summ).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-        $('.js-calculator').find('.calculator__result-year p span').html(String(summ * 12).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-    });
+    // $('.js-calculator').find('input').on('change', function (event) {
+    //     var pc = $('#calc-game-pk')[0].checked ? $('#calc-pc').val() * 35000 : 0;
+    //     var syties = $('#calc-syties').val() > 500000 ? 300000 : 250000;
+    //     var food = $('#calc-food')[0].checked ? 136000 : 0;
+    //     var hook = $('#calc-hookah')[0].checked ? 300000 : 0;
+    //     var summ = (pc - syties + food + hook) > 0 ? (pc - syties + food + hook) : 0;
+    //     $('.js-calculator').find('.calculator__result-month p span').html(String(summ).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+    //     $('.js-calculator').find('.calculator__result-year p span').html(String(summ * 12).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+    // });
 
     // больше клубов - ссылка на сайт, котрого еще нет
     $('.js-clubs').on('click', function () {
@@ -124,18 +125,70 @@ window.onload = function () {
     });
 
     // плавный скролл к блокам
-    var elems = document.querySelectorAll('.js-menu');
-    for ( let j =0; j < elems.length; j++) {
-        var links = $(elems[j]).find('li a');
-        for ( let k = 0; k < links.length; k++) {
-            links[k].addEventListener('click', function () {
-                event.preventDefault();
-                var id = $(this).attr('href'),
-                    top = $(id).offset().top;
-                $('body,html').animate({ scrollTop: top }, 1500);
-            });
-        }        
+    var links = $('.js-menu').find('.nav__menu').find('li');
+    for ( let k = 0; k < links.length; k++) {
+        links[k].addEventListener('click', function (event) {
+            event.preventDefault();
+            // активный пункт меню
+            // setMenuLinkActive(k);
+
+            // скролл к выбранному
+            var id = $(this).find('a').attr('href'),
+                top = $(id).offset().top;
+            $('body,html').animate({ scrollTop: top }, 1500);
+        });
     }
+
+    var classesNav = [
+        [null, 'nav__mouse-red'],
+        ['nav__dark', 'nav__mouse-red'],
+        ['nav__dark', 'nav__mouse-red'],
+        ['nav__dark', 'nav__mouse-red'],
+        [null, 'nav__mouse-white'],
+        ['nav__dark', 'nav__mouse-red'],
+        ['nav__dark', 'nav__mouse-red'],
+        [null, 'nav__mouse-white'],
+        ['nav__dark', 'nav__mouse-red'],
+        ['nav__dark', 'nav__mouse-red'],
+        [null, 'nav__mouse-white'],
+        ['nav__dark', 'nav__mouse-red'],
+        [null, 'nav__mouse-white'],
+        [null, 'nav__mouse-red']
+    ];
+    
+    function setMenuLinkActive() {
+        let x = $('body').outerHeight() / 14;
+        let y = $(window).scrollTop();
+        // console.log(Math.floor(y/x + 1));
+        num = Math.floor(y * 1.05 / x);
+
+        for (let i = 0; i < links.length; i++) {
+            if ($(links[i]).hasClass('is-active')) {
+                $(links[i]).removeClass('is-active')
+            }
+            let op = 1 - Math.abs(num - i) * 0.070;
+            $(links[i]).css('opacity', op);
+        }
+        $(links[num]).addClass('is-active');
+
+        if (classesNav[num][0] === null ) {
+            $('.js-menu').removeClass('nav__dark');
+        }
+        else if (classesNav[num][0] === 'nav__dark') {
+            $('.js-menu').addClass('nav__dark');
+        }
+
+        if (classesNav[num][1] === 'nav__mouse-red') {
+            $('.js-menu').removeClass('nav__mouse-white');
+            $('.js-menu').addClass('nav__mouse-red');
+        }
+        else if (classesNav[num][1] === 'nav__mouse-white') {
+            $('.js-menu').removeClass('nav__mouse-red');
+            $('.js-menu').addClass('nav__mouse-white');
+        }
+    }
+
+    setMenuLinkActive();
 
     // плавный скролл от кнопки далее
     $('.js-link').on('click', function () {
@@ -157,6 +210,8 @@ window.onload = function () {
             $('.nav-mobile').hasClass('is-scrolled') ? null : $('.nav-mobile').addClass('is-scrolled');
         }
         else $('.nav-mobile').hasClass('is-scrolled') ? $('.nav-mobile').removeClass('is-scrolled') : null;
+        
+        setMenuLinkActive();
     });
 
     // мобменю список
@@ -312,6 +367,7 @@ window.onload = function () {
         document.querySelector('.popup').style.display = 'none';
     });
 
+    var popupOpen5 = document.querySelector('#popup_5'); // попап заказать фин модель
     var popupOpen4 = document.querySelector('#popup_4'); // попап заказать звонок
     var popupOpen3 = document.querySelector('#popup_3'); // попап заказать звонок
     var popupOpen1 = document.querySelector('#popup_1'); // попап получить доступ к фин документации
@@ -350,6 +406,15 @@ window.onload = function () {
         document.querySelector('.popup__wrap').style.display = 'block';
         document.querySelector('.popup__submited').style.display = 'none';
         document.querySelector('#popup__submited-button').innerHTML = '<span>Получить доступ</span>';
+    });
+
+    popupOpen5.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.querySelector('.popup__title').innerHTML = 'Получить документы<br>по расчету прибыли';
+        document.querySelector('.popup').style.display = 'block';
+        document.querySelector('.popup__wrap').style.display = 'block';
+        document.querySelector('.popup__submited').style.display = 'none';
+        document.querySelector('#popup__submited-button').innerHTML = '<span>Получить документы</span>';
     });
 
     popupClouse.addEventListener('click', () => {
@@ -413,14 +478,14 @@ window.onload = function () {
 
     $('.js-form').submit(function () {
         event.preventDefault();
-        // $('.fifteenth__form-inner').html('<div class="fifteenth__form-title">Ваша заявка отправленна!<br>мы скоро с вами свяжемся.</div><img src="/images/first/logo.png">')
         $.ajax({
             type: "POST",
             url: "request.php",
-            data: { name: $(forms[0]).val(), phone: $(forms[1]).val(), email: $(forms[2]).val(), sity: $(forms[2]).val() }
+            data: { name: $(forms[0]).val(), phone: $(forms[1]).val(), email: $(forms[2]).val(), sity: $(forms[3]).val() }
         }).done(function () {
             $(this).find("input").val("");
-            alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+            $('.fifteenth__form-inner').html('<div class="fifteenth__form-title">Ваша заявка отправленна!<br>мы скоро с вами свяжемся.</div><img src="/images/first/logo.png">')
+            // alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
             $("#form").trigger("reset");
         });
         return false;

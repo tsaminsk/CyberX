@@ -701,8 +701,8 @@ button.button--red:hover:after {
 }
 
 .nav {
-    position: absolute;
-    z-index: 3;
+    position: fixed;
+    z-index: 10;
     top: 350px;
     right: 4.5%;
 }
@@ -749,13 +749,22 @@ button.button--red:hover:after {
     color: #1b1b1b;
 }
 
-.nav__decor {
+.nav__decor-red,
+.nav__decor-white {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: 102px;
     transform: translate3d(0, -10px, 0);
+}
+
+.nav__mouse-red .nav__decor-white {
+    display: none;
+}
+
+.nav__mouse-white .nav__decor-red {
+    display: none;
 }
 
 .nav__decor .icon-arrow-red,
@@ -1146,7 +1155,7 @@ button.button--red:hover:after {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 10;
     animation-name: fadePopup;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: ease
 }
 
@@ -2153,7 +2162,7 @@ button.button--red:hover:after {
     font-family: "Jura-DemiBold";
     font-size: 16px;
     border-bottom: 2px solid #da4453;
-    margin: 0 0 30px
+    margin: 0 0 10px
 }
 
 .calculator__list input[type="checkbox"] {
@@ -2213,6 +2222,27 @@ button.button--red:hover:after {
     font-family: "RoadRadio-Bold";
     font-size: 16px;
     margin: 0 0 9px
+}
+
+.calculator__result-button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 40px;
+    font-family: "Jura-DemiBold";
+    font-size: 20px;
+    letter-spacing: -0.6px;
+    color: #bf1e2e;
+    border-radius: 2px;
+    border: none;
+    background-color: #fff;
+    transition: box-shadow 0.5s ease;
+    margin: 0 auto 10px;
+}
+
+.calculator__result-button button:hover {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.4)
 }
 
 .calculator__result-month,
